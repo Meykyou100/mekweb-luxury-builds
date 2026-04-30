@@ -6,62 +6,62 @@
 
 @layer base {
   :root {
-    /* MekWeb luxury dark palette: black + gold + white */
+    /* MekWeb modern dark palette: black + white + blue */
     --background: 0 0% 4%;
-    --foreground: 40 30% 96%;
+    --foreground: 0 0% 98%;
 
     --card: 0 0% 7%;
-    --card-foreground: 40 30% 96%;
+    --card-foreground: 0 0% 98%;
 
     --popover: 0 0% 6%;
-    --popover-foreground: 40 30% 96%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 43 74% 56%;          /* gold */
-    --primary-foreground: 0 0% 6%;
-    --primary-glow: 45 95% 68%;
+    --primary: 217 91% 60%;          /* blue #3B82F6 */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 213 94% 68%;
 
     --secondary: 0 0% 10%;
-    --secondary-foreground: 40 30% 96%;
+    --secondary-foreground: 0 0% 98%;
 
     --muted: 0 0% 12%;
-    --muted-foreground: 40 8% 65%;
+    --muted-foreground: 0 0% 69%; /* ~#B0B0B0 */
 
-    --accent: 43 74% 56%;
-    --accent-foreground: 0 0% 6%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 43 30% 18%;
+    --border: 217 30% 18%;
     --input: 0 0% 14%;
-    --ring: 43 74% 56%;
+    --ring: 217 91% 60%;
 
     --radius: 1rem;
 
-    /* Luxury tokens */
-    --gold: 43 74% 56%;
-    --gold-light: 45 95% 68%;
-    --gold-deep: 38 70% 42%;
+    /* Brand accent tokens (kept "gold" names so existing classes keep working) */
+    --gold: 217 91% 60%;        /* blue #3B82F6 */
+    --gold-light: 213 94% 68%;  /* lighter blue */
+    --gold-deep: 221 83% 53%;   /* #2563EB hover */
 
-    --gradient-gold: linear-gradient(135deg, hsl(38 70% 42%), hsl(43 74% 56%) 50%, hsl(45 95% 75%));
-    --gradient-radial-gold: radial-gradient(circle at 50% 0%, hsl(43 74% 56% / 0.18), transparent 60%);
+    --gradient-gold: linear-gradient(135deg, hsl(221 83% 53%), hsl(217 91% 60%) 50%, hsl(213 94% 78%));
+    --gradient-radial-gold: radial-gradient(circle at 50% 0%, hsl(217 91% 60% / 0.18), transparent 60%);
     --gradient-hero: linear-gradient(180deg, hsl(0 0% 4% / 0.4) 0%, hsl(0 0% 4%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 9%), hsl(0 0% 5%));
 
-    --shadow-gold: 0 10px 40px -10px hsl(43 74% 56% / 0.45);
-    --shadow-gold-soft: 0 0 60px hsl(43 74% 56% / 0.15);
-    --shadow-elegant: 0 20px 60px -20px hsl(0 0% 0% / 0.6);
+    --shadow-gold: 0 10px 40px -10px hsl(217 91% 60% / 0.45);
+    --shadow-gold-soft: 0 0 60px hsl(217 91% 60% / 0.18);
+    --shadow-elegant: 0 20px 60px -20px hsl(0 0% 0% / 0.7);
 
     --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
     --sidebar-background: 0 0% 6%;
-    --sidebar-foreground: 40 30% 96%;
-    --sidebar-primary: 43 74% 56%;
-    --sidebar-primary-foreground: 0 0% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 40 30% 96%;
-    --sidebar-border: 43 30% 18%;
-    --sidebar-ring: 43 74% 56%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 217 30% 18%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
