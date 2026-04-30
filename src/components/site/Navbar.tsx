@@ -51,8 +51,8 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden md:block">
-          <Button asChild variant="hero" size="default">
-            <a href="#contact">Get Started</a>
+          <Button asChild variant="hero" size="default" className="animate-glow-pulse hover:animate-none">
+            <a href="#contact">Get Free Demo</a>
           </Button>
         </div>
 
@@ -78,8 +78,8 @@ export const Navbar = () => {
                 {l.label}
               </a>
             ))}
-            <Button asChild variant="hero" className="mt-2">
-              <a href="#contact" onClick={() => setOpen(false)}>Get Started</a>
+            <Button asChild variant="hero" className="mt-2 animate-glow-pulse">
+              <a href="#contact" onClick={() => setOpen(false)}>Get Free Demo</a>
             </Button>
           </div>
         </div>

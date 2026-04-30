@@ -2,6 +2,7 @@ import { MessageCircle } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { Services } from "@/components/site/Services";
+import { HowItWorks } from "@/components/site/HowItWorks";
 import { Portfolio } from "@/components/site/Portfolio";
 import { About } from "@/components/site/About";
 import { Testimonials } from "@/components/site/Testimonials";
@@ -15,6 +16,7 @@ const Index = () => {
       <main>
         <Hero />
         <Services />
+        <HowItWorks />
         <Portfolio />
         <About />
         <Testimonials />

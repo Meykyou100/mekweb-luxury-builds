@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Rocket, Heart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -29,39 +29,50 @@ export const Hero = () => {
           </div>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-6 animate-fade-in-up">
-            We Build Websites That{" "}
-            <span className="text-gradient-gold italic">Grow</span>
-            <br />
-            Your Business
+            Turn Your Website Into a{" "}
+            <span className="text-gradient-gold italic">Client Machine</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.15s", opacity: 0 }}>
-            MekWeb crafts high-converting digital experiences for ambitious brands —
-            blending design, technology, and strategy to turn visitors into customers.
+          <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.15s", opacity: 0 }}>
+            We help restaurants and local businesses get more clients with modern,
+            high-converting websites.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.3s", opacity: 0 }}>
-            <Button asChild variant="hero" size="xl">
+            <Button asChild variant="hero" size="xl" className="animate-glow-pulse">
               <a href="#contact">
-                Get Started <ArrowRight />
+                Get Your Free Website Preview <ArrowRight />
               </a>
             </Button>
             <Button asChild variant="outlineGold" size="xl">
-              <a href="#portfolio">View Portfolio</a>
+              <a href="#portfolio">View Our Work</a>
             </Button>
           </div>
 
-          <div className="mt-20 grid grid-cols-3 gap-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.5s", opacity: 0 }}>
+          <div className="mt-24 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: "0.5s", opacity: 0 }}>
             {[
-              { v: "50+", l: "Projects" },
-              { v: "100%", l: "Satisfaction" },
-              { v: "5★", l: "Avg. Rating" },
+              { v: "50+", l: "Projects Delivered", icon: Rocket },
+              { v: "100%", l: "Client Satisfaction", icon: Heart },
+              { v: "5★", l: "Average Rating", icon: Star },
             ].map((s) => (
-              <div key={s.l} className="text-center">
+              <div key={s.l} className="flex flex-col items-center gap-3 p-6 rounded-2xl border border-gold/15 bg-card/30 backdrop-blur-sm hover:border-gold/40 hover:shadow-gold-soft transition-all duration-500">
+                <span className="w-11 h-11 rounded-full bg-gold/10 grid place-items-center">
+                  <s.icon className="w-5 h-5 text-gold" />
+                </span>
                 <div className="font-display text-3xl md:text-4xl font-bold text-gradient-gold">{s.v}</div>
-                <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">{s.l}</div>
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">{s.l}</div>
               </div>
             ))}
+          </div>
+
+          {/* Future client logos placeholder */}
+          <div className="mt-12 animate-fade-in" style={{ animationDelay: "0.7s", opacity: 0 }}>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground/60 mb-4">Trusted by ambitious brands</p>
+            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 opacity-50">
+              {["LOGO", "BRAND", "STUDIO", "AGENCY", "CO."].map((n) => (
+                <span key={n} className="font-display text-sm tracking-[0.25em] text-muted-foreground">{n}</span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -1,12 +1,12 @@
 import { Code2, Palette, Search, ShoppingBag, RefreshCw, Smartphone } from "lucide-react";
 
 const services = [
-  { icon: Code2, title: "Website Development", desc: "Lightning-fast, custom-coded websites built with modern frameworks for scale and performance." },
-  { icon: Palette, title: "UI / UX Design", desc: "Pixel-perfect interfaces designed to delight users and drive measurable conversions." },
-  { icon: Search, title: "SEO Optimization", desc: "Rank higher on Google with technical SEO, content strategy, and Core Web Vitals tuning." },
-  { icon: ShoppingBag, title: "E-commerce Development", desc: "Conversion-focused online stores with seamless checkout and inventory management." },
-  { icon: RefreshCw, title: "Website Redesign", desc: "Transform outdated websites into modern, mobile-first experiences that win clients." },
-  { icon: Smartphone, title: "Mobile-First Design", desc: "Responsive designs engineered for flawless experiences on every screen size." },
+  { icon: Code2, title: "Website Development", benefit: "Fast, modern websites that convert visitors into clients", desc: "Lightning-fast, custom-coded websites built with modern frameworks for scale and performance." },
+  { icon: Palette, title: "UI / UX Design", benefit: "Beautiful designs that guide visitors straight to action", desc: "Pixel-perfect interfaces designed to delight users and drive measurable conversions." },
+  { icon: Search, title: "SEO Optimization", benefit: "Get found on Google and bring in steady free traffic", desc: "Rank higher on Google with technical SEO, content strategy, and Core Web Vitals tuning." },
+  { icon: ShoppingBag, title: "E-commerce Development", benefit: "Sell more online with smooth, trust-building checkouts", desc: "Conversion-focused online stores with seamless checkout and inventory management." },
+  { icon: RefreshCw, title: "Website Redesign", benefit: "Refresh your old site into a client-winning machine", desc: "Transform outdated websites into modern, mobile-first experiences that win clients." },
+  { icon: Smartphone, title: "Mobile-First Design", benefit: "Capture the 70% of customers browsing on their phones", desc: "Responsive designs engineered for flawless experiences on every screen size." },
 ];
 
 export const Services = () => {
@@ -35,7 +35,8 @@ export const Services = () => {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-gold grid place-items-center mb-6 shadow-gold-soft group-hover:scale-110 transition-transform duration-500">
                   <s.icon className="w-7 h-7 text-primary-foreground" strokeWidth={2} />
                 </div>
-                <h3 className="font-display text-2xl font-bold mb-3 group-hover:text-gold transition-colors">{s.title}</h3>
+                <h3 className="font-display text-2xl font-bold mb-2 group-hover:text-gold transition-colors">{s.title}</h3>
+                <p className="text-gold/90 text-sm font-medium mb-3">{s.benefit}</p>
                 <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
 
