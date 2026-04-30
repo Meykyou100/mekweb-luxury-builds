@@ -1,16 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { MessageCircle } from "lucide-react";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { Services } from "@/components/site/Services";
+import { Portfolio } from "@/components/site/Portfolio";
+import { About } from "@/components/site/About";
+import { Testimonials } from "@/components/site/Testimonials";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <main>
+        <Hero />
+        <Services />
+        <Portfolio />
+        <About />
+        <Testimonials />
+        <Contact />
+      </main>
+      <Footer />
+
+      {/* Floating WhatsApp */}
+      <a
+        href="https://wa.me/15555555555"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-gradient-gold grid place-items-center shadow-gold animate-glow-pulse hover:scale-110 transition-transform"
+      >
+        <MessageCircle className="w-6 h-6 text-primary-foreground" />
+      </a>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
