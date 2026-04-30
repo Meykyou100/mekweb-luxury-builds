@@ -38,12 +38,15 @@ export const Contact = () => {
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Get In Touch</p>
             <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">
-              Let's build something{" "}
-              <span className="text-gradient-gold italic">great</span> together
+              Let's build your{" "}
+              <span className="text-gradient-gold italic">website</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
+            <div className="inline-block px-4 py-2 rounded-full border border-gold/30 bg-gold/10 mb-6">
+              <p className="text-sm font-semibold text-gold">🎁 Free website preview — no commitment</p>
+            </div>
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
               Tell us about your project. We'll reply within 24 hours with a free
-              strategy call to discuss how we can help your business grow.
+              strategy call and a custom mockup to show you what's possible.
             </p>
 
             <div className="space-y-4">
