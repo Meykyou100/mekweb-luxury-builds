@@ -115,8 +115,8 @@ export const Contact = () => {
                   className="bg-input/60 border-border/60 focus-visible:ring-gold rounded-xl resize-none"
                 />
               </div>
-              <Button type="submit" variant="hero" size="lg" disabled={loading} className="w-full">
-                {loading ? "Sending…" : (<>Send Message <Send /></>)}
+              <Button type="submit" variant="hero" size="lg" disabled={loading} className="w-full animate-glow-pulse">
+                {loading ? "Sending…" : (<>Get My Free Website Preview <Send /></>)}
               </Button>
             </div>
           </form>
