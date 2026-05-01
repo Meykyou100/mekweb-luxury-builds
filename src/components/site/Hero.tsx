@@ -6,15 +6,15 @@ const trustLogos = ["LOGO", "BRAND", "STUDIO", "AGENCY", "CO."];
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative min-h-[100svh] flex items-center overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-20">
+    <section id="home" className="relative isolate min-h-[100svh] flex items-center overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-20">
       {/* Background */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <img
           src={heroBg}
           alt=""
           width={1920}
           height={1280}
-          className="w-full h-full object-cover opacity-55 animate-hero-camera"
+          className="w-full h-full object-cover opacity-70 animate-hero-camera"
         />
         <div className="hero-cinematic" aria-hidden="true">
           <span className="hero-light hero-light-1" />
@@ -26,19 +26,19 @@ export const Hero = () => {
       </div>
 
       {/* Cinematic accent beams */}
-      <div className="hero-beam top-[18%] left-[-18%] w-[62vw]" />
-      <div className="hero-beam bottom-[24%] right-[-16%] w-[58vw] rotate-180" style={{ animationDelay: "3.5s" }} />
+      <div className="hero-beam top-[18%] left-[-18%] w-[62vw]" aria-hidden="true" />
+      <div className="hero-beam bottom-[24%] right-[-16%] w-[58vw] rotate-180" style={{ animationDelay: "3.5s" }} aria-hidden="true" />
 
-      <div className="container-luxe relative">
-        <div className="w-full max-w-4xl mx-auto overflow-hidden text-center">
+      <div className="container-luxe relative z-10">
+        <div className="w-full max-w-4xl mx-auto overflow-visible text-center">
           <div className="inline-flex max-w-[calc(100vw-2rem)] items-center justify-center gap-2 overflow-hidden px-3 py-2 sm:px-4 rounded-full border border-gold/30 bg-gold/5 backdrop-blur-sm mb-6 sm:mb-8 animate-fade-in">
             <Sparkles className="w-4 h-4 text-gold" />
             <span className="truncate text-[10px] sm:text-xs uppercase tracking-[0.14em] sm:tracking-[0.2em] text-gold/90">Premium Web Agency</span>
           </div>
 
-          <h1 className="mx-auto max-w-[11ch] sm:max-w-[13ch] md:max-w-none font-display text-[clamp(2.25rem,10vw,4rem)] md:text-7xl lg:text-8xl font-bold leading-[1.04] mb-5 sm:mb-6 animate-fade-in-up [text-wrap:balance]">
+          <h1 className="mx-auto max-w-[14ch] sm:max-w-[15ch] md:max-w-none font-display text-[clamp(2.15rem,9vw,4rem)] md:text-7xl lg:text-8xl font-bold leading-[1.1] mb-5 sm:mb-6 animate-fade-in-up [text-wrap:balance]">
             Turn Your Website Into a{" "}
-            <span className="text-gradient-gold italic">Client Machine</span>
+            <span className="-mx-2 inline-block px-2 pb-2 text-gradient-gold italic">Client Machine</span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.15s", opacity: 0 }}>
