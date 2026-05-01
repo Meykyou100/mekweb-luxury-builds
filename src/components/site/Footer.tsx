@@ -1,9 +1,33 @@
 import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
 
 const groups = [
-  { title: "Services", links: ["Web Development", "UI/UX Design", "SEO", "E-commerce", "Redesign"] },
-  { title: "Company", links: ["About", "Portfolio", "Testimonials", "Contact", "Careers"] },
-  { title: "Resources", links: ["Blog", "Case Studies", "Pricing", "FAQ", "Support"] },
+  {
+    title: "Services",
+    links: [
+      { label: "Web Development", href: "#services" },
+      { label: "UI/UX Design", href: "#services" },
+      { label: "SEO", href: "#services" },
+      { label: "E-commerce", href: "#services" },
+      { label: "Redesign", href: "#services" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "#about" },
+      { label: "Portfolio", href: "#portfolio" },
+      { label: "Testimonials", href: "#testimonials" },
+      { label: "Contact", href: "#contact" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "How It Works", href: "#how-it-works" },
+      { label: "FAQ", href: "#faq" },
+      { label: "Free Website Preview", href: "#contact" },
+    ],
+  },
 ];
 
 export const Footer = () => {
@@ -40,8 +64,8 @@ export const Footer = () => {
               <h4 className="font-display text-base font-bold mb-4 text-gold">{g.title}</h4>
               <ul className="space-y-2">
                 {g.links.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="text-sm text-muted-foreground hover:text-gold transition">{l}</a>
+                  <li key={l.label}>
+                    <a href={l.href} className="inline-block text-sm text-muted-foreground transition-all duration-300 hover:translate-x-1 hover:text-gold">{l.label}</a>
                   </li>
                 ))}
               </ul>

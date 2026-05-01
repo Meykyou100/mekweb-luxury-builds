@@ -141,6 +141,45 @@
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10;
   }
 
+  .animated-page {
+    position: relative;
+    isolation: isolate;
+    overflow-x: clip;
+  }
+
+  .animated-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(115deg, transparent 0 42%, hsl(var(--gold) / 0.08) 50%, transparent 58%),
+      linear-gradient(hsl(var(--gold) / 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--gold) / 0.025) 1px, transparent 1px);
+    background-position: 0 0, 0 0, 0 0;
+    background-size: 220% 220%, 72px 72px, 72px 72px;
+    mask-image: linear-gradient(to bottom, black 0%, black 45%, transparent 100%);
+    opacity: 0.55;
+    animation: background-drift 22s linear infinite;
+  }
+
+  .animated-page::after {
+    content: "";
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 0;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.7), transparent);
+    animation: bottom-scan 5s ease-in-out infinite;
+  }
+
+  .animated-page > * {
+    position: relative;
+    z-index: 1;
+  }
+
   [data-reveal] {
     opacity: 0;
     transform: translate3d(0, 36px, 0) scale(0.98);
@@ -221,6 +260,27 @@
   }
 }
 
+@keyframes background-drift {
+  0% {
+    background-position: -80% -80%, 0 0, 0 0;
+  }
+  100% {
+    background-position: 120% 120%, 72px 72px, 72px 72px;
+  }
+}
+
+@keyframes bottom-scan {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scaleX(0.25);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scaleX(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -235,6 +295,11 @@
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;
+  }
+
+  .animated-page::before,
+  .animated-page::after {
+    animation: none !important;
   }
 }
 

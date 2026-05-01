@@ -6,6 +6,7 @@ import { HowItWorks } from "@/components/site/HowItWorks";
 import { Portfolio } from "@/components/site/Portfolio";
 import { About } from "@/components/site/About";
 import { Testimonials } from "@/components/site/Testimonials";
+import { FAQ } from "@/components/site/FAQ";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
@@ -14,7 +15,7 @@ const Index = () => {
   useScrollReveal();
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="animated-page min-h-screen bg-background text-foreground">
       <Navbar />
       <main>
         <Hero />
@@ -23,6 +24,7 @@ const Index = () => {
         <Portfolio />
         <About />
         <Testimonials />
+        <FAQ />
         <Contact />
       </main>
       <Footer />
