@@ -1,6 +1,7 @@
 import { MessageCircle } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
+import { TrustBar } from "@/components/site/TrustBar";
 import { Services } from "@/components/site/Services";
 import { Pricing } from "@/components/site/Pricing";
 import { HowItWorks } from "@/components/site/HowItWorks";
@@ -20,6 +21,7 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <TrustBar />
         <Services />
         <Pricing />
         <HowItWorks />

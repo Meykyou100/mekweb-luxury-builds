@@ -24,6 +24,18 @@ const faqs = [
     a: "Yes. We set up the technical SEO basics, clean page structure, fast loading, metadata, and content sections that help customers find you.",
   },
   {
+    q: "How does payment work?",
+    a: "Projects can start with a deposit, then the remaining balance is paid before launch. The exact payment split can be agreed before work begins.",
+  },
+  {
+    q: "Is domain and hosting included?",
+    a: "Domain and hosting costs are separate, but we can help you choose the right setup and connect everything before launch.",
+  },
+  {
+    q: "Can I update the website later?",
+    a: "Yes. We can add small updates after launch, or set up a maintenance plan if you want ongoing edits and improvements.",
+  },
+  {
     q: "What do I need to start?",
     a: "Send your business details, logo if you have one, the services you offer, and a few examples of websites you like. We can guide the rest.",
   },

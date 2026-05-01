@@ -1,4 +1,4 @@
-import { Check, Crown, Rocket, Sparkles } from "lucide-react";
+import { CalendarClock, Check, Crown, RefreshCw, Rocket, Sparkles, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const plans = [
@@ -7,6 +7,10 @@ const plans = [
     price: "1000 DH",
     desc: "A clean one-page website for a new business or simple offer.",
     icon: Sparkles,
+    bestFor: "Best for new businesses",
+    delivery: "5-7 days",
+    revisions: "1 revision",
+    support: "7 days support",
     features: [
       "One-page responsive website",
       "Hero, services, about, and contact sections",
@@ -21,6 +25,10 @@ const plans = [
     desc: "A stronger website with more content, animation, and conversion sections.",
     icon: Rocket,
     popular: true,
+    bestFor: "Best for growing businesses",
+    delivery: "7-12 days",
+    revisions: "2 revisions",
+    support: "14 days support",
     features: [
       "Everything in Starter",
       "Up to 5 custom sections",
@@ -34,6 +42,10 @@ const plans = [
     price: "2500 DH",
     desc: "A complete polished website for brands that want a premium online presence.",
     icon: Crown,
+    bestFor: "Best for premium launches",
+    delivery: "12-20 days",
+    revisions: "3 revisions",
+    support: "30 days support",
     features: [
       "Everything in Business",
       "Advanced landing page structure",
@@ -87,6 +99,24 @@ export const Pricing = () => {
               </div>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">{plan.desc}</p>
 
+              <div className="grid gap-3 mb-6 rounded-2xl border border-border/60 bg-background/30 p-4">
+                <div className="text-sm font-medium text-gold">{plan.bestFor}</div>
+                <div className="grid gap-2 text-sm text-muted-foreground">
+                  <span className="flex items-center gap-2">
+                    <CalendarClock className="h-4 w-4 text-gold" />
+                    Delivery: {plan.delivery}
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <RefreshCw className="h-4 w-4 text-gold" />
+                    Revisions: {plan.revisions}
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <Wrench className="h-4 w-4 text-gold" />
+                    Support: {plan.support}
+                  </span>
+                </div>
+              </div>
+
               <ul className="space-y-3 mb-8 flex-1">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex gap-3 text-sm sm:text-base text-foreground/90">
@@ -102,6 +132,19 @@ export const Pricing = () => {
                 <a href="#contact">Start with {plan.name}</a>
               </Button>
             </article>
+          ))}
+        </div>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-3" data-reveal="scale">
+          {[
+            ["Payment", "Start with a deposit, finish payment before launch."],
+            ["Hosting", "We can guide domain and hosting setup if you do not have them yet."],
+            ["Ownership", "After final payment, the website files and access belong to you."],
+          ].map(([title, text]) => (
+            <div key={title} className="rounded-2xl border border-border/60 bg-card/40 p-5">
+              <h3 className="font-display text-xl font-bold text-gold mb-2">{title}</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">{text}</p>
+            </div>
           ))}
         </div>
       </div>
