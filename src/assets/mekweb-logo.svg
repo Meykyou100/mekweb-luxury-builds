@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 760" role="img" aria-labelledby="title desc">
+  <title id="title">MekWeb logo</title>
+  <desc id="desc">Gold MekWeb premium web agency logo on a transparent background.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff3bb"/>
+      <stop offset="0.18" stop-color="#f8cf67"/>
+      <stop offset="0.42" stop-color="#b97918"/>
+      <stop offset="0.66" stop-color="#ffe37a"/>
+      <stop offset="1" stop-color="#b06a0c"/>
+    </linearGradient>
+    <linearGradient id="goldStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9b6414"/>
+      <stop offset="0.2" stop-color="#ffe59a"/>
+      <stop offset="0.52" stop-color="#c48722"/>
+      <stop offset="0.82" stop-color="#fff0a7"/>
+      <stop offset="1" stop-color="#9a5d08"/>
+    </linearGradient>
+    <linearGradient id="whiteMetal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.46" stop-color="#f4f4f2"/>
+      <stop offset="1" stop-color="#bdbdbd"/>
+    </linearGradient>
+    <filter id="softGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 1  0 0.72 0 0 0.57  0 0 0.25 0 0.08  0 0 0 0.75 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="textShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="5" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softGlow)">
+    <path d="M220 350V144L378 306L540 144V350L505 312V228L378 355L254 229V312Z" fill="url(#gold)" stroke="url(#goldStroke)" stroke-width="8" stroke-linejoin="miter"/>
+    <path d="M236 350L378 204L524 350" fill="none" stroke="url(#gold)" stroke-width="42" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path d="M255 333L378 207L505 333" fill="none" stroke="#fff4b7" stroke-opacity="0.32" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+
+  <g filter="url(#textShadow)">
+    <text x="81" y="510" fill="url(#whiteMetal)" font-family="Montserrat, Poppins, Arial, sans-serif" font-size="116" font-weight="300" letter-spacing="-4">Mek</text>
+    <text x="405" y="510" fill="url(#gold)" font-family="Montserrat, Poppins, Arial, sans-serif" font-size="116" font-weight="300" letter-spacing="-4">Web</text>
+  </g>
+
+  <line x1="212" y1="555" x2="548" y2="555" stroke="url(#gold)" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+  <ellipse cx="380" cy="555" rx="78" ry="7" fill="#ffcf47" opacity="0.28"/>
+  <text x="380" y="612" text-anchor="middle" fill="#e0ad4d" font-family="Montserrat, Poppins, Arial, sans-serif" font-size="28" font-weight="600" letter-spacing="18">PREMIUM WEB AGENCY</text>
+</svg>

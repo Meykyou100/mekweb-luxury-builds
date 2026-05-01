@@ -1,5 +1,5 @@
 import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
-import logo from "@/assets/mekweb-logo.png";
+import logo from "@/assets/mekweb-logo.svg";
 
 const groups = [
   {
