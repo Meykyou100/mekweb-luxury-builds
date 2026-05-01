@@ -18,7 +18,7 @@ export const About = () => {
   return (
     <section id="about" className="relative py-32 bg-secondary/30">
       <div className="container-luxe grid lg:grid-cols-2 gap-16 items-center">
-        <div>
+        <div data-reveal="left">
           <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">About MekWeb</p>
           <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">
             We help businesses <span className="text-gradient-gold italic">grow online</span>
@@ -49,10 +49,13 @@ export const About = () => {
           {stats.map((s, i) => (
             <div
               key={s.l}
-              className={`p-8 rounded-3xl bg-card-gradient border border-border/60 hover:border-gold/40 transition-all duration-500 ${i % 3 === 0 ? "md:translate-y-6" : ""}`}
+              data-reveal="scale"
+              data-reveal-delay={i * 110}
             >
-              <div className="font-display text-5xl md:text-6xl font-bold text-gradient-gold mb-2">{s.v}</div>
-              <div className="text-sm uppercase tracking-widest text-muted-foreground">{s.l}</div>
+              <div className={`motion-card p-8 rounded-3xl bg-card-gradient border border-border/60 hover:border-gold/40 hover:shadow-gold-soft transition-all duration-500 ${i % 3 === 0 ? "md:translate-y-6" : ""}`}>
+                <div className="font-display text-5xl md:text-6xl font-bold text-gradient-gold mb-2">{s.v}</div>
+                <div className="text-sm uppercase tracking-widest text-muted-foreground">{s.l}</div>
+              </div>
             </div>
           ))}
         </div>

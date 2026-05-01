@@ -8,8 +8,11 @@ import { About } from "@/components/site/About";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const Index = () => {
+  useScrollReveal();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />

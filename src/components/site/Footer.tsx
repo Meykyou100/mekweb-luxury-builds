@@ -11,7 +11,7 @@ export const Footer = () => {
     <footer className="relative border-t border-gold/10 pt-20 pb-10">
       <div className="container-luxe">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2" data-reveal="left">
             <a href="#home" className="flex items-center gap-2 mb-5">
               <span className="grid place-items-center w-9 h-9 rounded-lg bg-gradient-gold text-primary-foreground font-display font-black text-lg">M</span>
               <span className="font-display text-xl font-bold">
@@ -27,7 +27,7 @@ export const Footer = () => {
                   key={i}
                   href="#"
                   aria-label="Social"
-                  className="w-10 h-10 rounded-full border border-border/60 grid place-items-center hover:border-gold hover:text-gold hover:bg-gold/5 transition"
+                  className="motion-card w-10 h-10 rounded-full border border-border/60 grid place-items-center hover:-translate-y-1 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -35,8 +35,8 @@ export const Footer = () => {
             </div>
           </div>
 
-          {groups.map((g) => (
-            <div key={g.title}>
+          {groups.map((g, i) => (
+            <div key={g.title} data-reveal="scale" data-reveal-delay={i * 90}>
               <h4 className="font-display text-base font-bold mb-4 text-gold">{g.title}</h4>
               <ul className="space-y-2">
                 {g.links.map((l) => (
@@ -49,7 +49,7 @@ export const Footer = () => {
           ))}
         </div>
 
-        <div className="pt-8 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-4" data-reveal="scale">
           <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} MekWeb. All rights reserved.</p>
           <p className="text-xs text-muted-foreground">Crafted with precision. Designed to convert.</p>
         </div>

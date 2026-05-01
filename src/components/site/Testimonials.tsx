@@ -43,20 +43,20 @@ export const Testimonials = () => {
   return (
     <section id="testimonials" className="relative py-32">
       <div className="container-luxe">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-16" data-reveal="scale">
           <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Client Love</p>
           <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight">
             What clients <span className="text-gradient-gold italic">say</span>
           </h2>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto" data-reveal="scale" data-reveal-delay="140">
           <div className="absolute -inset-x-10 -inset-y-6 bg-gold/5 blur-3xl rounded-full -z-10" />
 
-          <div key={i} className="relative p-10 md:p-14 rounded-3xl bg-card-gradient border border-gold/20 shadow-elegant animate-fade-in">
+          <div key={i} className="motion-card relative p-10 md:p-14 rounded-3xl bg-card-gradient border border-gold/20 shadow-elegant animate-fade-in">
             <div className="flex gap-1 mb-6 justify-center">
               {Array.from({ length: 5 }).map((_, k) => (
-                <Star key={k} className="w-5 h-5 fill-gold text-gold" />
+                <Star key={k} className="w-5 h-5 fill-gold text-gold animate-scale-in" style={{ animationDelay: `${k * 0.08}s` }} />
               ))}
             </div>
 

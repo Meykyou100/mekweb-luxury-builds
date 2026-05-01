@@ -25,7 +25,7 @@ export const HowItWorks = () => {
   return (
     <section id="how-it-works" className="relative py-32">
       <div className="container-luxe">
-        <div className="max-w-2xl mx-auto text-center mb-20">
+        <div className="max-w-2xl mx-auto text-center mb-20" data-reveal="scale">
           <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">The Process</p>
           <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight">
             How it <span className="text-gradient-gold italic">works</span>
@@ -37,11 +37,13 @@ export const HowItWorks = () => {
 
         <div className="relative grid md:grid-cols-3 gap-8 lg:gap-12">
           {/* connecting line */}
-          <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+          <div className="process-line hidden md:block absolute top-12 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
-          {steps.map((s) => (
+          {steps.map((s, i) => (
             <div
               key={s.n}
+              data-reveal="scale"
+              data-reveal-delay={i * 140}
               className="relative text-center group"
             >
               <div className="relative mx-auto mb-8 w-24 h-24">

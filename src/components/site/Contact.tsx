@@ -35,7 +35,7 @@ export const Contact = () => {
     <section id="contact" className="relative py-32">
       <div className="container-luxe">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          <div>
+          <div data-reveal="left">
             <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Get In Touch</p>
             <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">
               Let's build your{" "}
@@ -50,7 +50,7 @@ export const Contact = () => {
             </p>
 
             <div className="space-y-4">
-              <a href="mailto:hello@mekweb.com" className="flex items-center gap-4 p-4 rounded-2xl border border-border/60 hover:border-gold/40 transition group">
+              <a href="mailto:hello@mekweb.com" className="motion-card flex items-center gap-4 p-4 rounded-2xl border border-border/60 hover:-translate-y-1 hover:border-gold/40 transition-all duration-300 group">
                 <span className="w-11 h-11 rounded-xl bg-gold/10 grid place-items-center group-hover:bg-gold/20 transition">
                   <Mail className="w-5 h-5 text-gold" />
                 </span>
@@ -59,7 +59,7 @@ export const Contact = () => {
                   <div className="font-medium">hello@mekweb.com</div>
                 </div>
               </a>
-              <a href="https://wa.me/15555555555" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-2xl border border-border/60 hover:border-gold/40 transition group">
+              <a href="https://wa.me/15555555555" target="_blank" rel="noopener noreferrer" className="motion-card flex items-center gap-4 p-4 rounded-2xl border border-border/60 hover:-translate-y-1 hover:border-gold/40 transition-all duration-300 group">
                 <span className="w-11 h-11 rounded-xl bg-gold/10 grid place-items-center group-hover:bg-gold/20 transition">
                   <MessageCircle className="w-5 h-5 text-gold" />
                 </span>
@@ -68,7 +68,7 @@ export const Contact = () => {
                   <div className="font-medium">Chat with us instantly</div>
                 </div>
               </a>
-              <div className="flex items-center gap-4 p-4 rounded-2xl border border-border/60">
+              <div className="motion-card flex items-center gap-4 p-4 rounded-2xl border border-border/60">
                 <span className="w-11 h-11 rounded-xl bg-gold/10 grid place-items-center">
                   <MapPin className="w-5 h-5 text-gold" />
                 </span>
@@ -80,7 +80,7 @@ export const Contact = () => {
             </div>
           </div>
 
-          <form onSubmit={onSubmit} className="relative p-8 md:p-10 rounded-3xl bg-card-gradient border border-gold/20 shadow-elegant">
+          <form onSubmit={onSubmit} data-reveal="right" data-reveal-delay="120" className="motion-card relative p-8 md:p-10 rounded-3xl bg-card-gradient border border-gold/20 shadow-elegant">
             <div className="absolute inset-0 -z-10 bg-gold/10 blur-3xl rounded-full" />
             <div className="space-y-5">
               <div>
@@ -115,7 +115,7 @@ export const Contact = () => {
                   className="bg-input/60 border-border/60 focus-visible:ring-gold rounded-xl resize-none"
                 />
               </div>
-              <Button type="submit" variant="hero" size="lg" disabled={loading} className="w-full animate-glow-pulse">
+              <Button type="submit" variant="hero" size="lg" disabled={loading} className="h-auto min-h-12 w-full flex-wrap whitespace-normal px-5 py-4 text-center animate-glow-pulse">
                 {loading ? "Sending…" : (<>Get My Free Website Preview <Send /></>)}
               </Button>
             </div>
