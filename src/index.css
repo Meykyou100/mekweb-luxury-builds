@@ -72,6 +72,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -82,6 +83,21 @@
       radial-gradient(ellipse 80% 50% at 50% -10%, hsl(217 91% 60% / 0.12), transparent),
       radial-gradient(ellipse 60% 50% at 100% 100%, hsl(217 91% 60% / 0.06), transparent);
     background-attachment: fixed;
+  }
+
+  #root {
+    min-width: 0;
+    overflow-x: clip;
+  }
+
+  img,
+  video,
+  canvas {
+    max-width: 100%;
+  }
+
+  section {
+    scroll-margin-top: 5rem;
   }
 
   h1, h2, h3, h4 {
@@ -122,7 +138,7 @@
     box-shadow: 0 0 40px hsl(var(--gold) / 0.4), 0 0 80px hsl(var(--gold) / 0.15);
   }
   .container-luxe {
-    @apply max-w-7xl mx-auto px-6 md:px-10;
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10;
   }
 
   [data-reveal] {
@@ -219,5 +235,14 @@
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  [data-reveal],
+  [data-reveal="left"],
+  [data-reveal="right"],
+  [data-reveal="scale"] {
+    transform: translate3d(0, 24px, 0) scale(0.98);
   }
 }

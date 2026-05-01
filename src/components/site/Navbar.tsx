@@ -26,11 +26,11 @@ export const Navbar = () => {
     <header
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-500",
-        scrolled ? "py-3 bg-background/70 backdrop-blur-xl border-b border-gold/10" : "py-6 bg-transparent",
+        scrolled ? "py-3 bg-background/70 backdrop-blur-xl border-b border-gold/10" : "py-4 sm:py-6 bg-transparent",
       )}
     >
       <nav className="container-luxe flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2 group">
+        <a href="#home" className="flex min-w-0 items-center gap-2 group">
           <span className="grid place-items-center w-9 h-9 rounded-lg bg-gradient-gold text-primary-foreground font-display font-black text-lg shadow-gold-soft group-hover:scale-110 transition-transform">M</span>
           <span className="font-display text-xl font-bold tracking-tight">
             Mek<span className="text-gradient-gold">Web</span>
@@ -57,7 +57,7 @@ export const Navbar = () => {
         </div>
 
         <button
-          className="md:hidden text-foreground p-2"
+          className="md:hidden text-foreground p-2 -mr-2"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -66,8 +66,8 @@ export const Navbar = () => {
       </nav>
 
       {open && (
-        <div className="md:hidden container-luxe mt-4 pb-4 animate-fade-in">
-          <div className="flex flex-col gap-1 bg-card/80 backdrop-blur-xl rounded-2xl p-4 border border-gold/10">
+        <div className="md:hidden container-luxe mt-3 sm:mt-4 pb-4 animate-fade-in">
+          <div className="flex max-h-[calc(100svh-6rem)] flex-col gap-1 overflow-y-auto bg-card/90 backdrop-blur-xl rounded-2xl p-3 sm:p-4 border border-gold/10">
             {links.map((l) => (
               <a
                 key={l.href}

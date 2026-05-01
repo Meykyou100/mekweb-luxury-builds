@@ -33,9 +33,9 @@ const Index = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-gradient-gold grid place-items-center shadow-gold animate-glow-pulse hover:scale-110 transition-transform"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-gold grid place-items-center shadow-gold animate-glow-pulse hover:scale-110 transition-transform"
       >
-        <MessageCircle className="w-6 h-6 text-primary-foreground" />
+        <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
       </a>
     </div>
   );

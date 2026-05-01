@@ -16,19 +16,19 @@ const points = [
 
 export const About = () => {
   return (
-    <section id="about" className="relative py-32 bg-secondary/30">
-      <div className="container-luxe grid lg:grid-cols-2 gap-16 items-center">
+    <section id="about" className="relative py-20 sm:py-24 lg:py-32 bg-secondary/30">
+      <div className="container-luxe grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div data-reveal="left">
-          <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">About MekWeb</p>
-          <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">
+          <p className="text-xs uppercase tracking-[0.22em] sm:tracking-[0.3em] text-gold mb-4">About MekWeb</p>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-5 sm:mb-6">
             We help businesses <span className="text-gradient-gold italic">grow online</span>
           </h2>
-          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+          <p className="text-base sm:text-lg text-muted-foreground mb-5 sm:mb-6 leading-relaxed">
             MekWeb is a boutique web development agency on a mission to make premium digital
             experiences accessible to ambitious businesses of every size — from neighborhood
             restaurants to fast-scaling SaaS startups.
           </p>
-          <p className="text-muted-foreground mb-10 leading-relaxed">
+          <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
             We obsess over the details: every pixel, every load millisecond, every conversion
             opportunity. The result? Websites that don't just look stunning — they pay for themselves.
           </p>
@@ -39,22 +39,22 @@ export const About = () => {
                 <span className="w-6 h-6 rounded-full bg-gold/15 grid place-items-center shrink-0">
                   <Check className="w-3.5 h-3.5 text-gold" strokeWidth={3} />
                 </span>
-                <span className="text-foreground/90">{p}</span>
+                <span className="text-sm sm:text-base text-foreground/90">{p}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 min-[420px]:grid-cols-2 gap-4 sm:gap-5">
           {stats.map((s, i) => (
             <div
               key={s.l}
               data-reveal="scale"
               data-reveal-delay={i * 110}
             >
-              <div className={`motion-card p-8 rounded-3xl bg-card-gradient border border-border/60 hover:border-gold/40 hover:shadow-gold-soft transition-all duration-500 ${i % 3 === 0 ? "md:translate-y-6" : ""}`}>
-                <div className="font-display text-5xl md:text-6xl font-bold text-gradient-gold mb-2">{s.v}</div>
-                <div className="text-sm uppercase tracking-widest text-muted-foreground">{s.l}</div>
+              <div className={`motion-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-card-gradient border border-border/60 hover:border-gold/40 hover:shadow-gold-soft transition-all duration-500 ${i % 3 === 0 ? "md:translate-y-6" : ""}`}>
+                <div className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-gradient-gold mb-2">{s.v}</div>
+                <div className="text-xs sm:text-sm uppercase tracking-[0.18em] sm:tracking-widest text-muted-foreground">{s.l}</div>
               </div>
             </div>
           ))}

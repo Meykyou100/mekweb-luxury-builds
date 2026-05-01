@@ -8,9 +8,9 @@ const groups = [
 
 export const Footer = () => {
   return (
-    <footer className="relative border-t border-gold/10 pt-20 pb-10">
+    <footer className="relative border-t border-gold/10 pt-14 sm:pt-20 pb-8 sm:pb-10">
       <div className="container-luxe">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-9 sm:gap-12 mb-12 sm:mb-16">
           <div className="lg:col-span-2" data-reveal="left">
             <a href="#home" className="flex items-center gap-2 mb-5">
               <span className="grid place-items-center w-9 h-9 rounded-lg bg-gradient-gold text-primary-foreground font-display font-black text-lg">M</span>
@@ -18,7 +18,7 @@ export const Footer = () => {
                 Mek<span className="text-gradient-gold">Web</span>
               </span>
             </a>
-            <p className="text-muted-foreground max-w-sm mb-6">
+            <p className="text-sm sm:text-base text-muted-foreground max-w-sm mb-6">
               Building digital experiences that convert. Premium web development for ambitious brands.
             </p>
             <div className="flex gap-3">
@@ -49,7 +49,7 @@ export const Footer = () => {
           ))}
         </div>
 
-        <div className="pt-8 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-4" data-reveal="scale">
+        <div className="pt-6 sm:pt-8 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 text-center md:text-left" data-reveal="scale">
           <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} MekWeb. All rights reserved.</p>
           <p className="text-xs text-muted-foreground">Crafted with precision. Designed to convert.</p>
         </div>
