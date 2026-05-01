@@ -14,14 +14,20 @@ export const Hero = () => {
           alt=""
           width={1920}
           height={1280}
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-55 animate-hero-camera"
         />
+        <div className="hero-cinematic" aria-hidden="true">
+          <span className="hero-light hero-light-1" />
+          <span className="hero-light hero-light-2" />
+          <span className="hero-light hero-light-3" />
+          <span className="hero-scanline" />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
       </div>
 
-      {/* Floating shapes */}
-      <div className="absolute top-1/4 -left-28 w-56 h-56 rounded-full bg-gold/20 blur-3xl animate-float sm:-left-20 sm:w-72 sm:h-72" />
-      <div className="absolute bottom-1/4 -right-32 w-64 h-64 rounded-full bg-gold/10 blur-3xl animate-float sm:-right-20 sm:w-96 sm:h-96" style={{ animationDelay: "2s" }} />
+      {/* Cinematic accent beams */}
+      <div className="hero-beam top-[18%] left-[-18%] w-[62vw]" />
+      <div className="hero-beam bottom-[24%] right-[-16%] w-[58vw] rotate-180" style={{ animationDelay: "3.5s" }} />
 
       <div className="container-luxe relative">
         <div className="w-full max-w-4xl mx-auto overflow-hidden text-center">
