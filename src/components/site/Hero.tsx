@@ -22,6 +22,31 @@ export const Hero = () => {
           <span className="hero-light hero-light-3" />
           <span className="hero-scanline" />
         </div>
+        <div className="hero-motion-scene" aria-hidden="true">
+          <span className="hero-orbit-ring hero-orbit-ring-1" />
+          <span className="hero-orbit-ring hero-orbit-ring-2" />
+          <span className="hero-web-card hero-web-card-1">
+            <span />
+            <span />
+            <span />
+          </span>
+          <span className="hero-web-card hero-web-card-2">
+            <span />
+            <span />
+            <span />
+          </span>
+          <span className="hero-web-card hero-web-card-3">
+            <span />
+            <span />
+            <span />
+          </span>
+          <span className="hero-node hero-node-1" />
+          <span className="hero-node hero-node-2" />
+          <span className="hero-node hero-node-3" />
+          <span className="hero-node hero-node-4" />
+          <span className="hero-data-line hero-data-line-1" />
+          <span className="hero-data-line hero-data-line-2" />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
       </div>
 
