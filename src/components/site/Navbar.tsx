@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/mekweb-logo.png";
 
 const links = [
   { href: "#services", label: "Services" },
@@ -30,11 +31,12 @@ export const Navbar = () => {
       )}
     >
       <nav className="container-luxe flex items-center justify-between">
-        <a href="#home" className="flex min-w-0 items-center gap-2 group">
-          <span className="grid place-items-center w-9 h-9 rounded-lg bg-gradient-gold text-primary-foreground font-display font-black text-lg shadow-gold-soft group-hover:scale-110 transition-transform">M</span>
-          <span className="font-display text-xl font-bold tracking-tight">
-            Mek<span className="text-gradient-gold">Web</span>
-          </span>
+        <a href="#home" className="flex min-w-0 items-center transition-transform duration-300 hover:scale-[1.03]" aria-label="MekWeb home">
+          <img
+            src={logo}
+            alt="MekWeb"
+            className="h-10 w-auto max-w-[160px] object-contain sm:h-12 sm:max-w-[195px]"
+          />
         </a>
 
         <div className="hidden md:flex items-center gap-1">

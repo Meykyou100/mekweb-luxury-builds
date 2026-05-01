@@ -1,4 +1,5 @@
 import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
+import logo from "@/assets/mekweb-logo.png";
 
 const groups = [
   {
@@ -37,11 +38,12 @@ export const Footer = () => {
       <div className="container-luxe">
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-9 sm:gap-12 mb-12 sm:mb-16">
           <div className="lg:col-span-2" data-reveal="left">
-            <a href="#home" className="flex items-center gap-2 mb-5">
-              <span className="grid place-items-center w-9 h-9 rounded-lg bg-gradient-gold text-primary-foreground font-display font-black text-lg">M</span>
-              <span className="font-display text-xl font-bold">
-                Mek<span className="text-gradient-gold">Web</span>
-              </span>
+            <a href="#home" className="inline-flex items-center mb-5 transition-transform duration-300 hover:scale-[1.03]" aria-label="MekWeb home">
+              <img
+                src={logo}
+                alt="MekWeb"
+                className="h-14 w-auto max-w-[245px] object-contain sm:h-16 sm:max-w-[285px]"
+              />
             </a>
             <p className="text-sm sm:text-base text-muted-foreground max-w-sm mb-6">
               Building digital experiences that convert. Premium web development for ambitious brands.
