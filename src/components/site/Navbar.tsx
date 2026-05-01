@@ -35,7 +35,7 @@ export const Navbar = () => {
           <img
             src={logo}
             alt="MekWeb"
-            className="h-10 w-auto max-w-[160px] object-contain sm:h-12 sm:max-w-[195px]"
+            className="h-14 w-auto max-w-[115px] object-contain sm:h-16 sm:max-w-[135px]"
           />
         </a>
 

@@ -42,7 +42,7 @@ export const Footer = () => {
               <img
                 src={logo}
                 alt="MekWeb"
-                className="h-14 w-auto max-w-[245px] object-contain sm:h-16 sm:max-w-[285px]"
+                className="h-24 w-auto max-w-[180px] object-contain sm:h-28 sm:max-w-[220px]"
               />
             </a>
             <p className="text-sm sm:text-base text-muted-foreground max-w-sm mb-6">
