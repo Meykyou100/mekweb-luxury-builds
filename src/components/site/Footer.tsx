@@ -8,7 +8,7 @@ const groups = [
       { label: "UI/UX Design", href: "#services" },
       { label: "SEO", href: "#services" },
       { label: "E-commerce", href: "#services" },
-      { label: "Redesign", href: "#services" },
+      { label: "Pricing", href: "#pricing" },
     ],
   },
   {
@@ -24,6 +24,7 @@ const groups = [
     title: "Resources",
     links: [
       { label: "How It Works", href: "#how-it-works" },
+      { label: "Pricing", href: "#pricing" },
       { label: "FAQ", href: "#faq" },
       { label: "Free Website Preview", href: "#contact" },
     ],

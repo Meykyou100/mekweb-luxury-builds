@@ -5,9 +5,9 @@ import { cn } from "@/lib/utils";
 
 const links = [
   { href: "#services", label: "Services" },
+  { href: "#pricing", label: "Pricing" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "#about", label: "About" },
-  { href: "#testimonials", label: "Testimonials" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -42,10 +42,10 @@ export const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="px-4 py-2 text-sm text-muted-foreground hover:text-gold transition-colors relative group"
+              className="px-3 lg:px-4 py-2 text-sm text-muted-foreground hover:text-gold transition-colors relative group"
             >
               {l.label}
-              <span className="absolute left-4 right-4 -bottom-0.5 h-px bg-gradient-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+              <span className="absolute left-3 right-3 lg:left-4 lg:right-4 -bottom-0.5 h-px bg-gradient-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </a>
           ))}
         </div>
