@@ -6,105 +6,105 @@
 
 @layer base {
   :root {
-    /* MekWeb warm premium palette: cream + espresso + terracotta */
-    --background: 36 42% 94%;
-    --foreground: 13 39% 14%;
+    /* MekWeb agency palette: black + yellow */
+    --background: 50 100% 94%;
+    --foreground: 0 0% 9%;
 
-    --card: 38 45% 97%;
-    --card-foreground: 13 39% 14%;
+    --card: 48 100% 98%;
+    --card-foreground: 0 0% 9%;
 
-    --popover: 38 45% 97%;
-    --popover-foreground: 13 39% 14%;
+    --popover: 48 100% 98%;
+    --popover-foreground: 0 0% 9%;
 
-    --primary: 4 72% 40%;
-    --primary-foreground: 38 45% 97%;
-    --primary-glow: 16 76% 55%;
+    --primary: 49 97% 58%;
+    --primary-foreground: 0 0% 7%;
+    --primary-glow: 52 100% 70%;
 
-    --secondary: 34 42% 88%;
-    --secondary-foreground: 13 39% 14%;
+    --secondary: 50 100% 86%;
+    --secondary-foreground: 0 0% 9%;
 
-    --muted: 32 28% 86%;
-    --muted-foreground: 18 24% 38%;
+    --muted: 49 70% 88%;
+    --muted-foreground: 0 0% 28%;
 
-    --accent: 4 72% 40%;
-    --accent-foreground: 38 45% 97%;
+    --accent: 49 97% 58%;
+    --accent-foreground: 0 0% 7%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 30% 78%;
-    --input: 36 38% 91%;
-    --ring: 4 72% 40%;
+    --border: 0 0% 9%;
+    --input: 50 100% 90%;
+    --ring: 49 97% 58%;
 
     --radius: 1rem;
 
     /* Brand accent tokens (kept "gold" names so existing classes keep working) */
-    --gold: 4 72% 40%;
-    --gold-light: 29 80% 58%;
-    --gold-deep: 8 67% 30%;
+    --gold: 49 97% 58%;
+    --gold-light: 52 100% 72%;
+    --gold-deep: 43 92% 46%;
 
-    --gradient-gold: linear-gradient(135deg, hsl(8 67% 30%), hsl(4 72% 40%) 58%, hsl(29 80% 58%));
-    --gradient-radial-gold: radial-gradient(circle at 50% 0%, hsl(4 72% 40% / 0.16), transparent 60%);
-    --gradient-hero: linear-gradient(180deg, hsl(13 39% 14% / 0.08) 0%, hsl(36 42% 94%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(38 45% 98%), hsl(34 42% 91%));
+    --gradient-gold: linear-gradient(135deg, hsl(43 92% 46%), hsl(49 97% 58%) 55%, hsl(54 100% 78%));
+    --gradient-radial-gold: radial-gradient(circle at 50% 0%, hsl(49 97% 58% / 0.22), transparent 60%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 9% / 0.08) 0%, hsl(50 100% 94%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(48 100% 99%), hsl(50 100% 90%));
 
-    --shadow-gold: 0 10px 40px -12px hsl(4 72% 40% / 0.42);
-    --shadow-gold-soft: 0 18px 60px -28px hsl(4 72% 40% / 0.35);
-    --shadow-elegant: 0 22px 70px -34px hsl(18 42% 18% / 0.28);
+    --shadow-gold: 0 12px 42px -14px hsl(49 97% 58% / 0.62);
+    --shadow-gold-soft: 0 18px 64px -30px hsl(49 97% 58% / 0.48);
+    --shadow-elegant: 0 22px 70px -34px hsl(0 0% 0% / 0.28);
 
     --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
-    --sidebar-background: 38 45% 97%;
-    --sidebar-foreground: 13 39% 14%;
-    --sidebar-primary: 4 72% 40%;
-    --sidebar-primary-foreground: 38 45% 97%;
-    --sidebar-accent: 34 42% 88%;
-    --sidebar-accent-foreground: 13 39% 14%;
-    --sidebar-border: 30 30% 78%;
-    --sidebar-ring: 4 72% 40%;
+    --sidebar-background: 48 100% 98%;
+    --sidebar-foreground: 0 0% 9%;
+    --sidebar-primary: 49 97% 58%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 50 100% 86%;
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 0 0% 9%;
+    --sidebar-ring: 49 97% 58%;
   }
 
   .dark {
-    --background: 15 30% 8%;
-    --foreground: 36 42% 94%;
+    --background: 0 0% 7%;
+    --foreground: 50 100% 94%;
 
-    --card: 16 30% 11%;
-    --card-foreground: 36 42% 94%;
+    --card: 0 0% 10%;
+    --card-foreground: 50 100% 94%;
 
-    --popover: 16 30% 10%;
-    --popover-foreground: 36 42% 94%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 50 100% 94%;
 
-    --primary: 4 72% 45%;
-    --primary-foreground: 36 42% 94%;
-    --primary-glow: 24 82% 58%;
+    --primary: 49 97% 58%;
+    --primary-foreground: 0 0% 7%;
+    --primary-glow: 52 100% 70%;
 
-    --secondary: 18 26% 14%;
-    --secondary-foreground: 36 42% 94%;
+    --secondary: 0 0% 13%;
+    --secondary-foreground: 50 100% 94%;
 
-    --muted: 18 22% 18%;
-    --muted-foreground: 30 20% 72%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 50 22% 72%;
 
-    --accent: 4 72% 45%;
-    --accent-foreground: 36 42% 94%;
+    --accent: 49 97% 58%;
+    --accent-foreground: 0 0% 7%;
 
-    --border: 20 28% 24%;
-    --input: 18 24% 16%;
-    --ring: 4 72% 45%;
+    --border: 49 45% 24%;
+    --input: 0 0% 16%;
+    --ring: 49 97% 58%;
 
-    --gradient-radial-gold: radial-gradient(circle at 50% 0%, hsl(4 72% 45% / 0.18), transparent 60%);
-    --gradient-hero: linear-gradient(180deg, hsl(15 30% 8% / 0.4) 0%, hsl(15 30% 8%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(16 30% 13%), hsl(15 30% 8%));
+    --gradient-radial-gold: radial-gradient(circle at 50% 0%, hsl(49 97% 58% / 0.18), transparent 60%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 7% / 0.4) 0%, hsl(0 0% 7%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 12%), hsl(0 0% 7%));
 
     --shadow-elegant: 0 20px 60px -20px hsl(0 0% 0% / 0.72);
 
-    --sidebar-background: 16 30% 10%;
-    --sidebar-foreground: 36 42% 94%;
-    --sidebar-primary: 4 72% 45%;
-    --sidebar-primary-foreground: 36 42% 94%;
-    --sidebar-accent: 18 26% 14%;
-    --sidebar-accent-foreground: 36 42% 94%;
-    --sidebar-border: 20 28% 24%;
-    --sidebar-ring: 4 72% 45%;
+    --sidebar-background: 0 0% 9%;
+    --sidebar-foreground: 50 100% 94%;
+    --sidebar-primary: 49 97% 58%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 0 0% 13%;
+    --sidebar-accent-foreground: 50 100% 94%;
+    --sidebar-border: 49 45% 24%;
+    --sidebar-ring: 49 97% 58%;
   }
 }
 
@@ -126,8 +126,8 @@
     max-width: 100%;
     overflow-x: hidden;
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, hsl(4 72% 40% / 0.08), transparent),
-      radial-gradient(ellipse 60% 50% at 100% 100%, hsl(29 80% 58% / 0.08), transparent);
+      radial-gradient(ellipse 80% 50% at 50% -10%, hsl(var(--gold) / 0.16), transparent),
+      radial-gradient(ellipse 60% 50% at 100% 100%, hsl(var(--gold) / 0.10), transparent);
     background-attachment: fixed;
   }
 
@@ -201,13 +201,16 @@
     @apply py-16 sm:py-20 lg:py-24;
   }
   .section-surface {
-    @apply bg-secondary/45;
+    @apply bg-secondary/65;
+    background-image:
+      radial-gradient(circle at 12% 10%, hsl(var(--gold) / 0.12), transparent 28%),
+      linear-gradient(180deg, hsl(var(--background) / 0), hsl(var(--background) / 0.35));
   }
   .eyebrow {
-    @apply text-xs uppercase tracking-[0.22em] text-gold;
+    @apply inline-flex rounded-full border border-gold/35 bg-gold/15 px-3 py-2 text-xs font-black uppercase tracking-[0.22em] text-gold;
   }
   .section-title {
-    @apply font-display text-3xl font-bold leading-[1.08] text-foreground sm:text-4xl md:text-5xl lg:text-6xl;
+    @apply font-sans text-3xl font-black uppercase leading-[1.02] tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl;
     overflow-wrap: anywhere;
     text-wrap: balance;
   }
@@ -221,10 +224,11 @@
     letter-spacing: -0.015em;
   }
   .premium-card {
-    @apply rounded-2xl border border-border/70 bg-card/[0.82] shadow-elegant backdrop-blur-sm transition-all duration-700;
+    @apply rounded-2xl border border-border/55 bg-card/[0.88] shadow-elegant backdrop-blur-sm transition-all duration-700;
+    box-shadow: var(--shadow-elegant), inset 0 1px 0 hsl(0 0% 100% / 0.08);
   }
   .premium-card:hover {
-    border-color: hsl(var(--gold) / 0.42);
+    border-color: hsl(var(--gold) / 0.7);
     box-shadow: var(--shadow-gold-soft), var(--shadow-elegant);
     transform: translateY(-6px);
   }
