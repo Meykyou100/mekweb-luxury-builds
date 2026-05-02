@@ -91,17 +91,17 @@ export const Hero = () => {
                   <s.icon className="h-4 w-4 text-gold sm:h-5 sm:w-5" />
                 </span>
                 <div className="font-number text-2xl font-bold text-gradient-gold sm:text-3xl md:text-4xl">{s.v}</div>
-                <div className="text-[10px] uppercase tracking-[0.14em] text-white/70 sm:text-xs sm:tracking-widest">{s.l}</div>
+                <div className="text-[10px] uppercase tracking-[0.14em] text-black/70 dark:text-white/70 sm:text-xs sm:tracking-widest">{s.l}</div>
               </div>
             ))}
           </div>
 
           <div className="mt-9 animate-fade-in" style={{ animationDelay: "0.7s", opacity: 0 }}>
-            <p className="mb-4 text-[10px] uppercase tracking-[0.3em] text-white/45">Trusted by ambitious brands</p>
+            <p className="mb-4 text-[10px] uppercase tracking-[0.3em] text-black/55 dark:text-white/45">Trusted by ambitious brands</p>
             <div className="relative mx-auto max-w-3xl overflow-hidden opacity-50 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
               <div className="flex w-max items-center gap-x-10 animate-marquee">
                 {[...trustLogos, ...trustLogos].map((n, i) => (
-                  <span key={`${n}-${i}`} className="font-display text-sm tracking-[0.25em] text-white/60">{n}</span>
+                  <span key={`${n}-${i}`} className="font-display text-sm tracking-[0.25em] text-black/60 dark:text-white/60">{n}</span>
                 ))}
               </div>
             </div>
