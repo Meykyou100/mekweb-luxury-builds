@@ -9,6 +9,8 @@ export const Hero = () => {
         <div className="absolute inset-x-10 top-20 h-px bg-white/30" />
         <div className="hero-orb absolute right-[8%] top-24 h-24 w-24 rounded-full bg-yellow-300/80 blur-sm" />
         <div className="hero-orb absolute right-[5%] bottom-28 h-16 w-16 rounded-full bg-white/60 blur-[2px]" style={{ animationDelay: "1.4s" }} />
+        <div className="hero-orb hero-orb-soft absolute left-[9%] bottom-[22%] h-14 w-14 rounded-full bg-yellow-200/50 blur-[3px]" style={{ animationDelay: "2.1s" }} />
+        <div className="hero-orb hero-orb-soft absolute left-[54%] top-[17%] h-10 w-10 rounded-full bg-white/45 blur-[2px]" style={{ animationDelay: "3.2s" }} />
         <div className="hero-frame absolute left-0 right-0 top-20 mx-auto h-[52%] max-w-[92rem] rounded-t-[46%] border border-white/35" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
       </div>
@@ -52,8 +54,8 @@ export const Hero = () => {
           <div className="hero-mockup relative mx-auto w-full max-w-2xl animate-float lg:mx-0">
             <div className="absolute -inset-10 rounded-[42px] bg-yellow-300/35 blur-3xl" aria-hidden="true" />
             <div className="relative rounded-[34px] border border-yellow-200/35 bg-black/35 p-6 shadow-[0_40px_120px_rgba(250,204,21,0.18)] backdrop-blur-md">
-              <div className="absolute -left-8 -top-8 h-20 w-20 rounded-full bg-white/70" />
-              <div className="absolute -bottom-7 left-24 h-12 w-12 rounded-full bg-yellow-300/70" />
+              <div className="hero-orb absolute -left-8 -top-8 h-20 w-20 rounded-full bg-white/70" style={{ animationDelay: "0.6s" }} />
+              <div className="hero-orb absolute -bottom-7 left-24 h-12 w-12 rounded-full bg-yellow-300/70" style={{ animationDelay: "1.8s" }} />
               <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#20201d] p-5 shadow-2xl">
                 <div className="mb-5 flex items-center justify-between">
                   <div className="flex gap-2">
