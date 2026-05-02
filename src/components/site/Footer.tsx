@@ -1,4 +1,5 @@
 import { Github, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone, Twitter } from "lucide-react";
+import { BrandLogo } from "@/components/site/BrandLogo";
 
 const whatsappNumber = "212600000000";
 const displayPhone = "+212 600 000 000";
@@ -32,8 +33,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-5 lg:gap-10 mb-12 sm:mb-16">
           <div className="lg:col-span-2" data-reveal="left">
             <a href="#home" className="mb-5 inline-flex items-center gap-2 transition-transform duration-500 hover:scale-[1.02]" aria-label="MekWeb home">
-              <span className="grid h-10 w-10 place-items-center rounded-lg border border-gold/25 bg-gradient-gold font-display text-xl font-bold text-primary-foreground shadow-gold-soft">M</span>
-              <span className="font-display text-3xl font-bold leading-none text-foreground">Mek<span className="text-gold">Web</span></span>
+              <BrandLogo markClassName="h-12 w-12" textClassName="text-3xl" />
             </a>
             <p className="max-w-sm text-base leading-7 text-muted-foreground mb-6">
               Premium web development for ambitious businesses that want a website built to earn trust and generate leads.

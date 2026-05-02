@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
+import { BrandLogo } from "@/components/site/BrandLogo";
 
 const links = [
   { href: "#services", label: "Services" },
@@ -32,12 +33,7 @@ export const Navbar = () => {
     >
       <nav className="container-luxe flex items-center justify-between">
         <a href="#home" className="flex min-w-0 items-center gap-2 transition-transform duration-500 hover:scale-[1.02]" aria-label="MekWeb home">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-gold/25 bg-gradient-gold font-display text-lg font-bold text-primary-foreground shadow-gold-soft">
-            M
-          </span>
-          <span className={cn("font-display text-2xl font-bold leading-none tracking-normal", scrolled ? "text-foreground" : "text-white")}>
-            Mek<span className="text-gold">Web</span>
-          </span>
+          <BrandLogo markClassName="h-9 w-9 rounded-lg" textClassName={cn("text-xl sm:text-2xl", scrolled ? "text-gold" : "text-yellow-300")} />
         </a>
 
         <div className="hidden md:flex items-center gap-1">

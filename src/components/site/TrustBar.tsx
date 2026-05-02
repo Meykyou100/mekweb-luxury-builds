@@ -1,4 +1,5 @@
 import { ArrowRight, Code2, Heart, MessageCircle, SearchCheck, Smartphone, ThumbsUp, Users } from "lucide-react";
+import { BrandLogo } from "@/components/site/BrandLogo";
 
 const items = [
   { icon: MessageCircle, title: "Social Media Marketing", desc: "Clear messaging and landing pages built to convert visitors into leads." },
@@ -25,10 +26,7 @@ export const TrustBar = () => {
               <div className="mx-auto mb-16 h-3 w-16 rounded-full bg-[#1d1d1b]" />
               <div className="grid h-full place-items-center rounded-2xl border-2 border-[#1d1d1b]/20">
                 <div className="text-center">
-                  <div className="mx-auto mb-4 grid h-14 w-14 place-items-center border-4 border-[#1d1d1b] font-display text-xl font-black">
-                    M
-                  </div>
-                  <p className="text-lg font-black uppercase tracking-[0.18em]">MekWeb</p>
+                  <BrandLogo className="flex-col gap-3" markClassName="h-16 w-16 rounded-2xl border-[#1d1d1b]" textClassName="text-lg tracking-[0.18em] text-[#1d1d1b]" />
                 </div>
               </div>
             </div>
