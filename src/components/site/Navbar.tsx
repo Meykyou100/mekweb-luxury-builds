@@ -27,7 +27,7 @@ export const Navbar = () => {
     <header
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-500",
-        scrolled ? "py-2 bg-background/80 backdrop-blur-xl border-b border-gold/10" : "py-3 bg-background/45 backdrop-blur-md sm:bg-transparent",
+        scrolled ? "py-2 bg-background/80 backdrop-blur-xl border-b border-gold/10" : "py-3 bg-[#1d1d1b]/80 text-white backdrop-blur-md border-b border-white/10",
       )}
     >
       <nav className="container-luxe flex items-center justify-between">
@@ -35,7 +35,7 @@ export const Navbar = () => {
           <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-gold/25 bg-gradient-gold font-display text-lg font-bold text-primary-foreground shadow-gold-soft">
             M
           </span>
-          <span className="font-display text-2xl font-bold leading-none tracking-normal text-foreground">
+          <span className={cn("font-display text-2xl font-bold leading-none tracking-normal", scrolled ? "text-foreground" : "text-white")}>
             Mek<span className="text-gold">Web</span>
           </span>
         </a>
@@ -45,7 +45,10 @@ export const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="px-3 lg:px-4 py-2 text-sm text-muted-foreground hover:text-gold transition-colors relative group"
+              className={cn(
+                "px-3 lg:px-4 py-2 text-sm transition-colors relative group",
+                scrolled ? "text-muted-foreground hover:text-gold" : "text-white/85 hover:text-yellow-300",
+              )}
             >
               {l.label}
               <span className="absolute left-3 right-3 lg:left-4 lg:right-4 -bottom-0.5 h-px bg-gradient-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
