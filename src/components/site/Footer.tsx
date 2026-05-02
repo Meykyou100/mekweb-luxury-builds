@@ -1,8 +1,8 @@
 import { Github, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone, Twitter } from "lucide-react";
 import { BrandLogo } from "@/components/site/BrandLogo";
 
-const whatsappNumber = "212600000000";
-const displayPhone = "+212 600 000 000";
+const whatsappNumber = "212762971653";
+const displayPhone = "+212 762 971 653";
 const contactEmail = "contact@mekweb.ma";
 
 const footerGroups = [

@@ -18,7 +18,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const Index = () => {
   useScrollReveal();
-  const whatsappNumber = "212600000000";
+  const whatsappNumber = "212762971653";
 
   return (
     <div className="animated-page min-h-screen bg-background text-foreground">

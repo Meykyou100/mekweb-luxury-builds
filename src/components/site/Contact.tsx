@@ -9,8 +9,8 @@ import { toast } from "sonner";
 const projectTypes = ["Restaurant website", "E-commerce", "Service business", "Redesign"];
 const businessTypes = ["Restaurant", "Local service", "Online store", "Startup / SaaS", "Other"];
 const budgetRanges = ["1000-1500 DH", "1500-2500 DH", "2500+ DH", "Not sure yet"];
-const whatsappNumber = "212600000000";
-const displayPhone = "+212 600 000 000";
+const whatsappNumber = "212762971653";
+const displayPhone = "+212 762 971 653";
 const contactEmail = "contact@mekweb.ma";
 
 const schema = z.object({
@@ -44,7 +44,21 @@ export const Contact = () => {
     }
     setLoading(true);
     setTimeout(() => {
-      toast.success("Thanks! We'll reply in less than 24 hours.");
+      const message = [
+        "Bonjour, je veux un devis pour un site web.",
+        "",
+        `Nom: ${form.name}`,
+        `Telephone / WhatsApp: ${form.phone}`,
+        `Email: ${form.email}`,
+        `Type de business: ${form.businessType}`,
+        `Type de projet: ${form.projectType}`,
+        `Budget: ${form.budget}`,
+        "",
+        `Message: ${form.message}`,
+      ].join("\n");
+
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+      toast.success("Your devis request is ready in WhatsApp.");
       setForm({ name: "", phone: "", email: "", businessType: businessTypes[0], projectType: projectTypes[0], budget: budgetRanges[0], message: "" });
       setLoading(false);
     }, 800);
@@ -105,7 +119,7 @@ export const Contact = () => {
               </div>
               <div>
                 <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Phone / WhatsApp</label>
-                <Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+212 600 000 000" maxLength={40} className="h-12 rounded-xl border-border/60 bg-input/60 text-base focus-visible:ring-gold" />
+                <Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+212 762 971 653" maxLength={40} className="h-12 rounded-xl border-border/60 bg-input/60 text-base focus-visible:ring-gold" />
               </div>
               <div>
                 <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Email</label>
@@ -135,7 +149,7 @@ export const Contact = () => {
               </div>
               <div className="sm:col-span-2">
                 <Button type="submit" variant="hero" size="lg" disabled={loading} className="h-auto min-h-12 w-full flex-wrap whitespace-normal px-5 py-4 text-center animate-glow-pulse">
-                  {loading ? "Sending..." : (<>Get My Free Website Preview <Send /></>)}
+                  {loading ? "Preparing..." : (<>Send Devis Request <Send /></>)}
                 </Button>
               </div>
             </div>
