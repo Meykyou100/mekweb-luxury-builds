@@ -5,60 +5,59 @@ const steps = [
     icon: Search,
     n: "01",
     title: "We analyze your business",
-    desc: "We learn about your goals, customers, and competitors to craft a strategy that wins clients.",
+    desc: "We learn about your goals, customers, and competitors before shaping the page strategy.",
   },
   {
     icon: Pencil,
     n: "02",
-    title: "We design your website",
-    desc: "A modern, mobile-first website built around conversion — beautiful, fast, and easy to manage.",
+    title: "We design and build",
+    desc: "A modern, mobile-first website built around conversion, speed, and trust.",
   },
   {
     icon: TrendingUp,
     n: "03",
-    title: "You get more clients",
-    desc: "Launch and grow. Your new website becomes a 24/7 client machine working while you sleep.",
+    title: "You launch with confidence",
+    desc: "Your new website is ready to attract leads, explain your offer, and support growth.",
   },
 ];
 
 export const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="relative py-20 sm:py-24 lg:py-32">
+    <section id="how-it-works" className="relative section-pad">
       <div className="container-luxe">
-        <div className="max-w-2xl mx-auto text-center mb-12 sm:mb-16 lg:mb-20" data-reveal="scale">
-          <p className="text-xs uppercase tracking-[0.22em] sm:tracking-[0.3em] text-gold mb-4">The Process</p>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
-            How it <span className="text-gradient-gold italic">works</span>
+        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14" data-reveal="scale">
+          <p className="eyebrow mb-4">The Process</p>
+          <h2 className="section-title">
+            A calm path from idea to launch
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground mt-5 sm:mt-6">
+          <p className="section-copy mx-auto mt-5 max-w-2xl">
             A simple, proven 3-step process from first call to launch.
           </p>
         </div>
 
-        <div className="relative grid md:grid-cols-3 gap-10 md:gap-8 lg:gap-12">
-          {/* connecting line */}
-          <div className="process-line hidden md:block absolute top-12 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+        <div className="relative grid gap-5 md:grid-cols-3 lg:gap-6">
+          <div className="process-line hidden md:block absolute top-16 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-gold/35 to-transparent" />
 
           {steps.map((s, i) => (
             <div
               key={s.n}
               data-reveal="scale"
               data-reveal-delay={i * 140}
-              className="relative text-center group"
+              className="premium-card relative p-6 text-center group"
             >
-              <div className="relative mx-auto mb-6 sm:mb-8 w-20 h-20 sm:w-24 sm:h-24">
-                <div className="absolute inset-0 rounded-full bg-gold/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-card border border-gold/30 grid place-items-center shadow-gold-soft group-hover:border-gold group-hover:scale-105 transition-all duration-500">
-                  <s.icon className="w-8 h-8 sm:w-9 sm:h-9 text-gold" strokeWidth={1.5} />
+              <div className="relative mx-auto mb-6 h-20 w-20">
+                <div className="absolute inset-0 rounded-full bg-gold/10 blur-2xl opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+                <div className="relative grid h-20 w-20 place-items-center rounded-2xl border border-gold/25 bg-gold/10 shadow-gold-soft transition-all duration-700 group-hover:scale-105 group-hover:border-gold">
+                  <s.icon className="h-8 w-8 text-gold" strokeWidth={1.5} />
                 </div>
-                <span className="absolute -top-2 -right-2 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-gold text-primary-foreground text-xs sm:text-sm font-display font-bold grid place-items-center shadow-gold-soft">
+                <span className="absolute -right-2 -top-2 grid h-8 w-8 place-items-center rounded-full bg-gradient-gold font-display text-xs font-bold text-primary-foreground shadow-gold-soft">
                   {s.n}
                 </span>
               </div>
-              <h3 className="font-display text-xl sm:text-2xl font-bold mb-3 group-hover:text-gold transition-colors">
+              <h3 className="mb-3 font-display text-xl font-bold transition-colors group-hover:text-gold sm:text-2xl">
                 {s.title}
               </h3>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xs mx-auto">
+              <p className="mx-auto max-w-xs text-sm leading-relaxed text-muted-foreground sm:text-base">
                 {s.desc}
               </p>
             </div>

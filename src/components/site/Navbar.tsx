@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/mekweb-logo.svg";
+import { ThemeToggle } from "@/components/site/ThemeToggle";
 
 const links = [
   { href: "#services", label: "Services" },
@@ -27,16 +27,17 @@ export const Navbar = () => {
     <header
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-500",
-        scrolled ? "py-3 bg-background/70 backdrop-blur-xl border-b border-gold/10" : "py-4 sm:py-6 bg-transparent",
+        scrolled ? "py-2 bg-background/80 backdrop-blur-xl border-b border-gold/10" : "py-3 bg-background/45 backdrop-blur-md sm:bg-transparent",
       )}
     >
       <nav className="container-luxe flex items-center justify-between">
-        <a href="#home" className="flex min-w-0 items-center transition-transform duration-300 hover:scale-[1.03]" aria-label="MekWeb home">
-          <img
-            src={logo}
-            alt="MekWeb"
-            className="h-16 w-auto max-w-[130px] object-contain sm:h-20 sm:max-w-[165px]"
-          />
+        <a href="#home" className="flex min-w-0 items-center gap-2 transition-transform duration-500 hover:scale-[1.02]" aria-label="MekWeb home">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-gold/25 bg-gradient-gold font-display text-lg font-bold text-primary-foreground shadow-gold-soft">
+            M
+          </span>
+          <span className="font-display text-2xl font-bold leading-none tracking-normal text-foreground">
+            Mek<span className="text-gold">Web</span>
+          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-1">
@@ -52,14 +53,15 @@ export const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden md:block">
-          <Button asChild variant="hero" size="default" className="animate-glow-pulse hover:animate-none">
+        <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle />
+          <Button asChild variant="hero" size="sm" className="animate-glow-pulse hover:animate-none">
             <a href="#contact">Get Free Demo</a>
           </Button>
         </div>
 
         <button
-          className="md:hidden text-foreground p-2 -mr-2"
+          className="md:hidden text-foreground p-2"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -83,6 +85,9 @@ export const Navbar = () => {
             <Button asChild variant="hero" className="mt-2 animate-glow-pulse">
               <a href="#contact" onClick={() => setOpen(false)}>Get Free Demo</a>
             </Button>
+            <div className="mt-2 flex justify-end">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       )}

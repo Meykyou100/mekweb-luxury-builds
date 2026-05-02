@@ -1,84 +1,79 @@
-import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
-import logo from "@/assets/mekweb-logo.svg";
+import { Github, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone, Twitter } from "lucide-react";
 
-const groups = [
+const footerGroups = [
   {
     title: "Services",
     links: [
       { label: "Web Development", href: "#services" },
       { label: "UI/UX Design", href: "#services" },
-      { label: "SEO", href: "#services" },
+      { label: "SEO Optimization", href: "#services" },
       { label: "E-commerce", href: "#services" },
-      { label: "Pricing", href: "#pricing" },
     ],
   },
   {
-    title: "Company",
+    title: "Quick links",
     links: [
-      { label: "About", href: "#about" },
+      { label: "Pricing", href: "#pricing" },
       { label: "Portfolio", href: "#portfolio" },
       { label: "Testimonials", href: "#testimonials" },
-      { label: "Contact", href: "#contact" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "How It Works", href: "#how-it-works" },
-      { label: "Pricing", href: "#pricing" },
       { label: "FAQ", href: "#faq" },
-      { label: "Free Website Preview", href: "#contact" },
     ],
   },
 ];
 
 export const Footer = () => {
   return (
-    <footer className="relative border-t border-gold/10 pt-14 sm:pt-20 pb-8 sm:pb-10">
+    <footer className="relative border-t border-gold/10 pt-12 sm:pt-16 pb-8 sm:pb-10">
       <div className="container-luxe">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-9 sm:gap-12 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-5 lg:gap-10 mb-12 sm:mb-16">
           <div className="lg:col-span-2" data-reveal="left">
-            <a href="#home" className="inline-flex items-center mb-5 transition-transform duration-300 hover:scale-[1.03]" aria-label="MekWeb home">
-              <img
-                src={logo}
-                alt="MekWeb"
-                className="h-28 w-auto max-w-[210px] object-contain sm:h-32 sm:max-w-[250px]"
-              />
+            <a href="#home" className="mb-5 inline-flex items-center gap-2 transition-transform duration-500 hover:scale-[1.02]" aria-label="MekWeb home">
+              <span className="grid h-10 w-10 place-items-center rounded-lg border border-gold/25 bg-gradient-gold font-display text-xl font-bold text-primary-foreground shadow-gold-soft">M</span>
+              <span className="font-display text-3xl font-bold leading-none text-foreground">Mek<span className="text-gold">Web</span></span>
             </a>
-            <p className="text-sm sm:text-base text-muted-foreground max-w-sm mb-6">
-              Building digital experiences that convert. Premium web development for ambitious brands.
+            <p className="max-w-sm text-base leading-7 text-muted-foreground mb-6">
+              Premium web development for ambitious businesses that want a website built to earn trust and generate leads.
             </p>
             <div className="flex gap-3">
               {[Twitter, Instagram, Linkedin, Github].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  aria-label="Social"
-                  className="motion-card w-10 h-10 rounded-full border border-border/60 grid place-items-center hover:-translate-y-1 hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300"
-                >
-                  <Icon className="w-4 h-4" />
+                <a key={i} href="#" aria-label="Social" className="motion-card grid h-10 w-10 place-items-center rounded-full border border-border/60 transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:bg-gold/5 hover:text-gold">
+                  <Icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
           </div>
 
-          {groups.map((g, i) => (
+          {footerGroups.map((g, i) => (
             <div key={g.title} data-reveal="scale" data-reveal-delay={i * 90}>
-              <h4 className="font-display text-base font-bold mb-4 text-gold">{g.title}</h4>
-              <ul className="space-y-2">
+              <h4 className="font-display text-lg font-bold mb-4 text-gold">{g.title}</h4>
+              <ul className="space-y-3">
                 {g.links.map((l) => (
                   <li key={l.label}>
-                    <a href={l.href} className="inline-block text-sm text-muted-foreground transition-all duration-300 hover:translate-x-1 hover:text-gold">{l.label}</a>
+                    <a href={l.href} className="inline-block text-base text-muted-foreground transition-all duration-300 hover:translate-x-1 hover:text-gold">{l.label}</a>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
+
+          <div data-reveal="scale" data-reveal-delay={180}>
+            <h4 className="font-display text-lg font-bold mb-4 text-gold">Contact</h4>
+            <ul className="space-y-3 text-base text-muted-foreground">
+              <li className="flex gap-2"><Phone className="mt-1 h-4 w-4 shrink-0 text-gold" /> +1 555 555 5555</li>
+              <li className="flex gap-2"><Mail className="mt-1 h-4 w-4 shrink-0 text-gold" /> hello@mekweb.com</li>
+              <li className="flex gap-2"><MapPin className="mt-1 h-4 w-4 shrink-0 text-gold" /> Remote-first team</li>
+              <li>
+                <a href="https://wa.me/15555555555" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gold hover:underline">
+                  <MessageCircle className="h-4 w-4" /> WhatsApp
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className="pt-6 sm:pt-8 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 text-center md:text-left" data-reveal="scale">
-          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} MekWeb. All rights reserved.</p>
-          <p className="text-xs text-muted-foreground">Crafted with precision. Designed to convert.</p>
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-border/40 pt-6 text-center md:flex-row md:text-left" data-reveal="scale">
+          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} MekWeb. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">Crafted with precision. Designed to convert.</p>
         </div>
       </div>
     </footer>

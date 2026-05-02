@@ -92,7 +92,7 @@ export default {
         "fade-in-up": "fade-in-up 0.8s cubic-bezier(0.22,1,0.36,1) forwards",
         "scale-in": "scale-in 0.5s ease-out forwards",
         "float": "float 6s ease-in-out infinite",
-        "glow-pulse": "glow-pulse 3s ease-in-out infinite",
+        "glow-pulse": "glow-pulse 7s ease-in-out infinite",
         "shimmer": "shimmer 3s linear infinite",
         "marquee": "marquee 30s linear infinite",
       },

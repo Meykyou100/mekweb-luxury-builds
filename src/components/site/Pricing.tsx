@@ -58,50 +58,50 @@ const plans = [
 
 export const Pricing = () => {
   return (
-    <section id="pricing" className="relative py-20 sm:py-24 lg:py-32 bg-secondary/30">
+    <section id="pricing" className="relative section-pad section-surface">
       <div className="container-luxe">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 sm:gap-6 mb-10 sm:mb-16">
-          <div className="max-w-2xl" data-reveal="left">
-            <p className="text-xs uppercase tracking-[0.22em] sm:tracking-[0.3em] text-gold mb-4">Pricing</p>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
-              Choose the package that <span className="text-gradient-gold italic">fits</span>
+        <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-14">
+          <div data-reveal="scale">
+            <p className="eyebrow mb-4">Pricing</p>
+            <h2 className="section-title">
+              Simple packages, clear outcomes
             </h2>
+            <p className="section-copy mx-auto mt-5 max-w-2xl">
+              Starting prices in Moroccan dirhams. Every package includes responsive design, launch support, and a conversion-focused structure.
+            </p>
           </div>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-md" data-reveal="right" data-reveal-delay="120">
-            Simple starting prices in Moroccan dirhams. Every package is mobile-friendly and built to help you get more clients.
-          </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-6">
           {plans.map((plan, i) => (
             <article
               key={plan.name}
               data-reveal="scale"
               data-reveal-delay={i * 120}
-              className={`motion-card group relative flex h-full flex-col rounded-2xl sm:rounded-3xl bg-card-gradient border p-5 sm:p-6 lg:p-8 shadow-elegant transition-all duration-500 hover:-translate-y-2 hover:shadow-gold-soft ${
-                plan.popular ? "border-gold/60" : "border-border/60 hover:border-gold/40"
+              className={`premium-card motion-card group relative flex h-full flex-col p-5 sm:p-6 lg:p-7 ${
+                plan.popular ? "border-gold/80 shadow-gold-soft ring-2 ring-gold/35 xl:-translate-y-3" : ""
               }`}
             >
               {plan.popular && (
-                <span className="absolute right-5 top-5 rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-gold">
-                  Popular
+                <span className="absolute right-5 top-5 rounded-full border border-gold/40 bg-gold/20 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-gold">
+                  Most Popular
                 </span>
               )}
 
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-gold grid place-items-center mb-6 shadow-gold-soft group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+              <div className="mb-6 grid h-12 w-12 place-items-center rounded-2xl bg-gradient-gold shadow-gold-soft transition-transform duration-700 group-hover:scale-105">
                 <plan.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
               </div>
 
-              <h3 className="font-display text-2xl sm:text-3xl font-bold mb-2">{plan.name}</h3>
+              <h3 className="font-display text-3xl font-bold mb-2">{plan.name}</h3>
               <div className="mb-4">
-                <span className="font-display text-4xl sm:text-5xl font-bold text-gradient-gold">{plan.price}</span>
-                <span className="text-sm text-muted-foreground"> / starting</span>
+                <span className="font-display text-5xl font-bold text-foreground">{plan.price}</span>
+                <span className="ml-1 text-sm text-muted-foreground">starting</span>
               </div>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">{plan.desc}</p>
+              <p className="text-base text-muted-foreground leading-7 mb-6">{plan.desc}</p>
 
-              <div className="grid gap-3 mb-6 rounded-2xl border border-border/60 bg-background/30 p-4">
+              <div className="grid gap-3 mb-6 rounded-2xl border border-border/60 bg-background/45 p-4">
                 <div className="text-sm font-medium text-gold">{plan.bestFor}</div>
-                <div className="grid gap-2 text-sm text-muted-foreground">
+                <div className="grid gap-2 text-base text-muted-foreground">
                   <span className="flex items-center gap-2">
                     <CalendarClock className="h-4 w-4 text-gold" />
                     Delivery: {plan.delivery}
@@ -119,8 +119,8 @@ export const Pricing = () => {
 
               <ul className="space-y-3 mb-8 flex-1">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex gap-3 text-sm sm:text-base text-foreground/90">
-                    <span className="mt-0.5 w-5 h-5 rounded-full bg-gold/15 grid place-items-center shrink-0">
+                  <li key={feature} className="flex gap-3 text-base leading-7 text-foreground/90">
+                    <span className="mt-0.5 w-5 h-5 rounded-full bg-gold/20 grid place-items-center shrink-0">
                       <Check className="w-3 h-3 text-gold" strokeWidth={3} />
                     </span>
                     <span>{feature}</span>
@@ -135,14 +135,14 @@ export const Pricing = () => {
           ))}
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3" data-reveal="scale">
+        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3" data-reveal="scale">
           {[
             ["Payment", "Start with a deposit, finish payment before launch."],
             ["Hosting", "We can guide domain and hosting setup if you do not have them yet."],
             ["Ownership", "After final payment, the website files and access belong to you."],
           ].map(([title, text]) => (
-            <div key={title} className="rounded-2xl border border-border/60 bg-card/40 p-5">
-              <h3 className="font-display text-xl font-bold text-gold mb-2">{title}</h3>
+            <div key={title} className="premium-card p-5">
+              <h3 className="font-display text-xl font-bold mb-2">{title}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">{text}</p>
             </div>
           ))}

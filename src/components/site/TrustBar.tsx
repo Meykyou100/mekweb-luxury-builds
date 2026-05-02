@@ -1,30 +1,30 @@
-import { Clock, LifeBuoy, SearchCheck, ShieldCheck, Smartphone } from "lucide-react";
+import { Clock, LayoutDashboard, MessageCircle, SearchCheck, Smartphone } from "lucide-react";
 
 const items = [
   { icon: Smartphone, title: "Mobile-first", desc: "Built for phone, tablet, and desktop." },
   { icon: SearchCheck, title: "SEO-ready", desc: "Clean structure for Google visibility." },
   { icon: Clock, title: "Fast delivery", desc: "Clear timelines from start to launch." },
-  { icon: ShieldCheck, title: "Secure setup", desc: "Modern stack and clean launch basics." },
-  { icon: LifeBuoy, title: "After-launch help", desc: "Support for fixes and small updates." },
+  { icon: MessageCircle, title: "WhatsApp integration", desc: "Direct contact paths for more leads." },
+  { icon: LayoutDashboard, title: "Admin dashboard", desc: "Available for content control." },
 ];
 
 export const TrustBar = () => {
   return (
-    <section className="relative -mt-8 pb-20 sm:pb-24 lg:pb-32">
+    <section className="relative -mt-7 pb-14 sm:pb-16 lg:pb-20">
       <div className="container-luxe">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {items.map((item, i) => (
             <div
               key={item.title}
               data-reveal="scale"
               data-reveal-delay={i * 70}
-              className="motion-card rounded-2xl border border-border/60 bg-card/60 p-5 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-gold-soft"
+              className="premium-card motion-card p-5"
             >
-              <span className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-gold/10">
+              <span className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-gold/10 ring-1 ring-gold/20">
                 <item.icon className="h-5 w-5 text-gold" />
               </span>
               <h3 className="font-display text-xl font-bold mb-2">{item.title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+              <p className="text-base leading-7 text-muted-foreground">{item.desc}</p>
             </div>
           ))}
         </div>

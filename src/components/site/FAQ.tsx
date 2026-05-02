@@ -43,18 +43,18 @@ const faqs = [
 
 export const FAQ = () => {
   return (
-    <section id="faq" className="relative py-20 sm:py-24 lg:py-32 bg-secondary/30">
+    <section id="faq" className="relative section-pad section-surface">
       <div className="container-luxe">
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:gap-12 items-start">
           <div data-reveal="left">
             <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-gold/30 bg-gold/10 mb-5">
               <HelpCircle className="w-4 h-4 text-gold" />
               <span className="text-xs uppercase tracking-[0.22em] text-gold">FAQ</span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-5">
-              Questions before we <span className="text-gradient-gold italic">build?</span>
+            <h2 className="section-title mb-5">
+              Questions before we start?
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
+            <p className="section-copy max-w-xl">
               Clear answers about timing, mobile design, SEO, and what we need from you to start.
             </p>
           </div>
@@ -66,12 +66,12 @@ export const FAQ = () => {
                 value={`item-${i}`}
                 data-reveal="right"
                 data-reveal-delay={i * 80}
-                className="motion-card rounded-2xl border border-border/60 bg-card-gradient px-5 sm:px-6 shadow-elegant transition-all duration-500 hover:border-gold/40 hover:shadow-gold-soft"
+                className="premium-card motion-card px-5 py-1 sm:px-6"
               >
-                <AccordionTrigger className="text-left font-display text-lg sm:text-xl font-bold hover:text-gold hover:no-underline">
+                <AccordionTrigger className="text-left font-display text-lg sm:text-xl font-bold leading-snug hover:text-gold hover:no-underline">
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                <AccordionContent className="text-base text-muted-foreground leading-7">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>
