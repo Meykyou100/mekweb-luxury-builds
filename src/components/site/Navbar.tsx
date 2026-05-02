@@ -64,7 +64,7 @@ export const Navbar = () => {
         </div>
 
         <button
-          className="md:hidden text-foreground p-2"
+          className={cn("p-2 md:hidden", scrolled ? "text-foreground" : "text-white")}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >

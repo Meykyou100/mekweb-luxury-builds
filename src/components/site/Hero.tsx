@@ -28,7 +28,7 @@ export const Hero = () => {
             </h1>
 
             <p className="mb-6 max-w-xl text-base leading-7 text-white/86 animate-fade-in-up sm:text-lg" style={{ animationDelay: "0.15s", opacity: 0 }}>
-              We create developed and designed websites from your own choice. Tell us what you want and MekWeb will build it with clean code, high quality, and a team that cares about every corner.
+              We design and develop websites around your ideas. Tell us what you want, and MekWeb will build it with clean code, high quality, and care for every detail.
             </p>
 
             <div className="mb-8 flex max-w-md overflow-hidden rounded-lg border border-yellow-300/80 bg-black/20 p-1 animate-fade-in-up" style={{ animationDelay: "0.25s", opacity: 0 }}>

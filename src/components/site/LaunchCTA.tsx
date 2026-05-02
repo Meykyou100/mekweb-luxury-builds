@@ -1,6 +1,8 @@
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const whatsappNumber = "212600000000";
+
 export const LaunchCTA = () => {
   return (
     <section className="relative section-pad">
@@ -18,7 +20,7 @@ export const LaunchCTA = () => {
               <a href="#contact">Get a free quote <ArrowRight /></a>
             </Button>
             <Button asChild variant="outlineGold" size="xl" className="h-auto min-h-14 w-full px-7 py-4 sm:w-auto">
-              <a href="https://wa.me/15555555555" target="_blank" rel="noopener noreferrer">
+              <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">
                 Contact on WhatsApp <MessageCircle />
               </a>
             </Button>

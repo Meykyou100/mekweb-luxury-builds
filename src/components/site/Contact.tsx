@@ -9,6 +9,9 @@ import { toast } from "sonner";
 const projectTypes = ["Restaurant website", "E-commerce", "Service business", "Redesign"];
 const businessTypes = ["Restaurant", "Local service", "Online store", "Startup / SaaS", "Other"];
 const budgetRanges = ["1000-1500 DH", "1500-2500 DH", "2500+ DH", "Not sure yet"];
+const whatsappNumber = "212600000000";
+const displayPhone = "+212 600 000 000";
+const contactEmail = "contact@mekweb.ma";
 
 const schema = z.object({
   name: z.string().trim().min(1, "Name required").max(100),
@@ -63,9 +66,9 @@ export const Contact = () => {
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
               {[
-                { icon: Phone, label: "Phone / WhatsApp", value: "+1 555 555 5555", href: "https://wa.me/15555555555" },
-                { icon: Mail, label: "Email", value: "hello@mekweb.com", href: "mailto:hello@mekweb.com" },
-                { icon: MapPin, label: "Location", value: "Remote-first team" },
+                { icon: Phone, label: "Phone / WhatsApp", value: displayPhone, href: `https://wa.me/${whatsappNumber}` },
+                { icon: Mail, label: "Email", value: contactEmail, href: `mailto:${contactEmail}` },
+                { icon: MapPin, label: "Location", value: "Morocco / Remote" },
                 { icon: Clock, label: "Working hours", value: "Mon - Sat, 9:00 - 18:00" },
               ].map((item) => (
                 <a
@@ -87,7 +90,7 @@ export const Contact = () => {
             </div>
 
             <Button asChild variant="outlineGold" size="lg" className="mt-5 h-auto min-h-12 w-full px-5 py-4 sm:w-auto">
-              <a href="https://wa.me/15555555555" target="_blank" rel="noopener noreferrer">
+              <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">
                 Contact on WhatsApp <MessageCircle />
               </a>
             </Button>
@@ -98,7 +101,7 @@ export const Contact = () => {
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Name</label>
-                <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Jane Doe" maxLength={100} className="h-12 rounded-xl border-border/60 bg-input/60 text-base focus-visible:ring-gold" />
+                <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your name" maxLength={100} className="h-12 rounded-xl border-border/60 bg-input/60 text-base focus-visible:ring-gold" />
               </div>
               <div>
                 <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Phone / WhatsApp</label>

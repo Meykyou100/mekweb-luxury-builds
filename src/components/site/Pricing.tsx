@@ -9,7 +9,7 @@ const plans = [
     icon: Sparkles,
     bestFor: "Best for new businesses",
     delivery: "5-7 days",
-    revisions: "1 revision",
+    revisions: "1 revision round",
     support: "7 days support",
     features: [
       "One-page responsive website",
@@ -27,7 +27,7 @@ const plans = [
     popular: true,
     bestFor: "Best for growing businesses",
     delivery: "7-12 days",
-    revisions: "2 revisions",
+    revisions: "2 revision rounds",
     support: "14 days support",
     features: [
       "Everything in Starter",
@@ -44,7 +44,7 @@ const plans = [
     icon: Crown,
     bestFor: "Best for premium launches",
     delivery: "12-20 days",
-    revisions: "3 revisions",
+    revisions: "3 revision rounds",
     support: "30 days support",
     features: [
       "Everything in Business",
@@ -82,14 +82,15 @@ export const Pricing = () => {
                 plan.popular ? "border-gold/80 shadow-gold-soft ring-2 ring-gold/35 xl:-translate-y-3" : ""
               }`}
             >
-              {plan.popular && (
-                <span className="absolute right-5 top-5 rounded-full border border-gold/40 bg-gold/20 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-gold">
-                  Most Popular
-                </span>
-              )}
-
-              <div className="mb-6 grid h-12 w-12 place-items-center rounded-2xl bg-gradient-gold shadow-gold-soft transition-transform duration-700 group-hover:scale-105">
-                <plan.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
+              <div className="mb-6 flex min-h-12 items-start justify-between gap-3">
+                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gradient-gold shadow-gold-soft transition-transform duration-700 group-hover:scale-105">
+                  <plan.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
+                </div>
+                {plan.popular && (
+                  <span className="rounded-full border border-gold/50 bg-gold/15 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-gold shadow-gold-soft">
+                    Most Popular
+                  </span>
+                )}
               </div>
 
               <h3 className="font-display text-3xl font-bold mb-2">{plan.name}</h3>

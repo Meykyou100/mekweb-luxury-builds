@@ -18,6 +18,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const Index = () => {
   useScrollReveal();
+  const whatsappNumber = "212600000000";
 
   return (
     <div className="animated-page min-h-screen bg-background text-foreground">
@@ -41,7 +42,7 @@ const Index = () => {
 
       {/* Floating WhatsApp */}
       <a
-        href="https://wa.me/15555555555"
+        href={`https://wa.me/${whatsappNumber}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
