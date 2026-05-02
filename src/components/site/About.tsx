@@ -46,7 +46,7 @@ export const About = () => {
           {stats.map((s, i) => (
             <div key={s.l} data-reveal="scale" data-reveal-delay={i * 110}>
               <div className="premium-card p-6 sm:p-7">
-                <div className="mb-2 font-display text-4xl font-bold text-gradient-gold sm:text-5xl">{s.v}</div>
+                <div className="mb-2 font-number text-4xl font-bold text-gradient-gold sm:text-5xl">{s.v}</div>
                 <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground sm:text-sm">{s.l}</div>
               </div>
             </div>

@@ -94,7 +94,7 @@ export const Pricing = () => {
 
               <h3 className="font-display text-3xl font-bold mb-2">{plan.name}</h3>
               <div className="mb-4">
-                <span className="font-display text-5xl font-bold text-foreground">{plan.price}</span>
+                <span className="font-number text-5xl font-bold text-foreground">{plan.price}</span>
                 <span className="ml-1 text-sm text-muted-foreground">starting</span>
               </div>
               <p className="text-base text-muted-foreground leading-7 mb-6">{plan.desc}</p>
@@ -104,15 +104,15 @@ export const Pricing = () => {
                 <div className="grid gap-2 text-base text-muted-foreground">
                   <span className="flex items-center gap-2">
                     <CalendarClock className="h-4 w-4 text-gold" />
-                    Delivery: {plan.delivery}
+                    Delivery: <span className="font-number">{plan.delivery}</span>
                   </span>
                   <span className="flex items-center gap-2">
                     <RefreshCw className="h-4 w-4 text-gold" />
-                    Revisions: {plan.revisions}
+                    Revisions: <span className="font-number">{plan.revisions}</span>
                   </span>
                   <span className="flex items-center gap-2">
                     <Wrench className="h-4 w-4 text-gold" />
-                    Support: {plan.support}
+                    Support: <span className="font-number">{plan.support}</span>
                   </span>
                 </div>
               </div>

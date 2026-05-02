@@ -90,7 +90,7 @@ export const Hero = () => {
                 <span className="grid h-10 w-10 place-items-center rounded-full bg-gold/20 animate-float" style={{ animationDelay: `${i * 0.4}s` }}>
                   <s.icon className="h-4 w-4 text-gold sm:h-5 sm:w-5" />
                 </span>
-                <div className="font-display text-2xl font-bold text-gradient-gold sm:text-3xl md:text-4xl">{s.v}</div>
+                <div className="font-number text-2xl font-bold text-gradient-gold sm:text-3xl md:text-4xl">{s.v}</div>
                 <div className="text-[10px] uppercase tracking-[0.14em] text-white/70 sm:text-xs sm:tracking-widest">{s.l}</div>
               </div>
             ))}

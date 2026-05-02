@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;700;900&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -214,6 +214,11 @@
   .section-copy {
     @apply text-base leading-relaxed text-muted-foreground sm:text-lg;
     overflow-wrap: anywhere;
+  }
+  .font-number {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-variant-numeric: tabular-nums lining-nums;
+    letter-spacing: -0.015em;
   }
   .premium-card {
     @apply rounded-2xl border border-border/70 bg-card/[0.82] shadow-elegant backdrop-blur-sm transition-all duration-700;
