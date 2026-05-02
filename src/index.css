@@ -164,9 +164,11 @@
   }
   .text-gradient-gold {
     background: var(--gradient-gold);
+    background-size: 220% 220%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    animation: gradient-flow 8s ease-in-out infinite;
   }
   .shadow-gold {
     box-shadow: var(--shadow-gold);
@@ -199,6 +201,21 @@
   }
   .section-pad {
     @apply py-16 sm:py-20 lg:py-24;
+    position: relative;
+    isolation: isolate;
+  }
+  .section-pad::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 8% 18%, hsl(var(--gold) / 0.08), transparent 24%),
+      radial-gradient(circle at 92% 72%, hsl(var(--gold) / 0.09), transparent 26%);
+    opacity: 0.75;
+    transform: translate3d(0, 0, 0);
+    animation: section-aurora 18s ease-in-out infinite alternate;
   }
   .section-surface {
     @apply bg-secondary/65;
@@ -226,11 +243,22 @@
   .premium-card {
     @apply rounded-2xl border border-border/55 bg-card/[0.88] shadow-elegant backdrop-blur-sm transition-all duration-700;
     box-shadow: var(--shadow-elegant), inset 0 1px 0 hsl(0 0% 100% / 0.08);
+    transform-style: preserve-3d;
+    will-change: transform, box-shadow, border-color;
   }
   .premium-card:hover {
     border-color: hsl(var(--gold) / 0.7);
     box-shadow: var(--shadow-gold-soft), var(--shadow-elegant);
-    transform: translateY(-6px);
+    transform: translateY(-8px) scale(1.012);
+  }
+  .premium-card :is(svg, img) {
+    transition:
+      transform 800ms var(--transition-smooth),
+      filter 800ms var(--transition-smooth);
+  }
+  .premium-card:hover :is(svg) {
+    transform: translateY(-2px) rotate(-4deg) scale(1.08);
+    filter: drop-shadow(0 0 14px hsl(var(--gold) / 0.48));
   }
 
   .animated-page {
@@ -248,13 +276,15 @@
     z-index: 0;
     pointer-events: none;
     background-image:
-      linear-gradient(115deg, transparent 0 42%, hsl(var(--gold) / 0.08) 50%, transparent 58%),
-      linear-gradient(hsl(var(--gold) / 0.035) 1px, transparent 1px);
+      radial-gradient(circle at 16% 22%, hsl(var(--gold) / 0.16), transparent 18%),
+      radial-gradient(circle at 82% 12%, hsl(var(--gold) / 0.12), transparent 20%),
+      linear-gradient(115deg, transparent 0 42%, hsl(var(--gold) / 0.09) 50%, transparent 58%),
+      linear-gradient(hsl(var(--gold) / 0.04) 1px, transparent 1px);
     background-position: 0 0, 0 0;
-    background-size: 220% 220%, 72px 72px;
+    background-size: 160% 160%, 140% 140%, 220% 220%, 72px 72px;
     mask-image: linear-gradient(to bottom, black 0%, black 45%, transparent 100%);
-    opacity: 0.55;
-    animation: background-drift 22s linear infinite;
+    opacity: 0.62;
+    animation: background-drift 24s linear infinite, background-breathe 9s ease-in-out infinite;
   }
 
   .animated-page::after {
@@ -275,26 +305,26 @@
 
   [data-reveal] {
     opacity: 0;
-    transform: translate3d(0, 36px, 0) scale(0.98);
-    filter: blur(10px);
+    transform: translate3d(0, 52px, 0) scale(0.96);
+    filter: blur(14px);
     transition:
-      opacity 800ms var(--transition-smooth),
-      transform 800ms var(--transition-smooth),
-      filter 800ms var(--transition-smooth);
+      opacity 980ms var(--transition-smooth),
+      transform 980ms var(--transition-smooth),
+      filter 980ms var(--transition-smooth);
     transition-delay: var(--reveal-delay, 0ms);
     will-change: opacity, transform, filter;
   }
 
   [data-reveal="left"] {
-    transform: translate3d(0, 24px, 0) scale(0.98);
+    transform: translate3d(-56px, 28px, 0) rotate(-1deg) scale(0.97);
   }
 
   [data-reveal="right"] {
-    transform: translate3d(0, 24px, 0) scale(0.98);
+    transform: translate3d(56px, 28px, 0) rotate(1deg) scale(0.97);
   }
 
   [data-reveal="scale"] {
-    transform: translate3d(0, 24px, 0) scale(0.94);
+    transform: translate3d(0, 34px, 0) scale(0.9);
   }
 
   [data-reveal].is-visible {
@@ -307,6 +337,11 @@
     @apply relative overflow-hidden;
     isolation: isolate;
     transform: translateZ(0);
+    transition:
+      transform 700ms var(--transition-smooth),
+      box-shadow 700ms var(--transition-smooth),
+      border-color 700ms var(--transition-smooth),
+      background-color 700ms var(--transition-smooth);
   }
 
   .motion-card::before {
@@ -315,7 +350,7 @@
     inset: -60%;
     z-index: 1;
     pointer-events: none;
-    background: linear-gradient(115deg, transparent 35%, hsl(var(--gold) / 0.16), transparent 65%);
+    background: linear-gradient(115deg, transparent 35%, hsl(var(--gold) / 0.22), hsl(0 0% 100% / 0.12), transparent 68%);
     opacity: 0;
     transform: translateX(-55%) rotate(8deg);
     transition:
@@ -326,6 +361,63 @@
   .motion-card:hover::before {
     opacity: 1;
     transform: translateX(55%) rotate(8deg);
+  }
+  .motion-card::after {
+    content: "";
+    position: absolute;
+    inset: auto 16px 0;
+    z-index: 0;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.82), transparent);
+    opacity: 0;
+    transform: scaleX(0.2);
+    transition:
+      opacity 700ms var(--transition-smooth),
+      transform 700ms var(--transition-smooth);
+  }
+  .motion-card:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  .motion-card > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-orb {
+    animation: orb-drift 9s ease-in-out infinite;
+    will-change: transform, opacity, filter;
+  }
+
+  .hero-frame {
+    animation: frame-glow 6s ease-in-out infinite;
+  }
+
+  .hero-mockup {
+    transform-style: preserve-3d;
+  }
+
+  .hero-mockup::after {
+    content: "";
+    position: absolute;
+    inset: 11%;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 32px;
+    background: linear-gradient(115deg, transparent 32%, hsl(var(--gold) / 0.18), transparent 68%);
+    transform: translateX(-65%) rotate(8deg);
+    animation: mockup-sheen 5.5s ease-in-out infinite;
+  }
+
+  .chart-bar {
+    transform-origin: bottom;
+    animation: chart-rise 3.2s var(--transition-smooth) infinite alternate;
+  }
+
+  .progress-fill {
+    transform-origin: left;
+    animation: progress-breathe 3.4s var(--transition-smooth) infinite alternate;
   }
 
   .process-line {
@@ -356,10 +448,20 @@
 
 @keyframes background-drift {
   0% {
-    background-position: -80% -80%, 0 0;
+    background-position: 0% 0%, 100% 0%, -80% -80%, 0 0;
   }
   100% {
-    background-position: 120% 120%, 72px 72px;
+    background-position: 100% 65%, 0% 100%, 120% 120%, 72px 72px;
+  }
+}
+
+@keyframes background-breathe {
+  0%,
+  100% {
+    opacity: 0.42;
+  }
+  50% {
+    opacity: 0.72;
   }
 }
 
@@ -372,6 +474,96 @@
   50% {
     opacity: 0.55;
     transform: scaleX(1);
+  }
+}
+
+@keyframes gradient-flow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes section-aurora {
+  0% {
+    transform: translate3d(-1.5%, -1%, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(1.5%, 1%, 0) scale(1.03);
+  }
+}
+
+@keyframes soft-lift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes orb-drift {
+  0%,
+  100% {
+    opacity: 0.68;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(2px);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translate3d(-18px, 22px, 0) scale(1.08);
+    filter: blur(5px);
+  }
+}
+
+@keyframes frame-glow {
+  0%,
+  100% {
+    box-shadow: inset 0 0 0 hsl(var(--gold) / 0), 0 0 0 hsl(var(--gold) / 0);
+  }
+  50% {
+    box-shadow: inset 0 0 44px hsl(var(--gold) / 0.10), 0 0 54px hsl(var(--gold) / 0.12);
+  }
+}
+
+@keyframes mockup-sheen {
+  0%,
+  38% {
+    opacity: 0;
+    transform: translateX(-75%) rotate(8deg);
+  }
+  58% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(75%) rotate(8deg);
+  }
+}
+
+@keyframes chart-rise {
+  0% {
+    transform: scaleY(0.72);
+    opacity: 0.72;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes progress-breathe {
+  0% {
+    transform: scaleX(0.82);
+    opacity: 0.76;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
   }
 }
 
@@ -393,7 +585,14 @@
   }
 
   .animated-page::before,
-  .animated-page::after {
+  .animated-page::after,
+  .section-pad::before,
+  .text-gradient-gold,
+  .hero-orb,
+  .hero-frame,
+  .hero-mockup::after,
+  .chart-bar,
+  .progress-fill {
     animation: none !important;
   }
 }

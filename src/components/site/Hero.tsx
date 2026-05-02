@@ -7,9 +7,9 @@ export const Hero = () => {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_36%,rgba(250,204,21,0.32),transparent_36%),radial-gradient(circle_at_48%_86%,rgba(250,204,21,0.42),transparent_34%),linear-gradient(135deg,#191918_0%,#24231d_48%,#0d0d0c_100%)]" />
         <div className="absolute inset-x-10 top-20 h-px bg-white/30" />
-        <div className="absolute right-[8%] top-24 h-24 w-24 rounded-full bg-yellow-300/80 blur-sm" />
-        <div className="absolute right-[5%] bottom-28 h-16 w-16 rounded-full bg-white/60 blur-[2px]" />
-        <div className="absolute left-0 right-0 top-20 mx-auto h-[52%] max-w-[92rem] rounded-t-[46%] border border-white/35" />
+        <div className="hero-orb absolute right-[8%] top-24 h-24 w-24 rounded-full bg-yellow-300/80 blur-sm" />
+        <div className="hero-orb absolute right-[5%] bottom-28 h-16 w-16 rounded-full bg-white/60 blur-[2px]" style={{ animationDelay: "1.4s" }} />
+        <div className="hero-frame absolute left-0 right-0 top-20 mx-auto h-[52%] max-w-[92rem] rounded-t-[46%] border border-white/35" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
       </div>
 
@@ -49,7 +49,7 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-2xl animate-float lg:mx-0">
+          <div className="hero-mockup relative mx-auto w-full max-w-2xl animate-float lg:mx-0">
             <div className="absolute -inset-10 rounded-[42px] bg-yellow-300/35 blur-3xl" aria-hidden="true" />
             <div className="relative rounded-[34px] border border-yellow-200/35 bg-black/35 p-6 shadow-[0_40px_120px_rgba(250,204,21,0.18)] backdrop-blur-md">
               <div className="absolute -left-8 -top-8 h-20 w-20 rounded-full bg-white/70" />
@@ -67,7 +67,7 @@ export const Hero = () => {
                   <div className="rounded-xl border border-yellow-300/30 bg-black/35 p-4">
                     <div className="mb-4 flex items-end gap-2">
                       {[42, 68, 52, 86, 72, 94, 64].map((h, i) => (
-                        <span key={i} className="w-full rounded-t bg-yellow-300/85" style={{ height: `${h}px` }} />
+                        <span key={i} className="chart-bar w-full rounded-t bg-yellow-300/85" style={{ height: `${h}px`, animationDelay: `${i * 0.16}s` }} />
                       ))}
                     </div>
                     <div className="grid grid-cols-7 gap-2">
@@ -84,7 +84,7 @@ export const Hero = () => {
                       </div>
                       <div className="flex h-20 items-end gap-2">
                         {[28, 46, 35, 60, 52, 76].map((h, i) => (
-                          <span key={i} className="w-full rounded-t bg-gradient-to-t from-yellow-600 to-yellow-200" style={{ height: `${h}%` }} />
+                          <span key={i} className="chart-bar w-full rounded-t bg-gradient-to-t from-yellow-600 to-yellow-200" style={{ height: `${h}%`, animationDelay: `${i * 0.18}s` }} />
                         ))}
                       </div>
                     </div>
@@ -96,7 +96,7 @@ export const Hero = () => {
                       <div className="space-y-2">
                         {[82, 64, 92, 54].map((w, i) => (
                           <span key={i} className="block h-2 rounded-full bg-white/15">
-                            <span className="block h-full rounded-full bg-yellow-300" style={{ width: `${w}%` }} />
+                            <span className="progress-fill block h-full rounded-full bg-yellow-300" style={{ width: `${w}%`, animationDelay: `${i * 0.18}s` }} />
                           </span>
                         ))}
                       </div>
