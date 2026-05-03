@@ -1,8 +1,9 @@
 import { Github, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone, Twitter } from "lucide-react";
 import { BrandLogo } from "@/components/site/BrandLogo";
 
-const whatsappNumber = "212762971653";
-const displayPhone = "+212 762 971 653";
+const whatsappNumber = "212708465603";
+const displayPhone = "+212 708-465603";
+const secondPhone = "+212 762-971653";
 const contactEmail = "contact@mekweb.ma";
 
 const footerGroups = [
@@ -64,6 +65,7 @@ export const Footer = () => {
             <h4 className="font-display text-lg font-bold mb-4 text-gold">Contact</h4>
             <ul className="space-y-3 text-base text-muted-foreground">
               <li className="flex gap-2"><Phone className="mt-1 h-4 w-4 shrink-0 text-gold" /> {displayPhone}</li>
+              <li className="flex gap-2"><Phone className="mt-1 h-4 w-4 shrink-0 text-gold" /> {secondPhone}</li>
               <li className="flex gap-2"><Mail className="mt-1 h-4 w-4 shrink-0 text-gold" /> {contactEmail}</li>
               <li className="flex gap-2"><MapPin className="mt-1 h-4 w-4 shrink-0 text-gold" /> Morocco / Remote</li>
               <li>

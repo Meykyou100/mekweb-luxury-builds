@@ -9,8 +9,10 @@ import { toast } from "sonner";
 const projectTypes = ["Restaurant website", "E-commerce", "Service business", "Redesign"];
 const businessTypes = ["Restaurant", "Local service", "Online store", "Startup / SaaS", "Other"];
 const budgetRanges = ["1000-1500 DH", "1500-2500 DH", "2500+ DH", "Not sure yet"];
-const whatsappNumber = "212762971653";
-const displayPhone = "+212 762 971 653";
+const whatsappNumber = "212708465603";
+const displayPhone = "+212 708-465603";
+const secondPhone = "+212 762-971653";
+const secondPhoneNumber = "212762971653";
 const contactEmail = "contact@mekweb.ma";
 
 const schema = z.object({
@@ -81,6 +83,7 @@ export const Contact = () => {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
               {[
                 { icon: Phone, label: "Phone / WhatsApp", value: displayPhone, href: `https://wa.me/${whatsappNumber}` },
+                { icon: Phone, label: "Second Number", value: secondPhone, href: `tel:+${secondPhoneNumber}` },
                 { icon: Mail, label: "Email", value: contactEmail, href: `mailto:${contactEmail}` },
                 { icon: MapPin, label: "Location", value: "Morocco / Remote" },
                 { icon: Clock, label: "Working hours", value: "Mon - Sat, 9:00 - 18:00" },
@@ -119,7 +122,7 @@ export const Contact = () => {
               </div>
               <div>
                 <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Phone / WhatsApp</label>
-                <Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+212 762 971 653" maxLength={40} className="h-12 rounded-xl border-border/60 bg-input/60 text-base focus-visible:ring-gold" />
+                <Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+212 708-465603" maxLength={40} className="h-12 rounded-xl border-border/60 bg-input/60 text-base focus-visible:ring-gold" />
               </div>
               <div>
                 <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Email</label>

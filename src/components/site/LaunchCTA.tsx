@@ -1,7 +1,7 @@
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const whatsappNumber = "212762971653";
+const whatsappNumber = "212708465603";
 
 export const LaunchCTA = () => {
   return (
