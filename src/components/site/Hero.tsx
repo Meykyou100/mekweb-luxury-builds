@@ -109,7 +109,7 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="grid max-w-5xl grid-cols-1 gap-4 animate-fade-in sm:grid-cols-3 lg:col-span-2" style={{ animationDelay: "0.5s", opacity: 0 }}>
+          <div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-4 animate-fade-in sm:grid-cols-3 lg:col-span-2 lg:justify-self-center" style={{ animationDelay: "0.5s", opacity: 0 }}>
             {[
               { v: "50+", l: "Projects Delivered", icon: Rocket },
               { v: "100%", l: "Client Satisfaction", icon: Heart },
