@@ -33,7 +33,7 @@ export const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative isolate flex min-h-[100svh] items-start overflow-hidden bg-[#1d1d1b] pb-20 pt-20 text-white sm:pt-20 lg:pb-28 lg:pt-24">
+    <section id="home" className="relative isolate flex min-h-[100svh] items-start overflow-hidden bg-[#1d1d1b] pb-20 pt-[4.25rem] text-white sm:pt-[4.25rem] lg:pb-28 lg:pt-[4.5rem]">
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img
           src="/images/mekweb-office-hero.jpg"
