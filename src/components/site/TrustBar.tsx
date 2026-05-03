@@ -34,16 +34,16 @@ export const TrustBar = () => {
 
           <div data-reveal="right" className="max-w-2xl">
             <h2 className="mb-3 font-sans text-[clamp(2.5rem,5vw,4.5rem)] font-black uppercase leading-none tracking-tight">
-              Make it digital
+              Création site web Maroc
             </h2>
             <p className="mb-6 max-w-xl text-base leading-7 text-black/78 sm:text-lg">
-              A professional website gives your business a serious first impression, clear offers, and a direct path for customers to contact you.
+              Un site web professionnel donne une image sérieuse, explique clairement vos offres et facilite le contact par WhatsApp, téléphone ou formulaire.
             </p>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-lg bg-[#1d1d1b] px-7 py-3 text-sm font-bold uppercase tracking-wide text-white transition-transform hover:-translate-y-1"
             >
-              Get Started <ArrowRight className="h-4 w-4" />
+              Demander un devis <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
@@ -51,10 +51,10 @@ export const TrustBar = () => {
         <div className="mt-16 grid items-stretch gap-5 lg:grid-cols-[1fr_1.25fr]">
           <div data-reveal="left">
             <h3 className="font-sans text-3xl font-black leading-tight tracking-tight sm:text-4xl">
-              Our Digital<br />Marketing Expertise
+              Agence web<br />Maroc
             </h3>
             <p className="mt-3 max-w-md text-sm leading-6 text-black/70 sm:text-base">
-              Strategy, design, development, and launch support for local brands that want to look professional online.
+              Stratégie, design, développement et SEO pour les entreprises marocaines qui veulent gagner en crédibilité en ligne.
             </p>
           </div>
 
@@ -68,7 +68,7 @@ export const TrustBar = () => {
                 <p className="mb-3 text-sm leading-6 text-white/70">
                   Premium pages, conversion sections, contact paths, and responsive layouts for every screen.
                 </p>
-                <a href="#services" className="inline-flex rounded-md bg-white px-4 py-2 text-xs font-black uppercase text-black">Get Started</a>
+                <a href="#services" className="inline-flex rounded-md bg-white px-4 py-2 text-xs font-black uppercase text-black">Voir les services</a>
               </div>
             </div>
           </div>
@@ -92,7 +92,7 @@ export const TrustBar = () => {
               </span>
               <h3 className="mb-3 text-sm font-black text-yellow-300">{item.title}</h3>
               <p className="text-sm leading-6 text-white/72">{item.desc}</p>
-              <a href="#contact" className="mt-5 inline-flex rounded-md bg-white px-5 py-2 text-xs font-black uppercase text-black">Get Started</a>
+              <a href="#contact" className="mt-5 inline-flex rounded-md bg-white px-5 py-2 text-xs font-black uppercase text-black">Demander un devis</a>
             </div>
           ))}
         </div>

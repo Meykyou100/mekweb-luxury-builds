@@ -8,10 +8,10 @@ const stats = [
 ];
 
 const points = [
-  "Conversion-first design strategy",
-  "Modern React and Tailwind builds",
-  "SEO-ready page structure",
-  "Clear communication from start to launch",
+  "Création site web Maroc orientée clients",
+  "Design moderne, rapide et responsive",
+  "Structure SEO prête pour Google",
+  "Communication claire jusqu'à la mise en ligne",
 ];
 
 export const About = () => {
@@ -19,15 +19,15 @@ export const About = () => {
     <section id="about" className="relative section-pad section-surface">
       <div className="container-luxe grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div data-reveal="left">
-          <p className="eyebrow mb-4">About MekWeb</p>
+          <p className="eyebrow mb-4">Pourquoi MekWeb</p>
           <h2 className="section-title mb-5">
-            Premium websites for ambitious businesses
+            Pourquoi choisir MekWeb
           </h2>
           <p className="section-copy mb-5">
-            MekWeb is a boutique web development agency focused on premium digital experiences for restaurants, local service brands, stores, and growing teams.
+            MekWeb Agency est une agence web Maroc basée à Rabat, spécialisée dans la création de sites web professionnels pour les entreprises locales.
           </p>
           <p className="text-sm leading-relaxed text-muted-foreground sm:text-base mb-8">
-            We care about the details that make a site feel trustworthy: clear messaging, fast pages, refined spacing, mobile-first layouts, and conversion paths that are easy to follow.
+            Nous travaillons les détails qui inspirent confiance : message clair, pages rapides, design premium, expérience mobile et appels à l'action visibles.
           </p>
 
           <ul className="grid gap-3 sm:grid-cols-2">

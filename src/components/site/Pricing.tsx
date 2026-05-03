@@ -3,55 +3,55 @@ import { Button } from "@/components/ui/button";
 
 const plans = [
   {
-    name: "Starter",
-    price: "1000 DH",
-    desc: "A clean one-page website for a new business or simple offer.",
+    name: "Pack Essentiel",
+    price: "1500 DH",
+    desc: "Un site vitrine professionnel pour présenter votre activité et recevoir des contacts.",
     icon: Sparkles,
-    bestFor: "Best for new businesses",
-    delivery: "5-7 days",
-    revisions: "1 revision round",
-    support: "7 days support",
+    bestFor: "Idéal pour démarrer",
+    delivery: "5-7 jours",
+    revisions: "1 série",
+    support: "7 jours",
     features: [
-      "One-page responsive website",
-      "Hero, services, about, and contact sections",
-      "WhatsApp and email buttons",
-      "Basic SEO setup",
-      "Delivery in 5-7 days",
+      "Site responsive",
+      "Sections accueil, services et contact",
+      "Boutons WhatsApp et email",
+      "SEO de base",
+      "Mise en ligne guidée",
     ],
   },
   {
-    name: "Business",
-    price: "1500 DH",
-    desc: "A stronger website with more content, animation, and conversion sections.",
+    name: "Pack Business",
+    price: "2500 DH",
+    desc: "Un site plus complet pour convertir les visiteurs en demandes de devis.",
     icon: Rocket,
     popular: true,
-    bestFor: "Best for growing businesses",
-    delivery: "7-12 days",
-    revisions: "2 revision rounds",
-    support: "14 days support",
+    bestFor: "Idéal pour entreprises en croissance",
+    delivery: "7-12 jours",
+    revisions: "2 séries",
+    support: "14 jours",
     features: [
-      "Everything in Starter",
-      "Up to 5 custom sections",
-      "Smooth animations",
-      "Portfolio or gallery section",
-      "Contact form and lead-focused layout",
+      "Tout le Pack Essentiel",
+      "Jusqu'à 5 sections personnalisées",
+      "Réalisations ou galerie",
+      "Formulaire de contact",
+      "Structure orientée conversion",
     ],
   },
   {
-    name: "Premium",
-    price: "2500 DH",
-    desc: "A complete polished website for brands that want a premium online presence.",
+    name: "Pack E-commerce",
+    price: "Sur devis",
+    desc: "Une boutique en ligne moderne pour vendre vos produits au Maroc.",
     icon: Crown,
-    bestFor: "Best for premium launches",
-    delivery: "12-20 days",
-    revisions: "3 revision rounds",
-    support: "30 days support",
+    bestFor: "Idéal pour boutiques en ligne",
+    delivery: "Selon projet",
+    revisions: "Sur mesure",
+    support: "30 jours",
     features: [
-      "Everything in Business",
-      "Advanced landing page structure",
-      "Extra revisions and content support",
-      "Performance and SEO polish",
-      "Launch support and final cleanup",
+      "Catalogue produits",
+      "Pages catégories",
+      "Parcours d'achat clair",
+      "Base SEO e-commerce",
+      "Accompagnement lancement",
     ],
   },
 ];
@@ -62,12 +62,12 @@ export const Pricing = () => {
       <div className="container-luxe">
         <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-14">
           <div data-reveal="scale">
-            <p className="eyebrow mb-4">Pricing</p>
+            <p className="eyebrow mb-4">Tarifs</p>
             <h2 className="section-title">
-              Simple packages, clear outcomes
+              Packs de création site web
             </h2>
             <p className="section-copy mx-auto mt-5 max-w-2xl">
-              Starting prices in Moroccan dirhams. Every package includes responsive design, launch support, and a conversion-focused structure.
+              Des tarifs clairs pour création site web Maroc, site vitrine et site e-commerce Maroc. Chaque pack reste responsive et orienté contact.
             </p>
           </div>
         </div>
@@ -88,7 +88,7 @@ export const Pricing = () => {
                 </div>
                 {plan.popular && (
                   <span className="rounded-full border border-gold/50 bg-gold/15 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-gold shadow-gold-soft">
-                    Most Popular
+                    Le plus choisi
                   </span>
                 )}
               </div>
@@ -96,7 +96,7 @@ export const Pricing = () => {
               <h3 className="font-display text-3xl font-bold mb-2">{plan.name}</h3>
               <div className="mb-4">
                 <span className="font-number text-5xl font-bold text-foreground">{plan.price}</span>
-                <span className="ml-1 text-sm text-muted-foreground">starting</span>
+                {plan.price !== "Sur devis" && <span className="ml-1 text-sm text-muted-foreground">à partir de</span>}
               </div>
               <p className="text-base text-muted-foreground leading-7 mb-6">{plan.desc}</p>
 
@@ -105,11 +105,11 @@ export const Pricing = () => {
                 <div className="grid gap-2 text-base text-muted-foreground">
                   <span className="flex items-center gap-2">
                     <CalendarClock className="h-4 w-4 text-gold" />
-                    Delivery: <span className="font-number">{plan.delivery}</span>
+                    Délai: <span className="font-number">{plan.delivery}</span>
                   </span>
                   <span className="flex items-center gap-2">
                     <RefreshCw className="h-4 w-4 text-gold" />
-                    Revisions: <span className="font-number">{plan.revisions}</span>
+                    Révisions: <span className="font-number">{plan.revisions}</span>
                   </span>
                   <span className="flex items-center gap-2">
                     <Wrench className="h-4 w-4 text-gold" />
@@ -130,7 +130,7 @@ export const Pricing = () => {
               </ul>
 
               <Button asChild variant={plan.popular ? "hero" : "outlineGold"} size="lg" className="h-auto min-h-12 w-full whitespace-normal px-5 py-4 text-center">
-                <a href="#contact">Start with {plan.name}</a>
+                <a href="#contact">Demander un devis</a>
               </Button>
             </article>
           ))}
@@ -138,9 +138,9 @@ export const Pricing = () => {
 
         <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3" data-reveal="scale">
           {[
-            ["Payment", "Start with a deposit, finish payment before launch."],
-            ["Hosting", "We can guide domain and hosting setup if you do not have them yet."],
-            ["Ownership", "After final payment, the website files and access belong to you."],
+            ["Paiement", "Le projet peut commencer avec une avance, puis le reste avant la mise en ligne."],
+            ["Domaine & hébergement", "Nous pouvons vous guider pour connecter votre domaine et votre hébergement."],
+            ["Propriété", "Après paiement final, les accès et fichiers du site vous appartiennent."],
           ].map(([title, text]) => (
             <div key={title} className="premium-card p-5">
               <h3 className="font-display text-xl font-bold mb-2">{title}</h3>

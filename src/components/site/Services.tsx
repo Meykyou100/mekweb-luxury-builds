@@ -1,12 +1,12 @@
 import { Code2, Palette, Search, ShoppingBag, RefreshCw, Smartphone } from "lucide-react";
 
 const services = [
-  { icon: Code2, title: "Website Development", benefit: "Fast, modern websites that convert visitors into clients", desc: "Lightning-fast, custom-coded websites built with modern frameworks for scale and performance." },
-  { icon: Palette, title: "UI / UX Design", benefit: "Beautiful designs that guide visitors straight to action", desc: "Pixel-perfect interfaces designed to delight users and drive measurable conversions." },
-  { icon: Search, title: "SEO Optimization", benefit: "Get found on Google and bring in steady free traffic", desc: "Rank higher on Google with technical SEO, content strategy, and Core Web Vitals tuning." },
-  { icon: ShoppingBag, title: "E-commerce Development", benefit: "Sell more online with smooth, trust-building checkouts", desc: "Conversion-focused online stores with seamless checkout and inventory management." },
-  { icon: RefreshCw, title: "Website Redesign", benefit: "Refresh your old site into a polished lead system", desc: "Transform outdated websites into modern, mobile-first experiences that win clients." },
-  { icon: Smartphone, title: "Mobile-First Design", benefit: "Capture the 70% of customers browsing on their phones", desc: "Responsive designs engineered for flawless experiences on every screen size." },
+  { icon: Code2, title: "Site vitrine professionnel", benefit: "Une présence claire pour votre entreprise au Maroc", desc: "Création site web Maroc pour présenter vos services, rassurer vos visiteurs et générer des demandes de devis." },
+  { icon: ShoppingBag, title: "Site e-commerce Maroc", benefit: "Vendre vos produits avec une boutique moderne", desc: "Un site e-commerce Maroc responsive, rapide et pensé pour inspirer confiance au moment de l'achat." },
+  { icon: RefreshCw, title: "Refonte de site web", benefit: "Moderniser un site ancien sans perdre votre identité", desc: "Nous améliorons design, mobile, messages, SEO et vitesse pour transformer votre site en outil commercial." },
+  { icon: Search, title: "SEO Optimization", benefit: "Être plus visible sur Google", desc: "Structure SEO, balises, performance et contenus optimisés pour agence web Maroc, site web Rabat et vos services." },
+  { icon: Palette, title: "UI / UX Design", benefit: "Un design premium qui guide vers l'action", desc: "Des interfaces propres, modernes et faciles à utiliser pour aider vos visiteurs à vous contacter." },
+  { icon: Smartphone, title: "Maintenance & support", benefit: "Un site stable après la mise en ligne", desc: "Petites mises à jour, corrections, conseils et support pour garder votre site professionnel." },
 ];
 
 export const Services = () => {
@@ -14,12 +14,12 @@ export const Services = () => {
     <section id="services" className="relative section-pad">
       <div className="container-luxe">
         <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-14" data-reveal="scale">
-          <p className="eyebrow mb-4">What We Do</p>
+          <p className="eyebrow mb-4">Services</p>
           <h2 className="section-title">
-            Services built for premium digital growth
+            Nos services
           </h2>
           <p className="section-copy mx-auto mt-5 max-w-2xl">
-            Strategy, design, development, and launch support shaped around one goal: helping visitors become clients.
+            MekWeb Agency accompagne les entreprises marocaines avec création de site web, SEO, e-commerce et support après lancement.
           </p>
         </div>
 

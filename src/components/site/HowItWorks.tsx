@@ -1,23 +1,35 @@
-import { Search, Pencil, TrendingUp } from "lucide-react";
+import { Headphones, Pencil, Rocket, Search, TrendingUp } from "lucide-react";
 
 const steps = [
   {
     icon: Search,
     n: "01",
-    title: "We analyze your business",
-    desc: "We learn about your goals, customers, and competitors before shaping the page strategy.",
+    title: "Analyse",
+    desc: "Nous comprenons votre activité, vos clients et vos objectifs avant de structurer le site.",
   },
   {
     icon: Pencil,
     n: "02",
-    title: "We design and build",
-    desc: "A modern, mobile-first website built around conversion, speed, and trust.",
+    title: "Design",
+    desc: "Nous préparons une interface moderne, claire et adaptée à votre image.",
   },
   {
     icon: TrendingUp,
     n: "03",
-    title: "You launch with confidence",
-    desc: "Your new website is ready to attract leads, explain your offer, and support growth.",
+    title: "Développement",
+    desc: "Le site est développé avec une structure responsive, rapide et SEO-ready.",
+  },
+  {
+    icon: Rocket,
+    n: "04",
+    title: "Mise en ligne",
+    desc: "Nous connectons le domaine, vérifions les pages et préparons le lancement.",
+  },
+  {
+    icon: Headphones,
+    n: "05",
+    title: "Support",
+    desc: "MekWeb reste disponible pour les ajustements, conseils et améliorations.",
   },
 ];
 
@@ -26,16 +38,16 @@ export const HowItWorks = () => {
     <section id="how-it-works" className="relative section-pad">
       <div className="container-luxe">
         <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14" data-reveal="scale">
-          <p className="eyebrow mb-4">The Process</p>
+          <p className="eyebrow mb-4">Comment ça marche ?</p>
           <h2 className="section-title">
-            A calm path from idea to launch
+            Comment ça marche ?
           </h2>
           <p className="section-copy mx-auto mt-5 max-w-2xl">
-            A simple, proven 3-step process from first call to launch.
+            Un processus simple pour passer de l'idée à un site web professionnel en ligne.
           </p>
         </div>
 
-        <div className="relative grid gap-5 md:grid-cols-3 lg:gap-6">
+        <div className="relative grid gap-5 md:grid-cols-2 lg:grid-cols-5 lg:gap-6">
           <div className="process-line hidden md:block absolute top-16 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-gold/35 to-transparent" />
 
           {steps.map((s, i) => (

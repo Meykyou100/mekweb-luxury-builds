@@ -8,36 +8,36 @@ import {
 
 const faqs = [
   {
-    q: "How long does a website project take?",
-    a: "Most business websites are ready in 2 to 4 weeks, depending on the number of pages, content, and revision rounds.",
+    q: "Combien de temps prend la création d'un site web ?",
+    a: "Un site vitrine est souvent prêt en 1 à 3 semaines selon le contenu, les pages et les retours. Un site e-commerce peut demander plus de temps.",
   },
   {
-    q: "Can you redesign my old website?",
-    a: "Yes. We can refresh the look, improve mobile performance, rewrite the structure, and make the website more focused on leads and sales.",
+    q: "MekWeb travaille avec des entreprises partout au Maroc ?",
+    a: "Oui. MekWeb Agency accompagne les entreprises à Rabat et dans tout le Maroc pour la création de sites web professionnels.",
   },
   {
-    q: "Will the website work on phones?",
-    a: "Yes. Every page is built mobile-first, then refined for tablets and desktops so the design feels smooth on every screen size.",
+    q: "Le site sera-t-il responsive sur mobile ?",
+    a: "Oui. Chaque site est pensé mobile-first, puis ajusté pour tablette et ordinateur afin d'avoir une expérience propre sur tous les écrans.",
   },
   {
-    q: "Do you help with SEO?",
-    a: "Yes. We set up the technical SEO basics, clean page structure, fast loading, metadata, and content sections that help customers find you.",
+    q: "Est-ce que le SEO est inclus ?",
+    a: "Oui. Nous préparons les bases SEO : titres, meta description, structure claire, performance et contenus adaptés à votre activité.",
   },
   {
-    q: "How does payment work?",
-    a: "Projects can start with a deposit, then the remaining balance is paid before launch. The exact payment split can be agreed before work begins.",
+    q: "Pouvez-vous refaire un ancien site web ?",
+    a: "Oui. Nous pouvons moderniser le design, améliorer la version mobile, clarifier les messages et rendre le site plus orienté conversion.",
   },
   {
-    q: "Is domain and hosting included?",
-    a: "Domain and hosting costs are separate, but we can help you choose the right setup and connect everything before launch.",
+    q: "Le domaine et l'hébergement sont-ils inclus ?",
+    a: "Les frais de domaine et d'hébergement sont séparés, mais nous pouvons vous aider à choisir la bonne solution et tout connecter avant le lancement.",
   },
   {
-    q: "Can I update the website later?",
-    a: "Yes. We can add small updates after launch, or set up a maintenance plan if you want ongoing edits and improvements.",
+    q: "Puis-je modifier le site plus tard ?",
+    a: "Oui. Nous pouvons faire des petites mises à jour après lancement ou proposer une maintenance si vous voulez un suivi régulier.",
   },
   {
-    q: "What do I need to start?",
-    a: "Send your business details, logo if you have one, the services you offer, and a few examples of websites you like. We can guide the rest.",
+    q: "De quoi avez-vous besoin pour commencer ?",
+    a: "Envoyez les informations de votre entreprise, votre logo si vous en avez un, vos services et quelques exemples de sites que vous aimez.",
   },
 ];
 
@@ -52,10 +52,10 @@ export const FAQ = () => {
               <span className="text-xs uppercase tracking-[0.22em] text-gold">FAQ</span>
             </div>
             <h2 className="section-title mb-5">
-              Questions before we start?
+              FAQ
             </h2>
             <p className="section-copy max-w-xl">
-              Clear answers about timing, mobile design, SEO, and what we need from you to start.
+              Réponses rapides sur la création de site web Maroc, le SEO, les délais et le lancement.
             </p>
           </div>
 

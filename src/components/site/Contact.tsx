@@ -6,9 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 
-const projectTypes = ["Restaurant website", "E-commerce", "Service business", "Redesign"];
-const businessTypes = ["Restaurant", "Local service", "Online store", "Startup / SaaS", "Other"];
-const budgetRanges = ["1000-1500 DH", "1500-2500 DH", "2500+ DH", "Not sure yet"];
+const projectTypes = ["Site vitrine", "Site e-commerce", "Refonte de site web", "Maintenance & support"];
+const businessTypes = ["Entreprise locale", "Restaurant / traiteur", "Parapharmacie", "Service technique", "Autre"];
+const budgetRanges = ["1500 DH", "2500 DH", "Sur devis", "Pas encore sûr"];
 const whatsappNumber = "212708465603";
 const displayPhone = "+212 708-465603";
 const secondPhone = "+212 762-971653";
@@ -16,13 +16,13 @@ const secondPhoneNumber = "212762971653";
 const contactEmail = "mekwebagency@gmail.com";
 
 const schema = z.object({
-  name: z.string().trim().min(1, "Name required").max(100),
-  phone: z.string().trim().min(6, "Phone or WhatsApp required").max(40),
-  email: z.string().trim().email("Valid email required").max(255),
-  businessType: z.string().trim().min(1, "Choose a business type"),
-  projectType: z.string().trim().min(1, "Choose a project type"),
-  budget: z.string().trim().min(1, "Choose a budget range"),
-  message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000),
+  name: z.string().trim().min(1, "Nom requis").max(100),
+  phone: z.string().trim().min(6, "Téléphone ou WhatsApp requis").max(40),
+  email: z.string().trim().email("Email valide requis").max(255),
+  businessType: z.string().trim().min(1, "Choisissez un type d'entreprise"),
+  projectType: z.string().trim().min(1, "Choisissez un type de projet"),
+  budget: z.string().trim().min(1, "Choisissez un budget"),
+  message: z.string().trim().min(10, "Le message doit contenir au moins 10 caractères").max(1000),
 });
 
 type SelectFieldProps = {
@@ -89,7 +89,7 @@ export const Contact = () => {
       ].join("\n");
 
       window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
-      toast.success("Your devis request is ready in WhatsApp.");
+      toast.success("Votre demande de devis est prête dans WhatsApp.");
       setForm({ name: "", phone: "", email: "", businessType: businessTypes[0], projectType: projectTypes[0], budget: budgetRanges[0], message: "" });
       setLoading(false);
     }, 800);
@@ -100,13 +100,13 @@ export const Contact = () => {
       <div className="container-luxe">
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
           <div data-reveal="left">
-            <p className="eyebrow mb-4">Get In Touch</p>
-            <h2 className="section-title mb-5">Let's build your next website</h2>
+            <p className="eyebrow mb-4">Contact</p>
+            <h2 className="section-title mb-5">Contact</h2>
             <div className="mb-5 inline-block max-w-full rounded-full border border-gold/30 bg-gold/10 px-4 py-2">
-              <p className="text-sm font-semibold text-gold">Response in less than 24 hours</p>
+              <p className="text-sm font-semibold text-gold">Réponse en moins de 24h</p>
             </div>
             <p className="section-copy mb-8">
-              Share a few details and we will reply with a clear next step, estimated scope, and ideas to improve conversions.
+              Demandez un devis pour votre création site web Maroc. MekWeb Agency vous répond avec une proposition claire et adaptée à votre activité.
             </p>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
@@ -137,7 +137,7 @@ export const Contact = () => {
 
             <Button asChild variant="outlineGold" size="lg" className="mt-5 h-auto min-h-12 w-full px-5 py-4 sm:w-auto">
               <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">
-                Contact on WhatsApp <MessageCircle />
+                Contact WhatsApp <MessageCircle />
               </a>
             </Button>
           </div>
@@ -146,8 +146,8 @@ export const Contact = () => {
             <div className="absolute inset-0 -z-10 rounded-2xl bg-gold/5" />
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Name</label>
-                <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your name" maxLength={100} className="h-12 rounded-xl border-border/60 bg-input/60 text-base focus-visible:ring-gold" />
+                <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Nom</label>
+                <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Votre nom" maxLength={100} className="h-12 rounded-xl border-border/60 bg-input/60 text-base focus-visible:ring-gold" />
               </div>
               <div>
                 <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Phone / WhatsApp</label>
@@ -157,16 +157,16 @@ export const Contact = () => {
                 <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Email</label>
                 <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="jane@company.com" maxLength={255} className="h-12 rounded-xl border-border/60 bg-input/60 text-base focus-visible:ring-gold" />
               </div>
-              <SelectField label="Business type" value={form.businessType} options={businessTypes} onChange={(businessType) => setForm({ ...form, businessType })} />
-              <SelectField label="Project type" value={form.projectType} options={projectTypes} onChange={(projectType) => setForm({ ...form, projectType })} />
-              <SelectField label="Budget range" value={form.budget} options={budgetRanges} onChange={(budget) => setForm({ ...form, budget })} />
+              <SelectField label="Type d'entreprise" value={form.businessType} options={businessTypes} onChange={(businessType) => setForm({ ...form, businessType })} />
+              <SelectField label="Type de projet" value={form.projectType} options={projectTypes} onChange={(projectType) => setForm({ ...form, projectType })} />
+              <SelectField label="Budget" value={form.budget} options={budgetRanges} onChange={(budget) => setForm({ ...form, budget })} />
               <div className="sm:col-span-2">
                 <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Message</label>
-                <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your goals, timeline, and what you want the website to do..." rows={5} maxLength={1000} className="resize-none rounded-xl border-border/60 bg-input/60 text-base focus-visible:ring-gold" />
+                <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Parlez-nous de votre activité, vos objectifs et le type de site souhaité..." rows={5} maxLength={1000} className="resize-none rounded-xl border-border/60 bg-input/60 text-base focus-visible:ring-gold" />
               </div>
               <div className="sm:col-span-2">
                 <Button type="submit" variant="hero" size="lg" disabled={loading} className="h-auto min-h-12 w-full flex-wrap whitespace-normal px-5 py-4 text-center">
-                  {loading ? "Preparing..." : (<>Send Devis Request <Send /></>)}
+                  {loading ? "Préparation..." : (<>Demander un devis <Send /></>)}
                 </Button>
               </div>
             </div>

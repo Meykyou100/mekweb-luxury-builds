@@ -7,14 +7,14 @@ import { BrandLogo } from "@/components/site/BrandLogo";
 
 const links = [
   { href: "#services", label: "Services" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#about", label: "About" },
+  { href: "#pricing", label: "Tarifs" },
+  { href: "#portfolio", label: "Réalisations" },
+  { href: "#about", label: "À propos" },
   { href: "#contact", label: "Contact" },
 ];
 
 const whatsappNumber = "212708465603";
-const callMessage = encodeURIComponent("Bonjour, je veux reserver un appel gratuit pour parler de mon site web.");
+const callMessage = encodeURIComponent("Bonjour MekWeb, je veux demander un devis pour la création de mon site web.");
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -59,7 +59,7 @@ export const Navbar = () => {
           <ThemeToggle />
           <Button asChild variant="hero" size="sm">
             <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer">
-              Book a Free Call <CalendarCheck />
+              Demander un devis <CalendarCheck />
             </a>
           </Button>
         </div>
@@ -88,7 +88,7 @@ export const Navbar = () => {
             ))}
             <Button asChild variant="hero" className="mt-2">
               <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
-                Book a Free Call <CalendarCheck />
+                Demander un devis <CalendarCheck />
               </a>
             </Button>
             <div className="mt-2 flex justify-end">

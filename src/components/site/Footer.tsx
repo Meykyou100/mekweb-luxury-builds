@@ -12,18 +12,18 @@ const footerGroups = [
   {
     title: "Services",
     links: [
-      { label: "Web Development", href: "#services" },
-      { label: "UI/UX Design", href: "#services" },
-      { label: "SEO Optimization", href: "#services" },
-      { label: "E-commerce", href: "#services" },
+      { label: "Site vitrine", href: "#services" },
+      { label: "Site e-commerce", href: "#services" },
+      { label: "Refonte", href: "#services" },
+      { label: "SEO", href: "#services" },
     ],
   },
   {
     title: "Quick links",
     links: [
-      { label: "Pricing", href: "#pricing" },
-      { label: "Portfolio", href: "#portfolio" },
-      { label: "Testimonials", href: "#testimonials" },
+      { label: "Tarifs", href: "#pricing" },
+      { label: "Réalisations", href: "#portfolio" },
+      { label: "Avis clients", href: "#testimonials" },
       { label: "FAQ", href: "#faq" },
     ],
   },
@@ -39,7 +39,7 @@ export const Footer = () => {
               <BrandLogo markClassName="h-12 w-12" textClassName="text-3xl" />
             </a>
             <p className="max-w-sm text-base leading-7 text-muted-foreground mb-6">
-              Premium web development for ambitious businesses that want a website built to earn trust and generate leads.
+              MekWeb Agency Maroc crée des sites web professionnels, e-commerce et SEO pour les entreprises à Rabat et partout au Maroc.
             </p>
             <div className="flex flex-wrap gap-3">
               <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="motion-card inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:bg-gold/5 hover:text-gold">

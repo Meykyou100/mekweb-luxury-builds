@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { saveNewsletterEmail } from "@/lib/newsletter";
 
 const whatsappNumber = "212708465603";
-const callMessage = encodeURIComponent("Bonjour, je veux reserver un appel gratuit pour parler de mon site web.");
+const callMessage = encodeURIComponent("Bonjour MekWeb, je veux demander un devis pour la création de mon site web.");
 
 export const Hero = () => {
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -50,15 +50,15 @@ export const Hero = () => {
           <div className="max-w-2xl text-left">
             <div className="mb-6 inline-flex max-w-full items-center gap-2 overflow-hidden rounded-full border border-yellow-300/50 bg-black/25 px-4 py-2 shadow-elegant animate-fade-in">
               <Sparkles className="h-4 w-4 text-yellow-300" />
-              <span className="truncate text-[10px] uppercase tracking-[0.18em] text-yellow-100 sm:text-xs">Premium Web Agency</span>
+              <span className="truncate text-[10px] uppercase tracking-[0.18em] text-yellow-100 sm:text-xs">MekWeb Agency Maroc</span>
             </div>
 
-            <h1 className="mb-6 max-w-3xl font-sans text-[clamp(3rem,7.2vw,6.6rem)] font-black uppercase leading-[0.94] tracking-tight text-white animate-fade-in-up [text-wrap:balance]">
-              Get <span className="text-yellow-300">your</span> website
+            <h1 className="mb-6 max-w-3xl font-sans text-[clamp(2.35rem,6.4vw,5.8rem)] font-black uppercase leading-[0.98] tracking-tight text-white animate-fade-in-up [text-wrap:balance]">
+              Création de sites web professionnels <span className="text-yellow-300">au Maroc</span>
             </h1>
 
             <p className="mb-6 max-w-xl text-base leading-7 text-white/86 animate-fade-in-up sm:text-lg" style={{ animationDelay: "0.15s", opacity: 0 }}>
-              We design and develop websites around your ideas. Tell us what you want, and MekWeb will build it with clean code, high quality, and care for every detail.
+              MekWeb Agency aide les entreprises locales à Rabat et partout au Maroc à obtenir un site web moderne, rapide et professionnel qui attire des clients.
             </p>
 
             <form onSubmit={onNewsletterSubmit} className="mb-8 flex max-w-md overflow-hidden rounded-lg border border-yellow-300/80 bg-black/20 p-1 animate-fade-in-up" style={{ animationDelay: "0.25s", opacity: 0 }}>
@@ -78,18 +78,22 @@ export const Hero = () => {
             <div className="mb-8 flex flex-col gap-3 animate-fade-in-up sm:flex-row" style={{ animationDelay: "0.32s", opacity: 0 }}>
               <Button asChild variant="hero" size="lg" className="h-auto min-h-12 w-full px-6 py-4 sm:w-auto">
                 <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer">
-                  Book a Free Call <CalendarCheck />
+                  Demander un devis <CalendarCheck />
                 </a>
               </Button>
               <Button asChild variant="outlineGold" size="lg" className="h-auto min-h-12 w-full border-white/40 px-6 py-4 text-white hover:bg-yellow-300 hover:text-black sm:w-auto">
-                <a href="#portfolio">View Our Work <ArrowRight /></a>
+                <a href="#portfolio">Voir nos réalisations <ArrowRight /></a>
               </Button>
             </div>
+
+            <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer" className="mb-8 inline-flex items-center gap-2 rounded-full border border-yellow-300/50 bg-yellow-300 px-5 py-3 text-sm font-black uppercase tracking-wide text-black transition-transform hover:-translate-y-1">
+              Contact WhatsApp <CalendarCheck className="h-4 w-4" />
+            </a>
 
             <div className="animate-fade-in-up" style={{ animationDelay: "0.42s", opacity: 0 }}>
               <ArrowRight className="idea-arrow mb-3 h-8 w-8 text-yellow-300" />
               <p className="max-w-lg text-[clamp(1.9rem,4.5vw,3.2rem)] font-black uppercase leading-[1.02] tracking-tight text-yellow-300">
-                Change your idea to a business
+                Transformez votre présence en ligne en clients
               </p>
             </div>
           </div>
