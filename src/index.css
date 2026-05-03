@@ -128,7 +128,7 @@
     background-image:
       radial-gradient(ellipse 80% 50% at 50% -10%, hsl(var(--gold) / 0.16), transparent),
       radial-gradient(ellipse 60% 50% at 100% 100%, hsl(var(--gold) / 0.10), transparent);
-    background-attachment: fixed;
+    background-attachment: scroll;
   }
 
   #root {
@@ -189,7 +189,7 @@
     box-shadow: 0 0 40px hsl(var(--gold) / 0.4), 0 0 80px hsl(var(--gold) / 0.15);
   }
   .animate-glow-pulse {
-    animation: glow-pulse 7s ease-in-out infinite;
+    animation: glow-pulse 9s ease-in-out infinite;
   }
   .container-luxe {
     @apply w-full mx-auto px-4 sm:px-6 lg:px-10 2xl:px-12;
@@ -215,7 +215,6 @@
       radial-gradient(circle at 92% 72%, hsl(var(--gold) / 0.09), transparent 26%);
     opacity: 0.75;
     transform: translate3d(0, 0, 0);
-    animation: section-aurora 18s ease-in-out infinite alternate;
   }
   .section-surface {
     @apply bg-secondary/65;
@@ -241,10 +240,9 @@
     letter-spacing: -0.015em;
   }
   .premium-card {
-    @apply rounded-2xl border border-border/55 bg-card/[0.88] shadow-elegant backdrop-blur-sm transition-all duration-700;
+    @apply rounded-2xl border border-border/55 bg-card/[0.92] shadow-elegant transition-all duration-500;
     box-shadow: var(--shadow-elegant), inset 0 1px 0 hsl(0 0% 100% / 0.08);
     transform-style: preserve-3d;
-    will-change: transform, box-shadow, border-color;
   }
   .premium-card:hover {
     border-color: hsl(var(--gold) / 0.7);
@@ -253,8 +251,8 @@
   }
   .premium-card :is(svg, img) {
     transition:
-      transform 800ms var(--transition-smooth),
-      filter 800ms var(--transition-smooth);
+      transform 600ms var(--transition-smooth),
+      filter 600ms var(--transition-smooth);
   }
   .premium-card:hover :is(svg) {
     transform: translateY(-2px) rotate(-4deg) scale(1.08);
@@ -271,7 +269,7 @@
 
   .animated-page::before {
     content: "";
-    position: fixed;
+    position: absolute;
     inset: 0;
     z-index: 0;
     pointer-events: none;
@@ -283,19 +281,11 @@
     background-position: 0 0, 0 0;
     background-size: 160% 160%, 140% 140%, 220% 220%, 72px 72px;
     mask-image: linear-gradient(to bottom, black 0%, black 45%, transparent 100%);
-    opacity: 0.62;
-    animation: background-drift 24s linear infinite, background-breathe 9s ease-in-out infinite;
+    opacity: 0.38;
   }
 
   .animated-page::after {
-    content: "";
-    position: fixed;
-    inset: auto 0 0;
-    z-index: 0;
-    height: 1px;
-    pointer-events: none;
-    background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.7), transparent);
-    animation: bottom-scan 5s ease-in-out infinite;
+    content: none;
   }
 
   .animated-page > * {
@@ -305,32 +295,28 @@
 
   [data-reveal] {
     opacity: 0;
-    transform: translate3d(0, 52px, 0) scale(0.96);
-    filter: blur(14px);
+    transform: translate3d(0, 34px, 0) scale(0.98);
     transition:
       opacity 980ms var(--transition-smooth),
-      transform 980ms var(--transition-smooth),
-      filter 980ms var(--transition-smooth);
+      transform 980ms var(--transition-smooth);
     transition-delay: var(--reveal-delay, 0ms);
-    will-change: opacity, transform, filter;
   }
 
   [data-reveal="left"] {
-    transform: translate3d(-56px, 28px, 0) rotate(-1deg) scale(0.97);
+    transform: translate3d(-30px, 24px, 0) scale(0.98);
   }
 
   [data-reveal="right"] {
-    transform: translate3d(56px, 28px, 0) rotate(1deg) scale(0.97);
+    transform: translate3d(30px, 24px, 0) scale(0.98);
   }
 
   [data-reveal="scale"] {
-    transform: translate3d(0, 34px, 0) scale(0.9);
+    transform: translate3d(0, 24px, 0) scale(0.96);
   }
 
   [data-reveal].is-visible {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
-    filter: blur(0);
   }
 
   .motion-card {
@@ -347,15 +333,15 @@
   .motion-card::before {
     content: "";
     position: absolute;
-    inset: -60%;
+    inset: -45%;
     z-index: 1;
     pointer-events: none;
     background: linear-gradient(115deg, transparent 35%, hsl(var(--gold) / 0.22), hsl(0 0% 100% / 0.12), transparent 68%);
     opacity: 0;
     transform: translateX(-55%) rotate(8deg);
     transition:
-      opacity 600ms var(--transition-smooth),
-      transform 900ms var(--transition-smooth);
+      opacity 450ms var(--transition-smooth),
+      transform 650ms var(--transition-smooth);
   }
 
   .motion-card:hover::before {
@@ -386,9 +372,8 @@
   }
 
   .hero-orb {
-    animation: orb-drift 5.8s ease-in-out infinite;
+    animation: orb-drift 10s ease-in-out infinite;
     mix-blend-mode: screen;
-    will-change: transform, opacity, filter;
   }
 
   .hero-orb-soft {
@@ -396,7 +381,7 @@
   }
 
   .hero-frame {
-    animation: frame-glow 6s ease-in-out infinite;
+    animation: frame-glow 10s ease-in-out infinite;
   }
 
   .hero-mockup {
@@ -412,22 +397,21 @@
     border-radius: 32px;
     background: linear-gradient(115deg, transparent 32%, hsl(var(--gold) / 0.18), transparent 68%);
     transform: translateX(-65%) rotate(8deg);
-    animation: mockup-sheen 5.5s ease-in-out infinite;
+    animation: mockup-sheen 9s ease-in-out infinite;
   }
 
   .chart-bar {
     transform-origin: bottom;
-    animation: chart-rise 3.2s var(--transition-smooth) infinite alternate;
+    animation: chart-rise 1.4s var(--transition-smooth) both;
   }
 
   .progress-fill {
     transform-origin: left;
-    animation: progress-breathe 3.4s var(--transition-smooth) infinite alternate;
+    animation: progress-breathe 1.5s var(--transition-smooth) both;
   }
 
   .hero-scroll-indicator {
     animation: scroll-pill-bounce 2.8s ease-in-out infinite;
-    will-change: transform, box-shadow;
   }
 
   .hero-scroll-mouse {
@@ -437,7 +421,6 @@
   .idea-arrow {
     animation: idea-arrow-slide 1.9s ease-in-out infinite;
     filter: drop-shadow(0 0 12px hsl(var(--gold-light) / 0.45));
-    will-change: transform, opacity, filter;
   }
 
   .process-line {
