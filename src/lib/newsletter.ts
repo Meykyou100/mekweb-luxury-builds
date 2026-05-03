@@ -17,9 +17,8 @@ export const saveNewsletterEmail = async ({ email, source = "website" }: Newslet
     method: "POST",
     headers: {
       apikey: supabaseAnonKey!,
-      Authorization: `Bearer ${supabaseAnonKey}`,
       "Content-Type": "application/json",
-      Prefer: "resolution=merge-duplicates",
+      Prefer: "return=minimal",
     },
     body: JSON.stringify({
       email: email.trim().toLowerCase(),
@@ -28,6 +27,7 @@ export const saveNewsletterEmail = async ({ email, source = "website" }: Newslet
   });
 
   if (!response.ok) {
-    throw new Error("Could not save this email right now.");
+    const errorText = await response.text();
+    throw new Error(errorText || "Could not save this email right now.");
   }
 };
