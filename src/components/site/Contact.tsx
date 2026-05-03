@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
-import { Clock, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { ChevronDown, Clock, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -24,6 +24,35 @@ const schema = z.object({
   budget: z.string().trim().min(1, "Choose a budget range"),
   message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000),
 });
+
+type SelectFieldProps = {
+  label: string;
+  value: string;
+  options: string[];
+  onChange: (value: string) => void;
+};
+
+const SelectField = ({ label, value, options, onChange }: SelectFieldProps) => (
+  <div>
+    <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">{label}</label>
+    <div className="group relative">
+      <select
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className="h-12 w-full appearance-none rounded-xl border border-border/60 bg-gradient-to-br from-card via-card to-gold/10 px-4 pr-11 text-base font-medium text-foreground shadow-inner outline-none transition-all duration-300 hover:border-gold/60 focus:border-gold focus:ring-2 focus:ring-gold/35 dark:from-white/10 dark:via-white/5 dark:to-gold/10"
+      >
+        {options.map((option) => (
+          <option key={option} value={option} className="bg-card text-foreground">
+            {option}
+          </option>
+        ))}
+      </select>
+      <span className="pointer-events-none absolute right-3 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-lg bg-gold/15 text-gold transition-transform duration-300 group-focus-within:rotate-180">
+        <ChevronDown className="h-4 w-4" />
+      </span>
+    </div>
+  </div>
+);
 
 export const Contact = () => {
   const [form, setForm] = useState({
@@ -128,24 +157,9 @@ export const Contact = () => {
                 <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Email</label>
                 <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="jane@company.com" maxLength={255} className="h-12 rounded-xl border-border/60 bg-input/60 text-base focus-visible:ring-gold" />
               </div>
-              <div>
-                <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Business type</label>
-                <select value={form.businessType} onChange={(e) => setForm({ ...form, businessType: e.target.value })} className="h-12 w-full rounded-xl border border-border/60 bg-input/60 px-3 text-base outline-none ring-offset-background focus:ring-2 focus:ring-gold">
-                  {businessTypes.map((type) => <option key={type}>{type}</option>)}
-                </select>
-              </div>
-              <div>
-                <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Project type</label>
-                <select value={form.projectType} onChange={(e) => setForm({ ...form, projectType: e.target.value })} className="h-12 w-full rounded-xl border border-border/60 bg-input/60 px-3 text-base outline-none ring-offset-background focus:ring-2 focus:ring-gold">
-                  {projectTypes.map((type) => <option key={type}>{type}</option>)}
-                </select>
-              </div>
-              <div>
-                <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Budget range</label>
-                <select value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })} className="h-12 w-full rounded-xl border border-border/60 bg-input/60 px-3 text-base outline-none ring-offset-background focus:ring-2 focus:ring-gold">
-                  {budgetRanges.map((budget) => <option key={budget}>{budget}</option>)}
-                </select>
-              </div>
+              <SelectField label="Business type" value={form.businessType} options={businessTypes} onChange={(businessType) => setForm({ ...form, businessType })} />
+              <SelectField label="Project type" value={form.projectType} options={projectTypes} onChange={(projectType) => setForm({ ...form, projectType })} />
+              <SelectField label="Budget range" value={form.budget} options={budgetRanges} onChange={(budget) => setForm({ ...form, budget })} />
               <div className="sm:col-span-2">
                 <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Message</label>
                 <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your goals, timeline, and what you want the website to do..." rows={5} maxLength={1000} className="resize-none rounded-xl border-border/60 bg-input/60 text-base focus-visible:ring-gold" />
