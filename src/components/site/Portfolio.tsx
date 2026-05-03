@@ -32,8 +32,8 @@ export const Portfolio = () => {
         <div className="grid gap-5 md:grid-cols-2 lg:gap-6">
           {projects.map((p, i) => (
             <div key={p.title} data-reveal="scale" data-reveal-delay={i * 120}>
-              <article className="premium-card motion-card group relative overflow-hidden">
-                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+              <article className="premium-card motion-card overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
                   <img
                     src={p.img}
                     alt={`${p.title} - réalisation MekWeb Agency`}
@@ -41,12 +41,11 @@ export const Portfolio = () => {
                     decoding="async"
                     width={1024}
                     height={768}
-                    className="h-full w-full object-cover brightness-105 saturate-110 transition-transform duration-700 group-hover:scale-110"
+                    className="h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-yellow-50/95 via-yellow-50/35 to-transparent opacity-95 transition-opacity duration-300" />
                 </div>
 
-                <div className="absolute inset-x-0 bottom-0 p-5 transition-transform duration-700 sm:p-7">
+                <div className="bg-yellow-50 p-5 text-black sm:p-7">
                   <div className="flex items-end justify-between gap-3 sm:gap-4">
                     <div className="min-w-0">
                       <p className="mb-2 text-[10px] uppercase tracking-[0.18em] text-black/70 sm:text-xs sm:tracking-[0.2em]">{p.category}</p>
@@ -54,11 +53,11 @@ export const Portfolio = () => {
                       <p className="inline-block rounded-full border border-black/20 bg-yellow-300 px-3 py-1 text-xs font-bold text-black sm:text-sm">
                         {p.result}
                       </p>
-                      <p className="mt-3 max-h-32 overflow-hidden text-sm font-medium text-black/78 opacity-100 transition-all duration-500 md:max-h-0 md:opacity-0 md:group-hover:max-h-32 md:group-hover:opacity-100">
+                      <p className="mt-3 text-sm font-medium text-black/78">
                         {p.desc}
                       </p>
                     </div>
-                    <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-gold shadow-gold-soft transition-transform duration-700 group-hover:rotate-45 sm:h-12 sm:w-12">
+                    <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-gold sm:h-12 sm:w-12">
                       <ArrowUpRight className="h-5 w-5 text-primary-foreground" />
                     </div>
                   </div>
