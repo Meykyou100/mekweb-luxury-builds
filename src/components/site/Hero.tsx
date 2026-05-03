@@ -29,7 +29,7 @@ const stats = [
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative isolate min-h-[100svh] overflow-hidden bg-black pt-28 text-white sm:pt-32 lg:pt-36">
+    <section id="home" className="relative isolate min-h-[100svh] overflow-hidden bg-black pb-10 pt-24 text-white sm:pt-28 lg:pt-28">
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img
           src="/images/mekweb-office-hero.jpg"
@@ -43,24 +43,24 @@ export const Hero = () => {
       </div>
 
       <div className="container-luxe relative z-10">
-        <div className="grid items-center gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:gap-10">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8">
           <div className="max-w-3xl">
-            <div className="mb-8 inline-flex max-w-full items-center gap-3 rounded-full border border-yellow-300/70 bg-black/35 px-5 py-3 text-yellow-300 shadow-gold-soft">
+            <div className="mb-6 inline-flex max-w-full items-center gap-3 rounded-full border border-yellow-300/70 bg-black/35 px-5 py-3 text-yellow-300 shadow-gold-soft">
               <span className="h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_18px_rgba(250,204,21,.85)]" />
               <span className="truncate text-xs font-black uppercase tracking-[0.18em] sm:text-sm">Agence web au Maroc</span>
             </div>
 
-            <h1 className="max-w-4xl font-sans text-[clamp(3.1rem,7.2vw,6.8rem)] font-black uppercase leading-[0.98] tracking-tight text-white [text-wrap:balance]">
+            <h1 className="max-w-4xl font-sans text-[clamp(2.7rem,6.4vw,6.1rem)] font-black uppercase leading-[0.98] tracking-tight text-white [text-wrap:balance]">
               Création de <span className="text-yellow-300">sites web</span> professionnels
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/86 sm:text-xl">
+            <p className="mt-6 max-w-2xl text-base leading-7 text-white/86 sm:text-lg">
               Nous créons des sites web modernes, rapides et optimisés pour aider votre entreprise à se démarquer et attirer plus de clients.
             </p>
 
-            <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
+            <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
               {highlights.map((item) => (
-                <div key={item.title} className="flex flex-col items-center gap-3 text-center">
+                <div key={item.title} className="flex flex-col items-center gap-3 text-center sm:last:col-start-2 lg:last:col-start-auto">
                   <item.icon className="h-9 w-9 text-yellow-300" strokeWidth={1.8} />
                   <div>
                     <p className="text-[10px] font-black uppercase leading-5 tracking-[0.08em] text-white">{item.title}</p>
@@ -70,7 +70,7 @@ export const Hero = () => {
               ))}
             </div>
 
-            <div className="mt-12 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Button asChild variant="hero" size="lg" className="h-auto min-h-14 w-full rounded-lg px-8 py-4 text-base sm:w-auto">
                 <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer">
                   Demander un devis
@@ -84,12 +84,12 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="relative mx-auto hidden w-full max-w-[860px] lg:block">
-            <div className="absolute -right-16 top-8 h-72 w-72 rounded-full bg-yellow-300/20 blur-3xl" />
-            <div className="absolute -bottom-14 left-20 h-44 w-96 rounded-full bg-yellow-300/10 blur-3xl" />
-            <div className="relative ml-auto origin-bottom-right rotate-[-4deg] rounded-[28px] border border-white/25 bg-[#080808] p-4 shadow-[0_40px_110px_rgba(0,0,0,.75)]">
-              <div className="rounded-[22px] border border-yellow-300/25 bg-black p-8">
-                <div className="mb-14 flex items-center justify-between">
+          <div className="relative mx-auto hidden w-full max-w-[760px] lg:block">
+            <div className="absolute -right-10 top-6 h-64 w-64 rounded-full bg-yellow-300/18 blur-3xl" />
+            <div className="absolute -bottom-10 left-16 h-36 w-80 rounded-full bg-yellow-300/10 blur-3xl" />
+            <div className="relative ml-auto origin-bottom-right rounded-[26px] border border-white/20 bg-[#080808] p-3 shadow-[0_32px_90px_rgba(0,0,0,.7)]">
+              <div className="rounded-[20px] border border-yellow-300/20 bg-black p-6">
+                <div className="mb-10 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <img src="/favicon-32.png" alt="" className="h-8 w-8" />
                     <div>
@@ -97,7 +97,7 @@ export const Hero = () => {
                       <p className="text-[9px] font-black uppercase tracking-[0.3em] text-yellow-300">Agency</p>
                     </div>
                   </div>
-                  <div className="flex gap-5 text-[10px] font-semibold text-white/80">
+                  <div className="flex gap-4 text-[9px] font-semibold text-white/80">
                     <span>Accueil</span>
                     <span>Services</span>
                     <span>Réalisations</span>
@@ -106,9 +106,9 @@ export const Hero = () => {
                   </div>
                 </div>
 
-                <div className="grid min-h-[270px] items-center rounded-2xl bg-[radial-gradient(circle_at_70%_35%,rgba(250,204,21,.22),transparent_42%),linear-gradient(135deg,#10100e,#050505)] p-10">
+                <div className="grid min-h-[230px] items-center rounded-2xl bg-[radial-gradient(circle_at_70%_35%,rgba(250,204,21,.22),transparent_42%),linear-gradient(135deg,#10100e,#050505)] p-8">
                   <div className="max-w-md">
-                    <p className="text-4xl font-black leading-tight text-white">
+                    <p className="text-3xl font-black leading-tight text-white">
                       Des solutions digitales pour <span className="text-yellow-300">développer votre activité</span>
                     </p>
                     <p className="mt-5 text-sm leading-6 text-white/75">
@@ -121,7 +121,7 @@ export const Hero = () => {
                   </div>
                 </div>
 
-                <div className="mt-6 grid grid-cols-3 border-y border-white/10 py-5 text-center">
+                <div className="mt-5 grid grid-cols-3 border-y border-white/10 py-4 text-center">
                   <div>
                     <p className="font-number text-xl font-black text-yellow-300">+50</p>
                     <p className="text-[10px] text-white/60">Projets réalisés</p>
@@ -136,11 +136,11 @@ export const Hero = () => {
                   </div>
                 </div>
 
-                <p className="mt-8 text-2xl font-black text-white">Nos services</p>
-                <div className="mt-5 grid grid-cols-4 gap-4">
+                <p className="mt-6 text-xl font-black text-white">Nos services</p>
+                <div className="mt-4 grid grid-cols-4 gap-3">
                   {[Monitor, Smartphone, TrendingUp, Headphones].map((Icon, index) => (
-                    <span key={index} className="grid h-24 place-items-center rounded-xl border border-yellow-300/15 bg-white/[0.03]">
-                      <Icon className="h-9 w-9 text-yellow-300" />
+                    <span key={index} className="grid h-20 place-items-center rounded-xl border border-yellow-300/15 bg-white/[0.03]">
+                      <Icon className="h-8 w-8 text-yellow-300" />
                     </span>
                   ))}
                 </div>
@@ -150,9 +150,9 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-5 border-t border-white/15 py-8 sm:grid-cols-3 lg:mt-16">
+        <div className="mt-10 grid gap-5 border-t border-white/15 py-7 sm:grid-cols-3 lg:mt-12">
           {stats.map((stat, index) => (
-            <div key={stat.label} className="flex items-center justify-center gap-5 border-white/10 sm:justify-start sm:border-r sm:last:border-r-0">
+            <div key={stat.label} className="flex items-center justify-center gap-5 border-white/10 sm:justify-center sm:border-r sm:last:border-r-0">
               <span className="grid h-14 w-14 place-items-center rounded-lg bg-yellow-300/18 text-yellow-300 shadow-gold-soft">
                 <stat.icon className="h-7 w-7" />
               </span>

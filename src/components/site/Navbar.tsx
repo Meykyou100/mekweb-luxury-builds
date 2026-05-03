@@ -19,13 +19,13 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-black/70 py-5 text-white">
+    <header className="fixed top-0 inset-x-0 z-50 bg-black/80 py-3 text-white">
       <nav className="container-luxe flex items-center justify-between">
         <a href="#home" className="flex min-w-0 items-center gap-2" aria-label="MekWeb home">
-          <BrandLogo markClassName="h-10 w-10 border-0 bg-transparent sm:h-12 sm:w-12" textClassName="text-xl sm:text-2xl" />
+          <BrandLogo markClassName="h-9 w-9 border-0 bg-transparent sm:h-11 sm:w-11" textClassName="text-xl sm:text-2xl" />
         </a>
 
-        <div className="hidden md:flex items-center gap-5 lg:gap-8">
+        <div className="hidden md:flex items-center gap-4 lg:gap-7">
           {links.map((l) => (
             <a
               key={l.href}
@@ -39,7 +39,7 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button asChild variant="outlineGold" size="sm" className="border-yellow-300/70 bg-black/15 px-6 py-5 text-yellow-300 hover:bg-yellow-300 hover:text-black">
+          <Button asChild variant="outlineGold" size="sm" className="border-yellow-300/70 bg-black/15 px-5 py-4 text-yellow-300 hover:bg-yellow-300 hover:text-black">
             <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer">
               <BriefcaseBusiness className="h-4 w-4" /> Demander un devis
             </a>
