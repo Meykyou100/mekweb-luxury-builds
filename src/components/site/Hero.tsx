@@ -125,10 +125,10 @@ export const Hero = () => {
             ))}
           </div>
 
-          <div className="absolute bottom-0 left-1/2 hidden -translate-x-1/2 translate-y-1/2 lg:block">
-            <div className="grid h-24 w-20 place-items-center rounded-t-full bg-yellow-300 text-black shadow-[0_0_50px_rgba(250,204,21,0.45)]">
+          <div className="absolute bottom-0 left-1/2 hidden -translate-x-1/2 translate-y-[78%] lg:block">
+            <div className="hero-scroll-indicator grid h-20 w-16 place-items-center rounded-t-full bg-yellow-300 text-black shadow-[0_0_50px_rgba(250,204,21,0.45)]">
               <div className="text-center">
-                <Mouse className="mx-auto mb-1 h-6 w-6" />
+                <Mouse className="hero-scroll-mouse mx-auto mb-1 h-5 w-5" />
                 <span className="text-[10px] font-bold">Scroll</span>
               </div>
             </div>

@@ -425,6 +425,15 @@
     animation: progress-breathe 3.4s var(--transition-smooth) infinite alternate;
   }
 
+  .hero-scroll-indicator {
+    animation: scroll-pill-bounce 2.8s ease-in-out infinite;
+    will-change: transform, box-shadow;
+  }
+
+  .hero-scroll-mouse {
+    animation: scroll-mouse-dot 1.6s ease-in-out infinite;
+  }
+
   .process-line {
     overflow: hidden;
   }
@@ -591,6 +600,30 @@
   100% {
     transform: scaleX(1);
     opacity: 1;
+  }
+}
+
+@keyframes scroll-pill-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 0 38px hsl(var(--gold-light) / 0.32);
+  }
+  50% {
+    transform: translateY(-12px);
+    box-shadow: 0 0 62px hsl(var(--gold-light) / 0.58);
+  }
+}
+
+@keyframes scroll-mouse-dot {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translateY(-2px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(4px);
   }
 }
 
