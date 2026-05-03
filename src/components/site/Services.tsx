@@ -25,14 +25,7 @@ export const Services = () => {
           </p>
         </div>
 
-        <div
-          className="relative overflow-hidden"
-          data-reveal="scale"
-          style={{
-            maskImage: "linear-gradient(90deg, transparent, black 7%, black 93%, transparent)",
-            WebkitMaskImage: "linear-gradient(90deg, transparent, black 7%, black 93%, transparent)",
-          }}
-        >
+        <div className="relative overflow-hidden" data-reveal="scale">
           <div className="flex w-max flex-nowrap gap-4 animate-marquee sm:gap-5 lg:gap-6">
             {marqueeServices.map((s, i) => (
               <article
