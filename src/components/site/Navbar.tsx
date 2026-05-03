@@ -19,7 +19,7 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-black/65 py-2 text-white">
+    <header className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-black py-2 text-white">
       <nav className="container-luxe flex items-center justify-between">
         <a href="#home" className="flex min-w-0 items-center gap-2" aria-label="MekWeb home">
           <BrandLogo markClassName="h-8 w-8 border-0 bg-transparent sm:h-10 sm:w-10" textClassName="text-lg sm:text-xl" />
