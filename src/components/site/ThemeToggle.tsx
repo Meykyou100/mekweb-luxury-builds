@@ -20,7 +20,7 @@ export const ThemeToggle = () => {
       size="icon"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="shrink-0 border border-gold/20 bg-background/50 backdrop-blur-sm"
+      className="shrink-0 border border-gold/20 bg-background/80"
     >
       {isDark ? <Sun /> : <Moon />}
     </Button>

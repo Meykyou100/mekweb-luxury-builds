@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CalendarCheck, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
 import { BrandLogo } from "@/components/site/BrandLogo";
 
@@ -17,26 +16,13 @@ const whatsappNumber = "212708465603";
 const callMessage = encodeURIComponent("Bonjour MekWeb, je veux demander un devis pour la création de mon site web.");
 
 export const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header
-      className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-all duration-500",
-        scrolled ? "py-2 bg-background/95 border-b border-gold/10" : "py-3 bg-[#1d1d1b]/95 text-white border-b border-white/10",
-      )}
-    >
+    <header className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-[#1d1d1b]/95 py-3 text-white">
       <nav className="container-luxe flex items-center justify-between">
-        <a href="#home" className="flex min-w-0 items-center gap-2 transition-transform duration-500 hover:scale-[1.02]" aria-label="MekWeb home">
-          <BrandLogo markClassName="h-9 w-9 rounded-lg" textClassName={cn("text-xl sm:text-2xl", scrolled ? "text-gold" : "text-yellow-300")} />
+        <a href="#home" className="flex min-w-0 items-center gap-2" aria-label="MekWeb home">
+          <BrandLogo markClassName="h-9 w-9 rounded-lg" textClassName="text-xl text-yellow-300 sm:text-2xl" />
         </a>
 
         <div className="hidden md:flex items-center gap-1">
@@ -44,10 +30,7 @@ export const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className={cn(
-                "px-3 lg:px-4 py-2 text-sm transition-colors relative group",
-                scrolled ? "text-muted-foreground hover:text-gold" : "text-white/85 hover:text-yellow-300",
-              )}
+              className="relative px-3 py-2 text-sm text-white/85 transition-colors hover:text-yellow-300 lg:px-4"
             >
               {l.label}
               <span className="absolute left-3 right-3 lg:left-4 lg:right-4 -bottom-0.5 h-px bg-gradient-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
@@ -64,11 +47,7 @@ export const Navbar = () => {
           </Button>
         </div>
 
-        <button
-          className={cn("p-2 md:hidden", scrolled ? "text-foreground" : "text-white")}
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
+        <button className="p-2 text-white md:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           {open ? <X /> : <Menu />}
         </button>
       </nav>

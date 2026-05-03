@@ -18,7 +18,7 @@ export const BrandLogo = ({
     <span className={cn("inline-flex min-w-0 items-center gap-2", className)}>
       <span
         className={cn(
-          "grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-xl border border-gold/30 bg-black shadow-gold-soft",
+          "grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-xl border border-gold/30 bg-black",
           markClassName,
         )}
       >
