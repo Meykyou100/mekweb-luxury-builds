@@ -48,7 +48,7 @@ export const Hero = () => {
       <div className="container-luxe relative z-10">
         <div className="grid w-full items-center gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(460px,1fr)] lg:gap-16">
           <div className="max-w-2xl text-left">
-            <div className="mb-6 inline-flex max-w-full items-center gap-2 overflow-hidden rounded-full border border-yellow-300/50 bg-black/25 px-4 py-2 shadow-elegant backdrop-blur-md animate-fade-in">
+            <div className="mb-6 inline-flex max-w-full items-center gap-2 overflow-hidden rounded-full border border-yellow-300/50 bg-black/25 px-4 py-2 shadow-elegant animate-fade-in">
               <Sparkles className="h-4 w-4 text-yellow-300" />
               <span className="truncate text-[10px] uppercase tracking-[0.18em] text-yellow-100 sm:text-xs">Premium Web Agency</span>
             </div>
@@ -94,9 +94,9 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="hero-mockup relative mx-auto w-full max-w-2xl animate-float lg:mx-0">
-            <div className="absolute -inset-10 rounded-[42px] bg-yellow-300/35 blur-3xl" aria-hidden="true" />
-            <div className="relative rounded-[34px] border border-yellow-200/35 bg-black/35 p-6 shadow-[0_40px_120px_rgba(250,204,21,0.18)] backdrop-blur-md">
+          <div className="hero-mockup relative mx-auto w-full max-w-2xl lg:mx-0">
+            <div className="absolute -inset-6 rounded-[42px] bg-yellow-300/10" aria-hidden="true" />
+            <div className="relative rounded-[34px] border border-yellow-200/35 bg-black/45 p-6 shadow-elegant">
               <div className="hero-orb absolute -left-8 -top-8 h-20 w-20 rounded-full bg-white/70" style={{ animationDelay: "0.6s" }} />
               <div className="hero-orb absolute -bottom-7 left-24 h-12 w-12 rounded-full bg-yellow-300/70" style={{ animationDelay: "1.8s" }} />
               <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#20201d] p-5 shadow-2xl">
@@ -158,8 +158,8 @@ export const Hero = () => {
               { v: "100%", l: "Client Satisfaction", icon: Heart },
               { v: "5/5", l: "Average Rating", icon: Star },
             ].map((s, i) => (
-              <div key={s.l} className="motion-card flex min-h-[128px] flex-col items-center justify-center gap-2 rounded-2xl border border-yellow-300/30 bg-black/40 p-5 shadow-elegant backdrop-blur-md transition-all duration-700 hover:-translate-y-1 hover:border-yellow-300 hover:shadow-[0_24px_70px_rgba(250,204,21,0.24)]">
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-yellow-300 text-black animate-float" style={{ animationDelay: `${i * 0.4}s` }}>
+              <div key={s.l} className="motion-card flex min-h-[128px] flex-col items-center justify-center gap-2 rounded-2xl border border-yellow-300/30 bg-black/50 p-5 shadow-elegant transition-all duration-300 hover:-translate-y-1 hover:border-yellow-300">
+                <span className="grid h-10 w-10 place-items-center rounded-full bg-yellow-300 text-black">
                   <s.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                 </span>
                 <div className="font-number text-2xl font-bold text-yellow-300 sm:text-3xl md:text-4xl">{s.v}</div>

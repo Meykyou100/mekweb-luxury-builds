@@ -143,7 +143,7 @@ export const Contact = () => {
           </div>
 
           <form onSubmit={onSubmit} data-reveal="right" data-reveal-delay="120" className="premium-card motion-card relative border-gold/25 p-5 sm:p-7 md:p-8">
-            <div className="absolute inset-0 -z-10 rounded-full bg-gold/10 blur-3xl" />
+            <div className="absolute inset-0 -z-10 rounded-2xl bg-gold/5" />
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground">Name</label>
@@ -165,7 +165,7 @@ export const Contact = () => {
                 <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your goals, timeline, and what you want the website to do..." rows={5} maxLength={1000} className="resize-none rounded-xl border-border/60 bg-input/60 text-base focus-visible:ring-gold" />
               </div>
               <div className="sm:col-span-2">
-                <Button type="submit" variant="hero" size="lg" disabled={loading} className="h-auto min-h-12 w-full flex-wrap whitespace-normal px-5 py-4 text-center animate-glow-pulse">
+                <Button type="submit" variant="hero" size="lg" disabled={loading} className="h-auto min-h-12 w-full flex-wrap whitespace-normal px-5 py-4 text-center">
                   {loading ? "Preparing..." : (<>Send Devis Request <Send /></>)}
                 </Button>
               </div>

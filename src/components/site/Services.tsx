@@ -35,7 +35,7 @@ export const Services = () => {
                 style={{ animationDelay: `${i * 0.05}s` }}
               >
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                  <div className="absolute -top-1/2 -right-1/2 w-full h-full rounded-full bg-gold/10 blur-3xl" />
+                  <div className="absolute -top-1/2 -right-1/2 w-full h-full rounded-full bg-gold/5" />
                 </div>
 
                 <div className="relative">

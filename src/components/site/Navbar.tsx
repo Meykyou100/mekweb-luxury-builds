@@ -23,7 +23,7 @@ export const Navbar = () => {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -31,7 +31,7 @@ export const Navbar = () => {
     <header
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-500",
-        scrolled ? "py-2 bg-background/80 backdrop-blur-xl border-b border-gold/10" : "py-3 bg-[#1d1d1b]/80 text-white backdrop-blur-md border-b border-white/10",
+        scrolled ? "py-2 bg-background/95 border-b border-gold/10" : "py-3 bg-[#1d1d1b]/95 text-white border-b border-white/10",
       )}
     >
       <nav className="container-luxe flex items-center justify-between">
@@ -57,7 +57,7 @@ export const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
-          <Button asChild variant="hero" size="sm" className="animate-glow-pulse hover:animate-none">
+          <Button asChild variant="hero" size="sm">
             <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer">
               Book a Free Call <CalendarCheck />
             </a>
@@ -75,7 +75,7 @@ export const Navbar = () => {
 
       {open && (
         <div className="md:hidden container-luxe mt-3 sm:mt-4 pb-4 animate-fade-in">
-          <div className="flex max-h-[calc(100svh-6rem)] flex-col gap-1 overflow-y-auto bg-card/90 backdrop-blur-xl rounded-2xl p-3 sm:p-4 border border-gold/10">
+          <div className="flex max-h-[calc(100svh-6rem)] flex-col gap-1 overflow-y-auto bg-card rounded-2xl p-3 sm:p-4 border border-gold/10">
             {links.map((l) => (
               <a
                 key={l.href}
@@ -86,7 +86,7 @@ export const Navbar = () => {
                 {l.label}
               </a>
             ))}
-            <Button asChild variant="hero" className="mt-2 animate-glow-pulse">
+            <Button asChild variant="hero" className="mt-2">
               <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
                 Book a Free Call <CalendarCheck />
               </a>
