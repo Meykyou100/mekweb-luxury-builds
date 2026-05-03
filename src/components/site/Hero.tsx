@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, CalendarCheck, CheckCircle2, Heart, MessageCircle, Rocket, Sparkles, Star, Zap } from "lucide-react";
+import { ArrowRight, CalendarCheck, Heart, Rocket, Sparkles, Star } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { saveNewsletterEmail } from "@/lib/newsletter";
@@ -35,10 +35,14 @@ export const Hero = () => {
   return (
     <section id="home" className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#1d1d1b] pb-20 pt-24 text-white sm:pt-28 lg:pb-28">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_36%,rgba(250,204,21,0.32),transparent_36%),radial-gradient(circle_at_48%_86%,rgba(250,204,21,0.42),transparent_34%),linear-gradient(135deg,#191918_0%,#24231d_48%,#0d0d0c_100%)]" />
-        <div className="absolute inset-x-10 top-20 h-px bg-white/30" />
-        <div className="hero-frame absolute left-0 right-0 top-20 mx-auto h-[52%] max-w-[92rem] rounded-t-[46%] border border-white/20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
+        <img
+          src="/images/mekweb-office-hero.jpg"
+          alt=""
+          className="h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-background" />
       </div>
 
       <div className="container-luxe relative z-10">
@@ -91,42 +95,6 @@ export const Hero = () => {
               <p className="max-w-lg text-[clamp(1.9rem,4.5vw,3.2rem)] font-black uppercase leading-[1.02] tracking-tight text-yellow-300">
                 Transformez votre présence en ligne en clients
               </p>
-            </div>
-          </div>
-
-          <div className="hero-mockup relative mx-auto w-full max-w-2xl lg:mx-0">
-            <div className="relative rounded-[28px] border border-yellow-200/30 bg-black/50 p-5 shadow-elegant sm:p-7">
-              <div className="mb-6 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-xs font-black uppercase tracking-[0.22em] text-yellow-300">MekWeb lead system</p>
-                  <h2 className="mt-2 font-sans text-3xl font-black uppercase leading-none text-white sm:text-4xl">Site rapide</h2>
-                </div>
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-yellow-300 text-black">
-                  <Zap className="h-6 w-6" />
-                </span>
-              </div>
-
-              <div className="grid gap-3">
-                {[
-                  "Design professionnel",
-                  "Contact WhatsApp visible",
-                  "SEO de base inclus",
-                  "Responsive mobile",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-yellow-300" />
-                    <span className="font-medium text-white/86">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-6 rounded-2xl border border-yellow-300/25 bg-yellow-300 p-5 text-black">
-                <div className="mb-2 flex items-center gap-2 text-sm font-black uppercase tracking-wide">
-                  <MessageCircle className="h-4 w-4" />
-                  Objectif
-                </div>
-                <p className="text-2xl font-black leading-tight">Transformer les visiteurs en demandes de devis.</p>
-              </div>
             </div>
           </div>
 
