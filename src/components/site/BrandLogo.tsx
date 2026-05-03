@@ -27,11 +27,12 @@ export const BrandLogo = ({
       {showText && (
         <span
           className={cn(
-            "font-sans text-2xl font-black uppercase leading-none tracking-tight text-gold",
+            "flex flex-col font-sans text-2xl font-black leading-none tracking-tight text-white",
             textClassName,
           )}
         >
-          Agency
+          <span>MekWeb</span>
+          <span className="mt-1 text-[0.42em] uppercase tracking-[0.34em] text-gold">Agency</span>
         </span>
       )}
     </span>

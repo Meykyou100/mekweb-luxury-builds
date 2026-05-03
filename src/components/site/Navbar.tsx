@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CalendarCheck, Menu, X } from "lucide-react";
+import { BriefcaseBusiness, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
 import { BrandLogo } from "@/components/site/BrandLogo";
@@ -19,30 +19,29 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-[#1d1d1b]/95 py-3 text-white">
+    <header className="fixed top-0 inset-x-0 z-50 bg-black/70 py-5 text-white">
       <nav className="container-luxe flex items-center justify-between">
         <a href="#home" className="flex min-w-0 items-center gap-2" aria-label="MekWeb home">
-          <BrandLogo markClassName="h-9 w-9 rounded-lg" textClassName="text-xl text-yellow-300 sm:text-2xl" />
+          <BrandLogo markClassName="h-10 w-10 border-0 bg-transparent sm:h-12 sm:w-12" textClassName="text-xl sm:text-2xl" />
         </a>
 
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-5 lg:gap-8">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="relative px-3 py-2 text-sm text-white/85 transition-colors hover:text-yellow-300 lg:px-4"
+              className="group relative px-2 py-2 text-sm font-semibold text-white transition-colors hover:text-yellow-300 lg:text-base"
             >
               {l.label}
-              <span className="absolute left-3 right-3 lg:left-4 lg:right-4 -bottom-0.5 h-px bg-gradient-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+              <span className="absolute inset-x-2 -bottom-0.5 h-px origin-left scale-x-0 bg-gradient-gold transition-transform group-hover:scale-x-100" />
             </a>
           ))}
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <ThemeToggle />
-          <Button asChild variant="hero" size="sm">
+          <Button asChild variant="outlineGold" size="sm" className="border-yellow-300/70 bg-black/15 px-6 py-5 text-yellow-300 hover:bg-yellow-300 hover:text-black">
             <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer">
-              Demander un devis <CalendarCheck />
+              <BriefcaseBusiness className="h-4 w-4" /> Demander un devis
             </a>
           </Button>
         </div>
@@ -67,7 +66,7 @@ export const Navbar = () => {
             ))}
             <Button asChild variant="hero" className="mt-2">
               <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
-                Demander un devis <CalendarCheck />
+                Demander un devis <BriefcaseBusiness />
               </a>
             </Button>
             <div className="mt-2 flex justify-end">
