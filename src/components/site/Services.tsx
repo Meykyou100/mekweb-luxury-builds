@@ -9,6 +9,8 @@ const services = [
   { icon: Smartphone, title: "Maintenance & support", benefit: "Un site stable après la mise en ligne", desc: "Petites mises à jour, corrections, conseils et support pour garder votre site professionnel." },
 ];
 
+const marqueeServices = [...services, ...services];
+
 export const Services = () => {
   return (
     <section id="services" className="relative section-pad">
@@ -23,34 +25,36 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="grid auto-rows-fr grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
-          {services.map((s, i) => (
-            <div
-              key={s.title}
-              data-reveal="scale"
-              data-reveal-delay={i * 90}
-            >
-              <div
-                className="premium-card motion-card group relative flex h-full flex-col overflow-hidden p-6 lg:p-7"
-                style={{ animationDelay: `${i * 0.05}s` }}
+        <div
+          className="relative overflow-hidden"
+          data-reveal="scale"
+          style={{
+            maskImage: "linear-gradient(90deg, transparent, black 7%, black 93%, transparent)",
+            WebkitMaskImage: "linear-gradient(90deg, transparent, black 7%, black 93%, transparent)",
+          }}
+        >
+          <div className="flex w-max flex-nowrap gap-4 animate-marquee sm:gap-5 lg:gap-6">
+            {marqueeServices.map((s, i) => (
+              <article
+                key={`${s.title}-${i}`}
+                aria-hidden={i >= services.length}
+                className="motion-card group relative flex min-h-[300px] w-[82vw] max-w-[360px] shrink-0 flex-col overflow-hidden rounded-2xl border border-gold/25 bg-[#1d1d1b] p-6 text-white shadow-elegant sm:w-[340px] lg:w-[360px] lg:p-7"
               >
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                  <div className="absolute -top-1/2 -right-1/2 w-full h-full rounded-full bg-gold/5" />
-                </div>
+                <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_80%_0%,rgba(250,204,21,0.14),transparent_38%)]" />
 
                 <div className="relative">
-                  <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-gold/10 ring-1 ring-gold/25 transition-all duration-700 group-hover:bg-gradient-gold group-hover:shadow-gold-soft">
-                    <s.icon className="w-6 h-6 sm:w-7 sm:h-7 text-gold transition-colors duration-700 group-hover:text-primary-foreground" strokeWidth={2} />
+                  <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-gold/10 ring-1 ring-gold/30 transition-colors duration-300 group-hover:bg-gradient-gold">
+                    <s.icon className="w-6 h-6 sm:w-7 sm:h-7 text-gold transition-colors duration-300 group-hover:text-primary-foreground" strokeWidth={2} />
                   </div>
-                  <h3 className="font-display text-xl sm:text-2xl font-bold mb-2 group-hover:text-gold transition-colors">{s.title}</h3>
+                  <h3 className="font-display text-xl sm:text-2xl font-bold mb-2 text-white group-hover:text-gold transition-colors">{s.title}</h3>
                   <p className="text-gold/90 text-base font-semibold leading-relaxed mb-3">{s.benefit}</p>
-                  <p className="text-base text-muted-foreground leading-7">{s.desc}</p>
+                  <p className="text-base text-white/72 leading-7">{s.desc}</p>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-            </div>
-          ))}
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
