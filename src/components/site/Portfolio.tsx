@@ -71,7 +71,7 @@ export const Portfolio = () => {
             <a href="#contact">Book a similar website <ArrowRight /></a>
           </Button>
           <Button asChild variant="outlineGold" size="lg" className="h-auto min-h-12 w-full px-6 py-4 sm:w-auto">
-            <a href="#portfolio">View more projects</a>
+            <a href="#contact">Request your project</a>
           </Button>
         </div>
       </div>

@@ -1,10 +1,11 @@
-import { Github, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone, Twitter } from "lucide-react";
+import { CalendarCheck, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { BrandLogo } from "@/components/site/BrandLogo";
 
 const whatsappNumber = "212708465603";
 const displayPhone = "+212 708-465603";
 const secondPhone = "+212 762-971653";
 const contactEmail = "contact@mekweb.ma";
+const callMessage = encodeURIComponent("Bonjour, je veux reserver un appel gratuit pour parler de mon site web.");
 
 const footerGroups = [
   {
@@ -39,12 +40,15 @@ export const Footer = () => {
             <p className="max-w-sm text-base leading-7 text-muted-foreground mb-6">
               Premium web development for ambitious businesses that want a website built to earn trust and generate leads.
             </p>
-            <div className="flex gap-3">
-              {[Twitter, Instagram, Linkedin, Github].map((Icon, i) => (
-                <a key={i} href="#" aria-label="Social" className="motion-card grid h-10 w-10 place-items-center rounded-full border border-border/60 transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:bg-gold/5 hover:text-gold">
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+            <div className="flex flex-wrap gap-3">
+              <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer" className="motion-card inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:bg-gold/5 hover:text-gold">
+                <CalendarCheck className="h-4 w-4" />
+                Book a Free Call
+              </a>
+              <a href={`mailto:${contactEmail}`} className="motion-card inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:bg-gold/5 hover:text-gold">
+                <Mail className="h-4 w-4" />
+                Email
+              </a>
             </div>
           </div>
 
@@ -66,7 +70,7 @@ export const Footer = () => {
             <ul className="space-y-3 text-base text-muted-foreground">
               <li className="flex gap-2"><Phone className="mt-1 h-4 w-4 shrink-0 text-gold" /> {displayPhone}</li>
               <li className="flex gap-2"><Phone className="mt-1 h-4 w-4 shrink-0 text-gold" /> {secondPhone}</li>
-              <li className="flex gap-2"><Mail className="mt-1 h-4 w-4 shrink-0 text-gold" /> {contactEmail}</li>
+              <li className="flex gap-2"><Mail className="mt-1 h-4 w-4 shrink-0 text-gold" /> <a href={`mailto:${contactEmail}`} className="hover:text-gold">{contactEmail}</a></li>
               <li className="flex gap-2"><MapPin className="mt-1 h-4 w-4 shrink-0 text-gold" /> Morocco / Remote</li>
               <li>
                 <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gold hover:underline">

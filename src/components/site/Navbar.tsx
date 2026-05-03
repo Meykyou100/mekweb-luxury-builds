@@ -14,7 +14,7 @@ const links = [
 ];
 
 const whatsappNumber = "212708465603";
-const callMessage = encodeURIComponent("Bonjour, je veux book a free call pour parler de mon site web.");
+const callMessage = encodeURIComponent("Bonjour, je veux reserver un appel gratuit pour parler de mon site web.");
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
