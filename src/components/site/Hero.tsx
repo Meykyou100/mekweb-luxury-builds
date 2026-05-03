@@ -1,7 +1,33 @@
+import { useState } from "react";
 import { Activity, ArrowRight, BarChart3, Heart, LayoutDashboard, Mouse, Rocket, Sparkles, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import { saveNewsletterEmail } from "@/lib/newsletter";
 
 export const Hero = () => {
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [savingEmail, setSavingEmail] = useState(false);
+
+  const onNewsletterSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const email = newsletterEmail.trim().toLowerCase();
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    setSavingEmail(true);
+    try {
+      await saveNewsletterEmail({ email, source: "hero_newsletter" });
+      toast.success("Email saved. You will receive news and blog updates.");
+      setNewsletterEmail("");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Could not save this email right now.");
+    } finally {
+      setSavingEmail(false);
+    }
+  };
+
   return (
     <section id="home" className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#1d1d1b] pb-20 pt-24 text-white sm:pt-28 lg:pb-28">
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -31,17 +57,19 @@ export const Hero = () => {
               We design and develop websites around your ideas. Tell us what you want, and MekWeb will build it with clean code, high quality, and care for every detail.
             </p>
 
-            <div className="mb-8 flex max-w-md overflow-hidden rounded-lg border border-yellow-300/80 bg-black/20 p-1 animate-fade-in-up" style={{ animationDelay: "0.25s", opacity: 0 }}>
+            <form onSubmit={onNewsletterSubmit} className="mb-8 flex max-w-md overflow-hidden rounded-lg border border-yellow-300/80 bg-black/20 p-1 animate-fade-in-up" style={{ animationDelay: "0.25s", opacity: 0 }}>
               <input
                 type="email"
                 aria-label="Email address"
                 placeholder="Enter Email Address"
+                value={newsletterEmail}
+                onChange={(event) => setNewsletterEmail(event.target.value)}
                 className="min-w-0 flex-1 bg-transparent px-3 py-3 text-sm text-white placeholder:text-white/40 outline-none"
               />
-              <a href="#contact" aria-label="Submit email" className="grid w-14 place-items-center rounded-md bg-white/45 text-black transition-colors hover:bg-yellow-300">
+              <button type="submit" aria-label="Save email for news and blog updates" disabled={savingEmail} className="grid w-14 place-items-center rounded-md bg-white/45 text-black transition-colors hover:bg-yellow-300 disabled:cursor-not-allowed disabled:opacity-60">
                 <ArrowRight className="h-5 w-5" />
-              </a>
-            </div>
+              </button>
+            </form>
 
             <div className="animate-fade-in-up" style={{ animationDelay: "0.35s", opacity: 0 }}>
               <ArrowRight className="mb-3 h-8 w-8 text-yellow-300" />
