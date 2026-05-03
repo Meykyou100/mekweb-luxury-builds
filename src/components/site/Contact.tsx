@@ -13,7 +13,7 @@ const whatsappNumber = "212708465603";
 const displayPhone = "+212 708-465603";
 const secondPhone = "+212 762-971653";
 const secondPhoneNumber = "212762971653";
-const contactEmail = "contact@mekweb.ma";
+const contactEmail = "mekwebagency@gmail.com";
 
 const schema = z.object({
   name: z.string().trim().min(1, "Name required").max(100),

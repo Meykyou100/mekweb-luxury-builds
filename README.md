@@ -30,4 +30,4 @@ npm run build
 
 - Add the same Supabase variables in your hosting dashboard.
 - Point the domain DNS to your hosting provider.
-- Update `contact@mekweb.ma` if your final domain email is different.
+- Current public email is `mekwebagency@gmail.com`; update it later if you create a domain email.

@@ -1,11 +1,12 @@
-import { CalendarCheck, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { BrandLogo } from "@/components/site/BrandLogo";
 
 const whatsappNumber = "212708465603";
 const displayPhone = "+212 708-465603";
 const secondPhone = "+212 762-971653";
-const contactEmail = "contact@mekweb.ma";
-const callMessage = encodeURIComponent("Bonjour, je veux reserver un appel gratuit pour parler de mon site web.");
+const contactEmail = "mekwebagency@gmail.com";
+const instagramUrl = "https://www.instagram.com/mekweb.agency/";
+const facebookUrl = "https://www.facebook.com/profile.php?id=61589344164240&sk=about";
 
 const footerGroups = [
   {
@@ -41,13 +42,17 @@ export const Footer = () => {
               Premium web development for ambitious businesses that want a website built to earn trust and generate leads.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer" className="motion-card inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:bg-gold/5 hover:text-gold">
-                <CalendarCheck className="h-4 w-4" />
-                Book a Free Call
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="motion-card inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:bg-gold/5 hover:text-gold">
+                <Instagram className="h-4 w-4" />
+                Instagram
+              </a>
+              <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className="motion-card inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:bg-gold/5 hover:text-gold">
+                <Facebook className="h-4 w-4" />
+                Facebook
               </a>
               <a href={`mailto:${contactEmail}`} className="motion-card inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:bg-gold/5 hover:text-gold">
                 <Mail className="h-4 w-4" />
-                Email
+                Gmail
               </a>
             </div>
           </div>
