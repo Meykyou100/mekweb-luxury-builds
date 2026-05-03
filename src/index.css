@@ -434,6 +434,12 @@
     animation: scroll-mouse-dot 1.6s ease-in-out infinite;
   }
 
+  .idea-arrow {
+    animation: idea-arrow-slide 1.9s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px hsl(var(--gold-light) / 0.45));
+    will-change: transform, opacity, filter;
+  }
+
   .process-line {
     overflow: hidden;
   }
@@ -624,6 +630,19 @@
   50% {
     opacity: 1;
     transform: translateY(4px);
+  }
+}
+
+@keyframes idea-arrow-slide {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translateX(0) scale(1);
+  }
+  45% {
+    opacity: 1;
+    transform: translateX(18px) scale(1.08);
+    filter: drop-shadow(0 0 20px hsl(var(--gold-light) / 0.72));
   }
 }
 

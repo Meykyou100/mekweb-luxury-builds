@@ -72,7 +72,7 @@ export const Hero = () => {
             </form>
 
             <div className="animate-fade-in-up" style={{ animationDelay: "0.35s", opacity: 0 }}>
-              <ArrowRight className="mb-3 h-8 w-8 text-yellow-300" />
+              <ArrowRight className="idea-arrow mb-3 h-8 w-8 text-yellow-300" />
               <p className="max-w-lg text-[clamp(1.9rem,4.5vw,3.2rem)] font-black uppercase leading-[1.02] tracking-tight text-yellow-300">
                 Change your idea to a business
               </p>
