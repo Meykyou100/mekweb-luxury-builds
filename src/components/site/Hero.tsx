@@ -29,7 +29,7 @@ const stats = [
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative isolate min-h-[100svh] overflow-hidden bg-black pb-10 pt-24 text-white sm:pt-28 lg:pt-28">
+    <section id="home" className="relative isolate min-h-[100svh] overflow-hidden bg-black pb-10 pt-20 text-white sm:pt-[5.5rem] lg:pt-24">
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img
           src="/images/mekweb-office-hero.jpg"
