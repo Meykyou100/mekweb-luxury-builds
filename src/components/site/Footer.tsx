@@ -76,7 +76,7 @@ export const Footer = () => {
               <li className="flex gap-2"><Phone className="mt-1 h-4 w-4 shrink-0 text-gold" /> {displayPhone}</li>
               <li className="flex gap-2"><Phone className="mt-1 h-4 w-4 shrink-0 text-gold" /> {secondPhone}</li>
               <li className="flex gap-2"><Mail className="mt-1 h-4 w-4 shrink-0 text-gold" /> <a href={`mailto:${contactEmail}`} className="hover:text-gold">{contactEmail}</a></li>
-              <li className="flex gap-2"><MapPin className="mt-1 h-4 w-4 shrink-0 text-gold" /> Morocco / Remote</li>
+              <li className="flex gap-2"><MapPin className="mt-1 h-4 w-4 shrink-0 text-gold" /> Morocco - Rabat</li>
               <li>
                 <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gold hover:underline">
                   <MessageCircle className="h-4 w-4" /> WhatsApp

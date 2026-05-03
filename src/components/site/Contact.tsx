@@ -85,7 +85,7 @@ export const Contact = () => {
                 { icon: Phone, label: "Phone / WhatsApp", value: displayPhone, href: `https://wa.me/${whatsappNumber}` },
                 { icon: Phone, label: "Second Number", value: secondPhone, href: `tel:+${secondPhoneNumber}` },
                 { icon: Mail, label: "Email", value: contactEmail, href: `mailto:${contactEmail}` },
-                { icon: MapPin, label: "Location", value: "Morocco / Remote" },
+                { icon: MapPin, label: "Location", value: "Morocco - Rabat" },
                 { icon: Clock, label: "Working hours", value: "Mon - Sat, 9:00 - 18:00" },
               ].map((item) => (
                 <a
