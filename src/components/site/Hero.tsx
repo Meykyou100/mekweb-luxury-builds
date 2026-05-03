@@ -29,7 +29,7 @@ const stats = [
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative isolate min-h-[100svh] overflow-hidden bg-black pb-10 pt-[4.5rem] text-white sm:pt-20 lg:pt-[5.25rem]">
+    <section id="home" className="relative isolate min-h-[100svh] overflow-hidden bg-black pb-10 pt-16 text-white sm:pt-[4.75rem] lg:pt-20">
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img
           src="/images/mekweb-office-hero.jpg"
@@ -43,15 +43,17 @@ export const Hero = () => {
       </div>
 
       <div className="container-luxe relative z-10">
-        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8">
-          <div className="max-w-3xl">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-8">
+          <div className="min-w-0 max-w-3xl">
             <div className="mb-6 inline-flex max-w-full items-center gap-3 rounded-full border border-yellow-300/70 bg-black/35 px-5 py-3 text-yellow-300 shadow-gold-soft">
               <span className="h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_18px_rgba(250,204,21,.85)]" />
               <span className="truncate text-xs font-black uppercase tracking-[0.18em] sm:text-sm">Agence web au Maroc</span>
             </div>
 
-            <h1 className="max-w-4xl font-sans text-[clamp(2.7rem,6.4vw,6.1rem)] font-black uppercase leading-[0.98] tracking-tight text-white [text-wrap:balance]">
-              Création de <span className="text-yellow-300">sites web</span> professionnels
+            <h1 className="max-w-full font-sans text-[clamp(2.45rem,5.2vw,5.25rem)] font-black uppercase leading-[0.98] tracking-tight text-white [text-wrap:balance]">
+              <span className="block">Création de</span>
+              <span className="block text-yellow-300">sites web</span>
+              <span className="block">professionnels</span>
             </h1>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-white/86 sm:text-lg">

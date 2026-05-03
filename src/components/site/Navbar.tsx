@@ -19,18 +19,18 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-black/80 py-3 text-white">
+    <header className="fixed top-0 inset-x-0 z-50 bg-black/65 py-2 text-white">
       <nav className="container-luxe flex items-center justify-between">
         <a href="#home" className="flex min-w-0 items-center gap-2" aria-label="MekWeb home">
-          <BrandLogo markClassName="h-9 w-9 border-0 bg-transparent sm:h-11 sm:w-11" textClassName="text-xl sm:text-2xl" />
+          <BrandLogo markClassName="h-8 w-8 border-0 bg-transparent sm:h-10 sm:w-10" textClassName="text-lg sm:text-xl" />
         </a>
 
-        <div className="hidden md:flex items-center gap-4 lg:gap-7">
+        <div className="hidden md:flex items-center gap-4 lg:gap-6">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="group relative px-2 py-2 text-sm font-semibold text-white transition-colors hover:text-yellow-300 lg:text-base"
+              className="group relative px-2 py-2 text-sm font-semibold text-white transition-colors hover:text-yellow-300"
             >
               {l.label}
               <span className="absolute inset-x-2 -bottom-0.5 h-px origin-left scale-x-0 bg-gradient-gold transition-transform group-hover:scale-x-100" />
@@ -39,7 +39,7 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button asChild variant="outlineGold" size="sm" className="border-yellow-300/70 bg-black/15 px-5 py-4 text-yellow-300 hover:bg-yellow-300 hover:text-black">
+          <Button asChild variant="outlineGold" size="sm" className="border-yellow-300/70 bg-black/15 px-4 py-3 text-yellow-300 hover:bg-yellow-300 hover:text-black">
             <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer">
               <BriefcaseBusiness className="h-4 w-4" /> Demander un devis
             </a>
