@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { CalendarCheck, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
@@ -12,6 +12,9 @@ const links = [
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];
+
+const whatsappNumber = "212708465603";
+const callMessage = encodeURIComponent("Bonjour, je veux book a free call pour parler de mon site web.");
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -55,7 +58,9 @@ export const Navbar = () => {
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
           <Button asChild variant="hero" size="sm" className="animate-glow-pulse hover:animate-none">
-            <a href="#contact">Get Free Demo</a>
+            <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer">
+              Book a Free Call <CalendarCheck />
+            </a>
           </Button>
         </div>
 
@@ -82,7 +87,9 @@ export const Navbar = () => {
               </a>
             ))}
             <Button asChild variant="hero" className="mt-2 animate-glow-pulse">
-              <a href="#contact" onClick={() => setOpen(false)}>Get Free Demo</a>
+              <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+                Book a Free Call <CalendarCheck />
+              </a>
             </Button>
             <div className="mt-2 flex justify-end">
               <ThemeToggle />

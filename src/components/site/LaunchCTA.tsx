@@ -1,7 +1,8 @@
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, CalendarCheck, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const whatsappNumber = "212708465603";
+const callMessage = encodeURIComponent("Bonjour, je veux book a free call pour parler de mon site web.");
 
 export const LaunchCTA = () => {
   return (
@@ -17,7 +18,9 @@ export const LaunchCTA = () => {
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild variant="hero" size="xl" className="h-auto min-h-14 w-full px-7 py-4 sm:w-auto">
-              <a href="#contact">Get a free quote <ArrowRight /></a>
+              <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer">
+                Book a Free Call <CalendarCheck />
+              </a>
             </Button>
             <Button asChild variant="outlineGold" size="xl" className="h-auto min-h-14 w-full px-7 py-4 sm:w-auto">
               <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer">

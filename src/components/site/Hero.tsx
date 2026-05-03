@@ -1,7 +1,11 @@
 import { useState } from "react";
-import { Activity, ArrowRight, BarChart3, Heart, LayoutDashboard, Mouse, Rocket, Sparkles, Star } from "lucide-react";
+import { Activity, ArrowRight, BarChart3, CalendarCheck, Heart, LayoutDashboard, Mouse, Rocket, Sparkles, Star } from "lucide-react";
 import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
 import { saveNewsletterEmail } from "@/lib/newsletter";
+
+const whatsappNumber = "212708465603";
+const callMessage = encodeURIComponent("Bonjour, je veux book a free call pour parler de mon site web.");
 
 export const Hero = () => {
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -71,7 +75,18 @@ export const Hero = () => {
               </button>
             </form>
 
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.35s", opacity: 0 }}>
+            <div className="mb-8 flex flex-col gap-3 animate-fade-in-up sm:flex-row" style={{ animationDelay: "0.32s", opacity: 0 }}>
+              <Button asChild variant="hero" size="lg" className="h-auto min-h-12 w-full px-6 py-4 sm:w-auto">
+                <a href={`https://wa.me/${whatsappNumber}?text=${callMessage}`} target="_blank" rel="noopener noreferrer">
+                  Book a Free Call <CalendarCheck />
+                </a>
+              </Button>
+              <Button asChild variant="outlineGold" size="lg" className="h-auto min-h-12 w-full border-white/40 px-6 py-4 text-white hover:bg-yellow-300 hover:text-black sm:w-auto">
+                <a href="#portfolio">View Our Work <ArrowRight /></a>
+              </Button>
+            </div>
+
+            <div className="animate-fade-in-up" style={{ animationDelay: "0.42s", opacity: 0 }}>
               <ArrowRight className="idea-arrow mb-3 h-8 w-8 text-yellow-300" />
               <p className="max-w-lg text-[clamp(1.9rem,4.5vw,3.2rem)] font-black uppercase leading-[1.02] tracking-tight text-yellow-300">
                 Change your idea to a business
