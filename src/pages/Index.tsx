@@ -19,6 +19,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 const Index = () => {
   useScrollReveal();
   const whatsappNumber = "212762971653";
+  const whatsappMessage = encodeURIComponent("Bonjour, je veux un devis pour un site web.");
 
   return (
     <div className="animated-page min-h-screen bg-background text-foreground">
@@ -42,13 +43,14 @@ const Index = () => {
 
       {/* Floating WhatsApp */}
       <a
-        href={`https://wa.me/${whatsappNumber}`}
+        href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-gold grid place-items-center shadow-gold animate-glow-pulse hover:scale-110 transition-transform"
+        className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom))] right-4 z-40 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-gold px-4 py-3 font-black text-primary-foreground shadow-gold animate-glow-pulse transition-transform hover:-translate-y-1 hover:scale-105 sm:bottom-[calc(1.75rem+env(safe-area-inset-bottom))] sm:right-6"
       >
-        <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
+        <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
+        <span className="hidden text-sm sm:inline">WhatsApp</span>
       </a>
     </div>
   );

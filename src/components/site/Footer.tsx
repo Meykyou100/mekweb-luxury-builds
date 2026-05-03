@@ -28,7 +28,7 @@ const footerGroups = [
 
 export const Footer = () => {
   return (
-    <footer className="relative border-t border-gold/10 pt-12 sm:pt-16 pb-8 sm:pb-10">
+    <footer className="relative border-t border-gold/10 pt-12 pb-24 sm:pt-16 sm:pb-28">
       <div className="container-luxe">
         <div className="grid grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-5 lg:gap-10 mb-12 sm:mb-16">
           <div className="lg:col-span-2" data-reveal="left">
