@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { BrandLogo } from "@/components/site/BrandLogo";
+import agencyMark from "@/assets/agency-mark.png";
 
 const PRELOADER_ENABLED = true;
-const PRELOADER_DURATION_MS = 2100;
-const PRELOADER_FADE_MS = 450;
+const PRELOADER_DURATION_MS = 2800;
+const PRELOADER_FADE_MS = 550;
 
 export const Preloader = () => {
   const [visible, setVisible] = useState(PRELOADER_ENABLED);
@@ -41,17 +41,29 @@ export const Preloader = () => {
       aria-label="Loading MekWeb Agency"
     >
       <div className="preloader-glow" aria-hidden="true" />
-      <div className="relative flex flex-col items-center gap-7">
-        <BrandLogo
-          className="preloader-logo"
-          markClassName="h-16 w-16 border-0 bg-transparent sm:h-20 sm:w-20"
-          textClassName="text-3xl sm:text-4xl"
-        />
+      <div className="preloader-particles" aria-hidden="true">
+        {Array.from({ length: 12 }).map((_, index) => (
+          <span key={index} />
+        ))}
+      </div>
+
+      <div className="preloader-content relative flex flex-col items-center">
+        <div className="preloader-brand" aria-hidden="true">
+          <span className="preloader-mark">
+            <img src={agencyMark} alt="" />
+          </span>
+          <span className="preloader-wordmark">
+            <span className="preloader-name">MekWeb</span>
+            <span className="preloader-agency">Agency</span>
+          </span>
+        </div>
+
         <div className="preloader-line" aria-hidden="true">
           <span />
         </div>
-        <p className="text-xs font-black uppercase tracking-[0.36em] text-yellow-300/85">
-          Premium Web Agency
+
+        <p className="preloader-subtitle">
+          Création de sites web professionnels
         </p>
       </div>
     </div>
