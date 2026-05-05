@@ -238,6 +238,47 @@
     font-variant-numeric: tabular-nums lining-nums;
     letter-spacing: -0.015em;
   }
+  .preloader {
+    background:
+      radial-gradient(circle at 50% 42%, hsl(var(--gold) / 0.18), transparent 34%),
+      linear-gradient(145deg, #050505 0%, #0d0d0b 48%, #000 100%);
+    opacity: 1;
+    transition: opacity 450ms ease, visibility 450ms ease;
+  }
+  .preloader-leaving {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .preloader-glow {
+    position: absolute;
+    width: min(56vw, 360px);
+    aspect-ratio: 1;
+    border-radius: 999px;
+    background: hsl(var(--gold) / 0.16);
+    filter: blur(64px);
+    transform: translate3d(0, 0, 0);
+    animation: preloader-glow 1800ms ease-in-out infinite alternate;
+  }
+  .preloader-logo {
+    opacity: 0;
+    transform: scale(0.92);
+    animation: preloader-logo 900ms var(--transition-smooth) 120ms forwards;
+  }
+  .preloader-line {
+    width: min(58vw, 260px);
+    height: 3px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: hsl(var(--gold) / 0.18);
+  }
+  .preloader-line span {
+    display: block;
+    width: 42%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold-light)), hsl(var(--gold)), transparent);
+    animation: preloader-line 1150ms ease-in-out infinite;
+  }
   .premium-card {
     @apply rounded-2xl border border-border/55 bg-card/[0.94] shadow-elegant transition-colors duration-300;
     box-shadow: var(--shadow-elegant), inset 0 1px 0 hsl(0 0% 100% / 0.08);
@@ -620,10 +661,47 @@
   }
 }
 
+@keyframes preloader-logo {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes preloader-line {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+@keyframes preloader-glow {
+  from {
+    opacity: 0.58;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
+  }
+
+  .preloader-logo,
+  .preloader-line span,
+  .preloader-glow {
+    animation: none !important;
+  }
+
+  .preloader-logo {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   [data-reveal] {
