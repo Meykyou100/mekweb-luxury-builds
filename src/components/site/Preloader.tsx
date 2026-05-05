@@ -41,6 +41,11 @@ export const Preloader = () => {
       aria-label="Loading MekWeb Agency"
     >
       <div className="preloader-glow" aria-hidden="true" />
+      <div className="preloader-lines" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </div>
       <div className="preloader-particles" aria-hidden="true">
         {Array.from({ length: 12 }).map((_, index) => (
           <span key={index} />
