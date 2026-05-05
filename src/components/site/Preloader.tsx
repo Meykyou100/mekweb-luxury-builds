@@ -4,19 +4,16 @@ import { BrandLogo } from "@/components/site/BrandLogo";
 const PRELOADER_ENABLED = true;
 const PRELOADER_DURATION_MS = 2100;
 const PRELOADER_FADE_MS = 450;
-const PRELOADER_STORAGE_KEY = "mekweb-preloader-seen";
 
 export const Preloader = () => {
-  const [visible, setVisible] = useState(() => {
-    if (!PRELOADER_ENABLED || typeof window === "undefined") return false;
-    return sessionStorage.getItem(PRELOADER_STORAGE_KEY) !== "true";
-  });
+  const [visible, setVisible] = useState(PRELOADER_ENABLED);
   const [leaving, setLeaving] = useState(false);
 
   useEffect(() => {
     if (!visible) return;
 
-    sessionStorage.setItem(PRELOADER_STORAGE_KEY, "true");
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
 
     const fadeTimer = window.setTimeout(() => {
       setLeaving(true);
@@ -27,6 +24,7 @@ export const Preloader = () => {
     }, PRELOADER_DURATION_MS + PRELOADER_FADE_MS);
 
     return () => {
+      document.body.style.overflow = previousOverflow;
       window.clearTimeout(fadeTimer);
       window.clearTimeout(removeTimer);
     };
