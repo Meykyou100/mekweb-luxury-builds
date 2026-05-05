@@ -1,13 +1,4 @@
-import {
-  ArrowRight,
-  Gauge,
-  Headphones,
-  Monitor,
-  Smartphone,
-  Star,
-  TrendingUp,
-  Users,
-} from "lucide-react";
+import { ArrowRight, Gauge, Headphones, MessageCircle, Monitor, Smartphone, Star, TrendingUp, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const whatsappNumber = "212708465603";
@@ -50,14 +41,14 @@ export const Hero = () => {
               <span className="truncate text-xs font-black uppercase tracking-[0.18em] sm:text-sm">Agence web au Maroc</span>
             </div>
 
-            <h1 className="max-w-full font-sans text-[clamp(2.45rem,5.2vw,5.25rem)] font-black uppercase leading-[0.98] tracking-tight text-white [text-wrap:balance]">
-              <span className="block">Création de</span>
-              <span className="block text-yellow-300">sites web</span>
-              <span className="block">professionnels</span>
+            <h1 className="max-w-full font-sans text-[clamp(2.35rem,5vw,5rem)] font-black uppercase leading-[0.98] tracking-tight text-white [text-wrap:balance]">
+              <span className="block">Création de sites web</span>
+              <span className="block text-yellow-300">modernes</span>
+              <span className="block">pour les entreprises au Maroc</span>
             </h1>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-white/86 sm:text-lg">
-              Nous créons des sites web modernes, rapides et optimisés pour aider votre entreprise à se démarquer et attirer plus de clients.
+              MekWeb aide les entreprises locales à obtenir un site professionnel, rapide et responsive pour attirer plus de clients et améliorer leur présence en ligne.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
@@ -84,6 +75,16 @@ export const Hero = () => {
                 </a>
               </Button>
             </div>
+
+            <a
+              href={`https://wa.me/${whatsappNumber}?text=${callMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-yellow-300/50 bg-black/45 px-6 py-4 text-sm font-black uppercase tracking-wide text-yellow-300 transition-colors hover:bg-yellow-300 hover:text-black sm:w-auto"
+            >
+              <MessageCircle className="h-5 w-5" />
+              Contact WhatsApp
+            </a>
           </div>
 
           <div className="relative mx-auto hidden w-full max-w-[760px] lg:block">

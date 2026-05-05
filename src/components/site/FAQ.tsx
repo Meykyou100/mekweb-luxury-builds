@@ -8,36 +8,24 @@ import {
 
 const faqs = [
   {
-    q: "Combien de temps prend la création d'un site web ?",
-    a: "Un site vitrine est souvent prêt en 1 à 3 semaines selon le contenu, les pages et les retours. Un site e-commerce peut demander plus de temps.",
+    q: "Combien coûte un site web ?",
+    a: "Le prix dépend du type de site, du nombre de pages et des fonctionnalités. Les packs commencent à partir de 1500 DH.",
   },
   {
-    q: "MekWeb travaille avec des entreprises partout au Maroc ?",
-    a: "Oui. MekWeb Agency accompagne les entreprises à Rabat et dans tout le Maroc pour la création de sites web professionnels.",
+    q: "Combien de temps faut-il pour créer un site ?",
+    a: "Un site vitrine simple peut être prêt en quelques jours après réception du contenu. Un projet plus complet demande plus de temps.",
   },
   {
-    q: "Le site sera-t-il responsive sur mobile ?",
-    a: "Oui. Chaque site est pensé mobile-first, puis ajusté pour tablette et ordinateur afin d'avoir une expérience propre sur tous les écrans.",
+    q: "Est-ce que le site fonctionne sur téléphone ?",
+    a: "Oui. Chaque site est responsive et adapté au mobile, à la tablette et à l'ordinateur.",
   },
   {
-    q: "Est-ce que le SEO est inclus ?",
-    a: "Oui. Nous préparons les bases SEO : titres, meta description, structure claire, performance et contenus adaptés à votre activité.",
+    q: "Est-ce que vous gérez le domaine et l'hébergement ?",
+    a: "Nous pouvons vous accompagner pour choisir, connecter et configurer le domaine et l'hébergement.",
   },
   {
-    q: "Pouvez-vous refaire un ancien site web ?",
-    a: "Oui. Nous pouvons moderniser le design, améliorer la version mobile, clarifier les messages et rendre le site plus orienté conversion.",
-  },
-  {
-    q: "Le domaine et l'hébergement sont-ils inclus ?",
-    a: "Les frais de domaine et d'hébergement sont séparés, mais nous pouvons vous aider à choisir la bonne solution et tout connecter avant le lancement.",
-  },
-  {
-    q: "Puis-je modifier le site plus tard ?",
-    a: "Oui. Nous pouvons faire des petites mises à jour après lancement ou proposer une maintenance si vous voulez un suivi régulier.",
-  },
-  {
-    q: "De quoi avez-vous besoin pour commencer ?",
-    a: "Envoyez les informations de votre entreprise, votre logo si vous en avez un, vos services et quelques exemples de sites que vous aimez.",
+    q: "Est-ce que je peux modifier mon site après la livraison ?",
+    a: "Oui. Nous pouvons faire des modifications après livraison ou proposer un suivi de maintenance.",
   },
 ];
 
@@ -45,33 +33,31 @@ export const FAQ = () => {
   return (
     <section id="faq" className="relative section-pad section-surface">
       <div className="container-luxe">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:gap-12 items-start">
+        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:gap-12">
           <div data-reveal="left">
-            <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-gold/30 bg-gold/10 mb-5">
-              <HelpCircle className="w-4 h-4 text-gold" />
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-2">
+              <HelpCircle className="h-4 w-4 text-gold" />
               <span className="text-xs uppercase tracking-[0.22em] text-gold">FAQ</span>
             </div>
-            <h2 className="section-title mb-5">
-              FAQ
-            </h2>
+            <h2 className="section-title mb-5">FAQ</h2>
             <p className="section-copy max-w-xl">
-              Réponses rapides sur la création de site web Maroc, le SEO, les délais et le lancement.
+              Les questions les plus fréquentes avant de créer un site web professionnel avec MekWeb.
             </p>
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((item, i) => (
+            {faqs.map((item, index) => (
               <AccordionItem
                 key={item.q}
-                value={`item-${i}`}
+                value={`item-${index}`}
                 data-reveal="right"
-                data-reveal-delay={i * 80}
+                data-reveal-delay={index * 80}
                 className="premium-card motion-card px-5 py-1 sm:px-6"
               >
-                <AccordionTrigger className="text-left font-display text-lg sm:text-xl font-bold leading-snug hover:text-gold hover:no-underline">
+                <AccordionTrigger className="text-left font-display text-lg font-bold leading-snug hover:text-gold hover:no-underline sm:text-xl">
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground leading-7">
+                <AccordionContent className="text-base leading-7 text-muted-foreground">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>

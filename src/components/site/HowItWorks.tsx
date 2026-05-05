@@ -4,20 +4,20 @@ const steps = [
   {
     icon: Search,
     n: "01",
-    title: "Analyse",
-    desc: "Nous comprenons votre activité, vos clients et vos objectifs avant de structurer le site.",
+    title: "Analyse de votre activité",
+    desc: "Nous comprenons vos services, vos clients et les objectifs du futur site.",
   },
   {
     icon: Pencil,
     n: "02",
-    title: "Design",
-    desc: "Nous préparons une interface moderne, claire et adaptée à votre image.",
+    title: "Proposition du design",
+    desc: "Nous préparons une direction visuelle moderne, claire et adaptée à votre image.",
   },
   {
     icon: TrendingUp,
     n: "03",
-    title: "Développement",
-    desc: "Le site est développé avec une structure responsive, rapide et SEO-ready.",
+    title: "Développement du site",
+    desc: "Le site est construit en version responsive avec des pages rapides et propres.",
   },
   {
     icon: Rocket,
@@ -28,7 +28,7 @@ const steps = [
   {
     icon: Headphones,
     n: "05",
-    title: "Support",
+    title: "Support et modifications",
     desc: "MekWeb reste disponible pour les ajustements, conseils et améliorations.",
   },
 ];
