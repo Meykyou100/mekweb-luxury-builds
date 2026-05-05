@@ -35,22 +35,22 @@ export const Footer = () => {
       <div className="container-luxe">
         <div className="grid grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-5 lg:gap-10 mb-12 sm:mb-16">
           <div className="lg:col-span-2" data-reveal="left">
-            <a href="#home" className="mb-5 inline-flex items-center gap-2 transition-transform duration-500 hover:scale-[1.02]" aria-label="MekWeb home">
+            <a href="#home" className="mb-5 inline-flex items-center gap-2" aria-label="MekWeb home">
               <BrandLogo markClassName="h-12 w-12" textClassName="text-3xl" />
             </a>
             <p className="max-w-sm text-base leading-7 text-muted-foreground mb-6">
               MekWeb Agency Maroc crée des sites web professionnels, e-commerce et SEO pour les entreprises à Rabat et partout au Maroc.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="motion-card inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:bg-gold/5 hover:text-gold">
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm transition-colors duration-150 hover:border-gold hover:bg-gold/5 hover:text-gold">
                 <Instagram className="h-4 w-4" />
                 Instagram
               </a>
-              <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className="motion-card inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:bg-gold/5 hover:text-gold">
+              <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm transition-colors duration-150 hover:border-gold hover:bg-gold/5 hover:text-gold">
                 <Facebook className="h-4 w-4" />
                 Facebook
               </a>
-              <a href={`mailto:${contactEmail}`} className="motion-card inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:bg-gold/5 hover:text-gold">
+              <a href={`mailto:${contactEmail}`} className="inline-flex items-center gap-2 rounded-full border border-border/60 px-4 py-2 text-sm transition-colors duration-150 hover:border-gold hover:bg-gold/5 hover:text-gold">
                 <Mail className="h-4 w-4" />
                 Gmail
               </a>
@@ -63,7 +63,7 @@ export const Footer = () => {
               <ul className="space-y-3">
                 {g.links.map((l) => (
                   <li key={l.label}>
-                    <a href={l.href} className="inline-block text-base text-muted-foreground transition-all duration-300 hover:translate-x-1 hover:text-gold">{l.label}</a>
+                    <a href={l.href} className="inline-block text-base text-muted-foreground transition-colors duration-150 hover:text-gold">{l.label}</a>
                   </li>
                 ))}
               </ul>

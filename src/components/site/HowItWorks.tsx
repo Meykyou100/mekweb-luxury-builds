@@ -58,8 +58,7 @@ export const HowItWorks = () => {
               className="premium-card relative p-6 text-center group"
             >
               <div className="relative mx-auto mb-6 h-20 w-20">
-                <div className="absolute inset-0 rounded-full bg-gold/10 blur-2xl opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-                <div className="relative grid h-20 w-20 place-items-center rounded-2xl border border-gold/25 bg-gold/10 shadow-gold-soft transition-all duration-700 group-hover:scale-105 group-hover:border-gold">
+                <div className="relative grid h-20 w-20 place-items-center rounded-2xl border border-gold/25 bg-gold/10 shadow-gold-soft transition-colors duration-150 group-hover:border-gold">
                   <s.icon className="h-8 w-8 text-gold" strokeWidth={1.5} />
                 </div>
                 <span className="absolute -right-2 -top-2 grid h-8 w-8 place-items-center rounded-full bg-gradient-gold font-display text-xs font-bold text-primary-foreground shadow-gold-soft">

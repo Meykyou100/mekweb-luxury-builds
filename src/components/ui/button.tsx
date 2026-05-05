@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "relative isolate inline-flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-all duration-700 after:pointer-events-none after:absolute after:inset-y-[-35%] after:left-[-75%] after:z-0 after:w-1/2 after:rotate-12 after:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.42),transparent)] after:transition-transform after:duration-1000 after:content-[''] hover:after:translate-x-[340%] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:relative [&_svg]:z-10 [&_svg]:size-4 [&_svg]:shrink-0",
+  "relative inline-flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -15,8 +15,8 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-gold text-primary-foreground font-black shadow-gold hover:scale-[1.025] hover:shadow-[0_16px_48px_-12px_hsl(var(--gold)/0.72)] active:scale-[0.98]",
-        outlineGold: "border border-foreground/35 text-foreground bg-transparent hover:bg-foreground hover:text-background hover:border-foreground hover:shadow-gold-soft",
+        hero: "bg-gradient-gold text-primary-foreground font-black shadow-gold active:bg-gold",
+        outlineGold: "border border-foreground/35 text-foreground bg-transparent hover:bg-foreground hover:text-background hover:border-foreground",
         ghostGold: "text-foreground hover:text-primary-foreground hover:bg-gold",
       },
       size: {

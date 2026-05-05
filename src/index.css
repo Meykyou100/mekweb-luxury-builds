@@ -48,9 +48,9 @@
     --gradient-hero: linear-gradient(180deg, hsl(0 0% 9% / 0.08) 0%, hsl(50 100% 94%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(48 100% 99%), hsl(50 100% 90%));
 
-    --shadow-gold: 0 12px 42px -14px hsl(43 96% 38% / 0.55);
-    --shadow-gold-soft: 0 18px 64px -30px hsl(43 96% 38% / 0.42);
-    --shadow-elegant: 0 22px 70px -34px hsl(0 0% 0% / 0.28);
+    --shadow-gold: 0 8px 24px -16px hsl(43 96% 38% / 0.45);
+    --shadow-gold-soft: 0 10px 32px -24px hsl(43 96% 38% / 0.35);
+    --shadow-elegant: 0 12px 32px -24px hsl(0 0% 0% / 0.24);
 
     --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -95,7 +95,7 @@
     --gradient-hero: linear-gradient(180deg, hsl(0 0% 7% / 0.4) 0%, hsl(0 0% 7%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 12%), hsl(0 0% 7%));
 
-    --shadow-elegant: 0 20px 60px -20px hsl(0 0% 0% / 0.72);
+    --shadow-elegant: 0 14px 38px -24px hsl(0 0% 0% / 0.68);
 
     --sidebar-background: 0 0% 9%;
     --sidebar-foreground: 50 100% 94%;
@@ -239,7 +239,7 @@
     letter-spacing: -0.015em;
   }
   .premium-card {
-    @apply rounded-2xl border border-border/55 bg-card/[0.94] shadow-elegant transition-colors duration-300;
+    @apply rounded-2xl border border-border/55 bg-card/[0.94] shadow-elegant transition-colors duration-150;
     box-shadow: var(--shadow-elegant), inset 0 1px 0 hsl(0 0% 100% / 0.08);
   }
   .premium-card:hover {
@@ -290,8 +290,8 @@
     opacity: 0;
     transform: translate3d(0, 34px, 0) scale(0.98);
     transition:
-      opacity 980ms var(--transition-smooth),
-      transform 980ms var(--transition-smooth);
+      opacity 420ms var(--transition-smooth),
+      transform 420ms var(--transition-smooth);
     transition-delay: var(--reveal-delay, 0ms);
   }
 
@@ -317,9 +317,8 @@
     isolation: isolate;
     transform: translateZ(0);
     transition:
-      transform 250ms var(--transition-smooth),
-      border-color 250ms var(--transition-smooth),
-      background-color 250ms var(--transition-smooth);
+      border-color 150ms ease,
+      background-color 150ms ease;
   }
 
   .motion-card::before {

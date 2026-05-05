@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "@/components/site/ThemeToggle";
 import { BrandLogo } from "@/components/site/BrandLogo";
 
 const links = [
@@ -88,10 +87,6 @@ export const Navbar = () => {
             >
               Demander un devis
             </a>
-
-            <div className="mt-2 flex justify-end">
-              <ThemeToggle />
-            </div>
           </div>
         </div>
       )}
