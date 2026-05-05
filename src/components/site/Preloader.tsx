@@ -10,13 +10,17 @@ export const Preloader = () => {
   const [leaving, setLeaving] = useState(false);
 
   useEffect(() => {
-    if (!visible) return;
+    if (!PRELOADER_ENABLED) return;
 
     const previousOverflow = document.body.style.overflow;
+    document.documentElement.classList.add("is-preloading");
+    document.documentElement.classList.remove("preloader-complete");
     document.body.style.overflow = "hidden";
 
     const fadeTimer = window.setTimeout(() => {
       setLeaving(true);
+      document.documentElement.classList.remove("is-preloading");
+      document.documentElement.classList.add("preloader-complete");
     }, PRELOADER_DURATION_MS);
 
     const removeTimer = window.setTimeout(() => {
@@ -24,11 +28,12 @@ export const Preloader = () => {
     }, PRELOADER_DURATION_MS + PRELOADER_FADE_MS);
 
     return () => {
+      document.documentElement.classList.remove("is-preloading");
       document.body.style.overflow = previousOverflow;
       window.clearTimeout(fadeTimer);
       window.clearTimeout(removeTimer);
     };
-  }, [visible]);
+  }, []);
 
   if (!visible) return null;
 
@@ -46,6 +51,7 @@ export const Preloader = () => {
         <span />
         <span />
       </div>
+      <div className="preloader-orbit" aria-hidden="true" />
       <div className="preloader-particles" aria-hidden="true">
         {Array.from({ length: 12 }).map((_, index) => (
           <span key={index} />
