@@ -5,24 +5,29 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "relative inline-flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "studio-button relative inline-flex items-center justify-center gap-2 overflow-hidden whitespace-normal rounded-none text-sm font-medium ring-offset-background transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-gold text-primary-foreground font-black shadow-gold active:bg-gold",
-        outlineGold: "border border-foreground/35 text-foreground bg-transparent hover:bg-foreground hover:text-background hover:border-foreground",
-        ghostGold: "text-foreground hover:text-primary-foreground hover:bg-gold",
+        hero: "bg-gold text-primary-foreground font-medium hover:bg-gold-light active:bg-gold",
+        outlineGold:
+          "border border-foreground/25 text-foreground bg-transparent hover:bg-foreground hover:text-background hover:border-foreground",
+        ghostGold:
+          "text-foreground hover:text-primary-foreground hover:bg-gold",
       },
       size: {
         default: "h-11 px-6 py-2",
         sm: "h-9 px-4",
-        lg: "h-14 px-8 text-base",
+        lg: "min-h-12 h-auto py-4 px-6 text-xs",
         xl: "h-16 px-10 text-base",
         icon: "h-10 w-10",
       },
@@ -35,7 +40,8 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
@@ -43,7 +49,13 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
-    return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    );
   },
 );
 Button.displayName = "Button";

@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://mekwebagency.com/sitemap.xml
+Sitemap: https://www.mekwebagency.com/sitemap.xml

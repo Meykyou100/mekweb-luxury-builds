@@ -1,4 +1,4 @@
-import { Check, Crown, Rocket, Sparkles } from "lucide-react";
+import { ArrowUpRight, Check, Crown, Rocket, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const plans = [
@@ -39,61 +39,66 @@ const plans = [
   },
 ];
 
-export const Pricing = () => {
-  return (
-    <section id="pricing" className="relative section-pad section-surface">
-      <div className="container-luxe">
-        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14" data-reveal="scale">
-          <p className="eyebrow mb-4">Tarifs</p>
-          <h2 className="section-title">Packs de création site web</h2>
-          <p className="section-copy mx-auto mt-5 max-w-2xl">
-            Des offres simples pour démarrer avec un site professionnel, puis évoluer selon votre activité.
-          </p>
+export const Pricing = () => (
+  <section id="pricing" className="section-pad pricing-section">
+    <div className="container-luxe">
+      <div className="section-heading" data-reveal>
+        <div>
+          <p className="eyebrow">05 / Un investissement clair</p>
+          <h2 className="section-title">
+            À chaque ambition,
+            <br />
+            <em>son point de départ.</em>
+          </h2>
         </div>
-
-        <div className="grid gap-5 md:grid-cols-3">
-          {plans.map((plan, index) => (
-            <article
-              key={plan.name}
-              data-reveal="scale"
-              data-reveal-delay={index * 100}
-              className={`premium-card motion-card relative flex h-full flex-col p-6 sm:p-7 ${
-                plan.popular ? "border-gold/80 ring-2 ring-gold/25" : ""
-              }`}
-            >
-              {plan.popular && (
-                <span className="mb-5 inline-flex w-fit rounded-full border border-gold/50 bg-gold/15 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-gold">
-                  Le plus demandé
-                </span>
-              )}
-              <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-gradient-gold text-black shadow-gold-soft">
-                <plan.icon className="h-6 w-6" />
-              </div>
-              <h3 className="mb-3 font-display text-3xl font-bold text-foreground">
-                {plan.name}
-              </h3>
-              <p className="font-number mb-6 text-3xl font-black text-gold">
-                {plan.price}
-              </p>
-
-              <ul className="mb-8 flex-1 space-y-3">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex gap-3 text-base leading-7 text-foreground/90">
-                    <span className="mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-gold/20">
-                      <Check className="h-3 w-3 text-gold" strokeWidth={3} />
-                    </span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Button asChild variant={plan.popular ? "hero" : "outlineGold"} size="lg" className="h-auto min-h-12 w-full px-5 py-4">
-                <a href="#contact">Demander ce pack</a>
-              </Button>
-            </article>
-          ))}
-        </div>
+        <p className="section-copy">
+          Des offres simples pour démarrer avec un site professionnel, puis
+          évoluer selon votre activité.
+        </p>
       </div>
-    </section>
-  );
-};
+      <div className="pricing-grid">
+        {plans.map((plan, index) => (
+          <article
+            key={plan.name}
+            className={`price-card ${plan.popular ? "price-recommended" : ""}`}
+            data-reveal
+            data-reveal-delay={index * 70}
+          >
+            <div className="price-top">
+              <plan.icon size={24} strokeWidth={1.4} />
+              {plan.popular ? (
+                <span>Recommandé</span>
+              ) : (
+                <span>0{index + 1}</span>
+              )}
+            </div>
+            <h3>{plan.name}</h3>
+            <p className="price-value">
+              {plan.price.startsWith("à partir") && <small>à partir de</small>}
+              {plan.price.replace("à partir de ", "")}
+            </p>
+            <div className="price-rule" />
+            <ul>
+              {plan.features.map((feature) => (
+                <li key={feature}>
+                  <Check size={16} strokeWidth={1.5} />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <Button
+              asChild
+              variant={plan.popular ? "hero" : "outlineGold"}
+              size="lg"
+              className="w-full"
+            >
+              <a href="#contact">
+                Demander ce pack <ArrowUpRight size={16} />
+              </a>
+            </Button>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+);
