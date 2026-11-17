@@ -33,48 +33,36 @@ const steps = [
   },
 ];
 
-export const HowItWorks = () => {
-  return (
-    <section id="how-it-works" className="relative section-pad">
-      <div className="container-luxe">
-        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14" data-reveal="scale">
-          <p className="eyebrow mb-4">Comment ça marche ?</p>
+export const HowItWorks = () => (
+  <section id="how-it-works" className="section-pad">
+    <div className="container-luxe">
+      <div className="section-heading" data-reveal>
+        <div>
+          <p className="eyebrow">04 / Notre méthode</p>
           <h2 className="section-title">
-            Comment ça marche ?
+            Une vision partagée.
+            <br />
+            <em>Un chemin clair.</em>
           </h2>
-          <p className="section-copy mx-auto mt-5 max-w-2xl">
-            Un processus simple pour passer de l'idée à un site web professionnel en ligne.
-          </p>
         </div>
-
-        <div className="relative grid gap-5 md:grid-cols-2 lg:grid-cols-5 lg:gap-6">
-          <div className="process-line hidden md:block absolute top-16 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-gold/35 to-transparent" />
-
-          {steps.map((s, i) => (
-            <div
-              key={s.n}
-              data-reveal="scale"
-              data-reveal-delay={i * 140}
-              className="premium-card relative p-6 text-center group"
-            >
-              <div className="relative mx-auto mb-6 h-20 w-20">
-                <div className="relative grid h-20 w-20 place-items-center rounded-2xl border border-gold/25 bg-gold/10 shadow-gold-soft transition-colors duration-150 group-hover:border-gold">
-                  <s.icon className="h-8 w-8 text-gold" strokeWidth={1.5} />
-                </div>
-                <span className="absolute -right-2 -top-2 grid h-8 w-8 place-items-center rounded-full bg-gradient-gold font-display text-xs font-bold text-primary-foreground shadow-gold-soft">
-                  {s.n}
-                </span>
-              </div>
-              <h3 className="mb-3 font-display text-xl font-bold transition-colors group-hover:text-gold sm:text-2xl">
-                {s.title}
-              </h3>
-              <p className="mx-auto max-w-xs text-sm leading-relaxed text-muted-foreground sm:text-base">
-                {s.desc}
-              </p>
-            </div>
-          ))}
-        </div>
+        <p className="section-copy">
+          Un processus simple pour passer de l'idée à un site web professionnel
+          en ligne.
+        </p>
       </div>
-    </section>
-  );
-};
+      <ol className="process-timeline">
+        {steps.map((step, index) => (
+          <li key={step.n} data-reveal data-reveal-delay={index * 65}>
+            <div className="process-number">
+              {step.n}
+              <span />
+              <step.icon size={19} strokeWidth={1.3} />
+            </div>
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+);

@@ -1,93 +1,138 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { BrandLogo } from "@/components/site/BrandLogo";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#pricing", label: "Tarifs" },
+  { href: "#services", label: "Expertises" },
   { href: "#portfolio", label: "Réalisations" },
-  { href: "#about", label: "À propos" },
+  { href: "#about", label: "Le studio" },
+  { href: "#pricing", label: "Tarifs" },
   { href: "#contact", label: "Contact" },
 ];
 
-const whatsappNumber = "212708465603";
-const callMessage = encodeURIComponent(
-  "Bonjour MekWeb, je veux demander un devis pour la création de mon site web."
-);
-
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
+  const toggle = useRef<HTMLButtonElement>(null);
+  const panel = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const update = () => {
+      const sections = links
+        .map((link) => document.querySelector(link.href))
+        .filter(Boolean);
+      const current = [...sections]
+        .reverse()
+        .find((section) => section!.getBoundingClientRect().top <= 180);
+      setActive(current ? `#${current.id}` : "");
+    };
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    const observer = new MutationObserver(update);
+    const main = document.getElementById("main-content");
+    if (main) observer.observe(main, { childList: true, subtree: true });
+    update();
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        toggle.current?.focus();
+      }
+      if (event.key === "Tab") {
+        const elements = [
+          toggle.current,
+          ...Array.from(
+            panel.current?.querySelectorAll<HTMLAnchorElement>("a") ?? [],
+          ),
+        ].filter(Boolean) as HTMLElement[];
+        const first = elements[0];
+        const last = elements[elements.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }
+    };
+    const onResize = () => {
+      if (window.innerWidth >= 1024) setOpen(false);
+    };
+    window.addEventListener("keydown", handleKey);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("keydown", handleKey);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [open]);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-black py-2 text-white">
-      <nav className="container-luxe flex items-center justify-between">
+    <header className="studio-header">
+      <nav
+        className="container-luxe nav-inner"
+        aria-label="Navigation principale"
+      >
         <a
           href="#home"
-          className="flex min-w-0 items-center gap-2"
-          aria-label="MekWeb home"
+          aria-label="MekWeb — Accueil"
+          onClick={() => setOpen(false)}
         >
-          <BrandLogo
-            markClassName="h-8 w-8 border-0 bg-transparent sm:h-10 sm:w-10"
-            textClassName="text-lg sm:text-xl"
-          />
+          <BrandLogo />
         </a>
-
-        <div className="hidden items-center gap-4 md:flex lg:gap-6">
-          {links.map((l) => (
+        <div className="desktop-nav">
+          {links.map((link) => (
             <a
-              key={l.href}
-              href={l.href}
-              className="px-2 py-2 text-sm font-semibold text-white transition-colors duration-150 hover:text-yellow-300"
+              key={link.href}
+              href={link.href}
+              aria-current={active === link.href ? "location" : undefined}
             >
-              {l.label}
+              {link.label}
             </a>
           ))}
         </div>
-
-        <div className="hidden items-center gap-3 md:flex">
-          <a
-            href={`https://wa.me/${whatsappNumber}?text=${callMessage}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-yellow-300/70 bg-black px-4 py-2 text-sm font-bold text-yellow-300 transition-colors duration-150 hover:border-yellow-300 hover:bg-yellow-300 hover:text-black"
-          >
-            Demander un devis
-          </a>
-        </div>
-
+        <a className="nav-cta" href="#contact">
+          Parlons de votre projet <ArrowUpRight size={16} />
+        </a>
         <button
-          className="p-2 text-white md:hidden"
+          ref={toggle}
+          className="menu-toggle"
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
         >
           {open ? <X /> : <Menu />}
         </button>
       </nav>
-
       {open && (
-        <div className="container-luxe mt-3 pb-4 md:hidden sm:mt-4">
-          <div className="flex max-h-[calc(100svh-6rem)] flex-col gap-1 overflow-y-auto rounded-2xl border border-gold/10 bg-card p-3 sm:p-4">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-4 py-3 text-sm text-muted-foreground transition-colors duration-150 hover:bg-gold/5 hover:text-gold"
-              >
-                {l.label}
-              </a>
-            ))}
-
+        <div
+          ref={panel}
+          id="mobile-navigation"
+          className="mobile-navigation container-luxe"
+        >
+          <p className="eyebrow">Explorer MekWeb</p>
+          {links.map((link, index) => (
             <a
-              href={`https://wa.me/${whatsappNumber}?text=${callMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              key={link.href}
+              href={link.href}
+              aria-current={active === link.href ? "location" : undefined}
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-yellow-300 px-5 py-3 text-sm font-black text-black transition-colors duration-150 hover:bg-yellow-400"
             >
-              Demander un devis
+              <span className="nav-number">0{index + 1}</span>
+              {link.label}
+              <ArrowUpRight size={22} />
             </a>
-          </div>
+          ))}
+          <p>Rabat, Maroc · Design & développement</p>
         </div>
       )}
     </header>

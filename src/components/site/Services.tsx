@@ -1,61 +1,110 @@
-import { Code2, RefreshCw, ShieldCheck, ShoppingBag } from "lucide-react";
-
+import {
+  ArrowUpRight,
+  Code2,
+  RefreshCw,
+  ShieldCheck,
+  ShoppingBag,
+} from "lucide-react";
 const services = [
   {
     icon: Code2,
     title: "Site vitrine professionnel",
     desc: "Présentez votre entreprise avec un site moderne, rapide et adapté au mobile.",
+    detail: "Une présence qui inspire confiance",
   },
   {
     icon: ShoppingBag,
     title: "Site e-commerce",
     desc: "Vendez vos produits en ligne avec une boutique claire, professionnelle et facile à gérer.",
+    detail: "Une boutique pensée pour vos clients",
   },
   {
     icon: RefreshCw,
     title: "Refonte de site web",
     desc: "Modernisez votre ancien site avec un design plus premium et plus efficace.",
+    detail: "Un nouveau regard sur votre marque",
   },
   {
     icon: ShieldCheck,
     title: "Maintenance & support",
     desc: "Gardez votre site rapide, sécurisé et toujours à jour.",
+    detail: "Un partenaire dans la durée",
   },
 ];
-
-export const Services = () => {
-  return (
-    <section id="services" className="relative section-pad">
-      <div className="container-luxe">
-        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14" data-reveal="scale">
-          <p className="eyebrow mb-4">Services</p>
-          <h2 className="section-title">Nos services</h2>
-          <p className="section-copy mx-auto mt-5 max-w-2xl">
-            Des solutions simples et professionnelles pour aider les entreprises marocaines à attirer plus de clients en ligne.
-          </p>
+export const Services = () => (
+  <section id="services" className="section-pad">
+    <div className="container-luxe">
+      <div className="section-heading" data-reveal>
+        <div>
+          <p className="eyebrow">01 / Nos expertises</p>
+          <h2 className="section-title">
+            Le fond. La forme.
+            <br />
+            <em>Et tout ce qui compte.</em>
+          </h2>
         </div>
-
-        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-          {services.map((service, index) => (
-            <article
-              key={service.title}
-              data-reveal="scale"
-              data-reveal-delay={index * 100}
-              className="premium-card motion-card group flex h-full flex-col p-6 sm:p-7"
-            >
-              <div className="mb-6 grid h-14 w-14 place-items-center rounded-2xl bg-gold/12 ring-1 ring-gold/30 transition-colors duration-300 group-hover:bg-gradient-gold">
-                <service.icon className="h-7 w-7 text-gold transition-colors duration-300 group-hover:text-black" strokeWidth={1.8} />
-              </div>
-              <h3 className="mb-3 font-display text-2xl font-bold leading-tight text-foreground">
-                {service.title}
-              </h3>
-              <p className="text-base leading-7 text-muted-foreground">
-                {service.desc}
-              </p>
-            </article>
-          ))}
-        </div>
+        <p className="section-copy">
+          Des solutions simples et professionnelles pour aider les entreprises
+          marocaines à attirer plus de clients en ligne.
+        </p>
       </div>
-    </section>
-  );
-};
+      <div className="services-bento">
+        {services.map((service, index) => (
+          <article
+            key={service.title}
+            className={`service-card service-card-${index}`}
+            data-reveal
+            data-reveal-delay={index * 60}
+          >
+            <div className="service-top">
+              <service.icon size={27} strokeWidth={1.3} />
+              <span>0{index + 1}</span>
+            </div>
+            <div className="service-art" aria-hidden="true">
+              {index === 0 ? (
+                <>
+                  <div className="mini-web">
+                    <span />
+                    <i />
+                    <b />
+                    <b />
+                    <div>
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                  </div>
+                  <div className="mini-mobile">
+                    <span />
+                    <i />
+                    <b />
+                    <b />
+                  </div>
+                </>
+              ) : index === 1 ? (
+                <>
+                  <div className="shop-outline">
+                    <ShoppingBag size={48} strokeWidth={0.7} />
+                    <span>Une expérience fluide.</span>
+                  </div>
+                </>
+              ) : null}
+            </div>
+            <div>
+              <p className="card-kicker">{service.detail}</p>
+              <h3>{service.title}</h3>
+              <p>{service.desc}</p>
+            </div>
+            <a
+              href="#contact"
+              className="service-link"
+              aria-label={`Discuter de votre projet : ${service.title}`}
+            >
+              <ArrowUpRight size={19} />
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+);

@@ -1,5 +1,4 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
@@ -10,25 +9,7 @@ import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
 
-const resetToHomeOnRefresh = () => {
-  const navigation = performance.getEntriesByType("navigation")[0] as
-    | PerformanceNavigationTiming
-    | undefined;
-
-  if (navigation?.type !== "reload") return;
-
-  if (window.location.pathname !== "/" || window.location.hash) {
-    window.history.replaceState(null, "", "/");
-  }
-
-  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-};
-
 const App = () => {
-  useEffect(() => {
-    resetToHomeOnRefresh();
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider

@@ -1,4 +1,3 @@
-import { HelpCircle } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -29,42 +28,41 @@ const faqs = [
   },
 ];
 
-export const FAQ = () => {
-  return (
-    <section id="faq" className="relative section-pad section-surface">
-      <div className="container-luxe">
-        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:gap-12">
-          <div data-reveal="left">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-2">
-              <HelpCircle className="h-4 w-4 text-gold" />
-              <span className="text-xs uppercase tracking-[0.22em] text-gold">FAQ</span>
-            </div>
-            <h2 className="section-title mb-5">FAQ</h2>
-            <p className="section-copy max-w-xl">
-              Les questions les plus fréquentes avant de créer un site web professionnel avec MekWeb.
-            </p>
-          </div>
-
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((item, index) => (
-              <AccordionItem
-                key={item.q}
-                value={`item-${index}`}
-                data-reveal="right"
-                data-reveal-delay={index * 80}
-                className="premium-card motion-card px-5 py-1 sm:px-6"
-              >
-                <AccordionTrigger className="text-left font-display text-lg font-bold leading-snug hover:text-gold hover:no-underline sm:text-xl">
-                  {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-base leading-7 text-muted-foreground">
-                  {item.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+export const FAQ = () => (
+  <section id="faq" className="section-pad">
+    <div className="container-luxe faq-layout">
+      <div data-reveal>
+        <p className="eyebrow">06 / Questions fréquentes</p>
+        <h2 className="section-title">
+          Tout commence
+          <br />
+          par un <em>échange.</em>
+        </h2>
+        <p className="section-copy mt-6">
+          Les questions les plus fréquentes avant de créer un site web
+          professionnel avec MekWeb.
+        </p>
+        <a href="#contact" className="text-link mt-6">
+          Une autre question ? Parlons-en.
+        </a>
       </div>
-    </section>
-  );
-};
+      <Accordion type="single" collapsible className="studio-accordion">
+        {faqs.map((item, index) => (
+          <AccordionItem
+            key={item.q}
+            value={`item-${index}`}
+            className="faq-item"
+          >
+            <AccordionTrigger className="faq-trigger">
+              <span>
+                <span className="faq-number">0{index + 1}</span>
+                {item.q}
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="faq-answer">{item.a}</AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </div>
+  </section>
+);
