@@ -1371,3 +1371,263 @@
     translate: none;
   }
 }
+
+/* Studio editing controls: consistent rendering across Safari and Chromium. */
+.studio-app {
+  color-scheme: dark;
+}
+.studio-app .studio-input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  border: 1px solid #646b5b;
+  border-radius: 7px;
+  background-color: #10160f;
+  color: #f1eee6;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: inset 0 1px 2px #0000001a;
+  transition:
+    border-color 0.16s ease,
+    box-shadow 0.16s ease,
+    background-color 0.16s ease;
+}
+.studio-app .studio-input::placeholder {
+  color: #a9ad9f;
+  opacity: 1;
+}
+.studio-app .studio-input:hover:not(:disabled) {
+  border-color: #a5ab96;
+}
+.studio-app .studio-input:focus-visible {
+  outline: 2px solid #ccb58e;
+  outline-offset: 2px;
+  border-color: #ccb58e;
+  background-color: #151d13;
+  box-shadow: 0 0 0 5px #ccb58e13;
+}
+.studio-app .studio-input:disabled {
+  color: #c2c7b8;
+  border-color: #4a5142;
+  background-color: #1e251b;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+.studio-app .studio-input[aria-invalid="true"] {
+  border-color: #eea79b;
+}
+.studio-app textarea.studio-input {
+  min-height: 104px;
+  line-height: 1.75;
+  resize: vertical;
+}
+.studio-app select.studio-input {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: 44px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23d5c09d' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px;
+  cursor: pointer;
+}
+.studio-app select.studio-input option {
+  color: #f1eee6;
+  background: #1b2318;
+}
+.studio-app input[type="date"].studio-input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.studio-app input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.85;
+  cursor: pointer;
+}
+.studio-app .field-label {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #e1e4d8;
+  margin-bottom: 9px;
+}
+.studio-app .form-fields {
+  gap: 24px;
+  align-items: start;
+}
+.studio-app .studio-panel {
+  border-color: #38402f;
+  border-radius: 10px;
+}
+.studio-app .form-note,
+.studio-app .field-hint {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #b8beac;
+}
+.field-hint {
+  display: block;
+  margin: 8px 0 0;
+}
+.quote-editor {
+  max-width: 1140px;
+}
+.quote-editor > .studio-page-title {
+  margin-bottom: 25px;
+}
+.quote-editor .studio-page-title h1 {
+  font-size: clamp(27px, 3vw, 38px);
+}
+.studio-section-heading {
+  margin-bottom: 26px;
+}
+.studio-section-heading h2 {
+  margin: 0 0 7px;
+  font-size: 19px;
+}
+.studio-section-heading p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #b8beac;
+  margin: 0;
+}
+.studio-client-picker {
+  display: grid;
+  gap: 10px;
+}
+.studio-client-picker .studio-input[type="search"] {
+  padding-left: 40px;
+}
+.studio-search-field {
+  position: relative;
+}
+.studio-search-field > svg {
+  position: absolute;
+  top: 15px;
+  left: 14px;
+  color: #b8beac;
+  pointer-events: none;
+}
+.quote-editor .catalogue-select {
+  max-width: 280px;
+  font-size: 14px;
+}
+.quote-editor .panel-title {
+  align-items: center;
+  margin-bottom: 24px;
+}
+.quote-editor .panel-title h2 {
+  margin: 0;
+}
+.quote-editor .quote-lines fieldset {
+  background: #11180f;
+  border: 1px solid #414b37;
+  border-radius: 8px;
+  padding: 20px;
+}
+.quote-editor .quote-lines legend {
+  font-size: 12px;
+  color: #d5c09d;
+  letter-spacing: 0.06em;
+  padding: 0 9px;
+}
+.quote-editor .quote-lines textarea {
+  min-height: 80px;
+}
+.quote-editor .line-numbers {
+  grid-template-columns: 0.8fr 1.2fr 0.8fr 44px;
+  gap: 16px;
+}
+.quote-editor .remove-line {
+  height: 48px;
+  width: 44px;
+  border: 1px solid #58473e;
+  border-radius: 7px;
+}
+.quote-editor .remove-line:hover:not(:disabled) {
+  background: #e6ab9d12;
+  border-color: #e6ab9d;
+}
+.quote-editor .remove-line:focus-visible {
+  outline: 2px solid #ccb58e;
+  outline-offset: 3px;
+}
+.quote-editor .quote-total {
+  max-width: 470px;
+  padding: 22px;
+  background: #11180f;
+  border: 1px solid #414b37;
+  border-radius: 8px;
+}
+.quote-editor .quote-total p {
+  font-size: 14px;
+}
+.quote-editor .quote-total small {
+  font-size: 12px;
+}
+.quote-savebar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 22px;
+  border: 1px solid #77765d;
+  border-radius: 9px;
+  background: #1b2318f5;
+  box-shadow: 0 10px 32px #0000004d;
+}
+.quote-savebar > p {
+  margin: 0;
+  font-size: 14px;
+  color: #e0e4d6;
+}
+.quote-savebar small {
+  display: block;
+  margin-top: 4px;
+  color: #b8beac;
+  font-size: 12px;
+}
+.quote-savebar .platform-button {
+  margin: 0;
+  min-height: 46px;
+  border-radius: 6px;
+}
+@media (max-width: 640px) {
+  .studio-app .studio-input {
+    font-size: 16px;
+  }
+  .studio-app .studio-panel {
+    padding: 22px 18px;
+  }
+  .quote-editor .line-numbers {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .quote-editor .quote-lines fieldset {
+    padding: 18px 14px;
+  }
+  .quote-editor .catalogue-select {
+    max-width: 100%;
+    margin: 0;
+  }
+  .quote-editor .panel-title {
+    align-items: stretch;
+  }
+  .quote-savebar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 13px;
+    padding: 16px;
+  }
+  .quote-savebar .platform-button {
+    justify-content: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .studio-app .studio-input {
+    transition: none;
+  }
+}

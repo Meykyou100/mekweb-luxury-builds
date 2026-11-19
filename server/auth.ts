@@ -10,7 +10,7 @@ import {
   json,
   rateLimit,
   writeSession,
-} from "./core";
+} from "./core.js";
 export async function authRoute(
   path: string,
   req: IncomingMessage,

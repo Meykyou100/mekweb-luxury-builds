@@ -1,10 +1,10 @@
 import PDFDocument from "pdfkit";
 import { resolve } from "node:path";
-import type { Snapshot, Version, QuoteRow, Client } from "./models";
-import { dbError, hash, HttpError, serviceDb } from "./core";
+import type { Snapshot, Version, QuoteRow, Client } from "./models.js";
+import { dbError, hash, HttpError, serviceDb } from "./core.js";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { calculateQuote } from "../shared/money";
-import { formatMoney } from "../shared/catalog";
+import { calculateQuote } from "../shared/money.js";
+import { formatMoney } from "../shared/catalog.js";
 const asset = (name: string) => resolve(process.cwd(), "server/assets", name);
 const date = (s: string) =>
   new Intl.DateTimeFormat("fr-MA", {

@@ -1,4 +1,4 @@
-import type { QuoteDraft } from "./schemas";
+import type { QuoteDraft } from "./schemas.js";
 const rounded = (n: bigint, d: bigint) => (n + d / 2n) / d;
 export function decimalToCents(input: string): number {
   if (!/^\d{1,9}([.,]\d{1,2})?$/.test(input.trim()))

@@ -1,7 +1,7 @@
 import { Resend } from "resend";
-import { env, dbError, hash, HttpError, serviceDb } from "./core";
-import type { Job, Version } from "./models";
-import { issuedPdf } from "./pdf";
+import { env, dbError, hash, HttpError, serviceDb } from "./core.js";
+import type { Job, Version } from "./models.js";
+import { issuedPdf } from "./pdf.js";
 const escape = (s: string) =>
   s.replace(
     /[&<>"']/g,

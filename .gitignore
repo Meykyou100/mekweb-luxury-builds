@@ -33,3 +33,4 @@ vite-dev.err
 
 # Supabase CLI local metadata
 supabase/.temp/
+.vercel/

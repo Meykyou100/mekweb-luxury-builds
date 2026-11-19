@@ -10,7 +10,7 @@ import {
   quoteDraftSchema,
   agencySchema,
   pricingSchema,
-} from "../shared/schemas";
+} from "../shared/schemas.js";
 import {
   admin,
   body,
@@ -25,11 +25,11 @@ import {
   safeEqual,
   serviceDb,
   verifyChallenge,
-} from "./core";
-import { authRoute } from "./auth";
-import { runJobs } from "./jobs";
-import { draftSnapshot, issuedPdf, renderQuote } from "./pdf";
-import type { Version } from "./models";
+} from "./core.js";
+import { authRoute } from "./auth.js";
+import { runJobs } from "./jobs.js";
+import { draftSnapshot, issuedPdf, renderQuote } from "./pdf.js";
+import type { Version } from "./models.js";
 const uuid = z.string().uuid();
 const tables = {
   requests: "project_requests",
@@ -154,7 +154,7 @@ export async function handler(req: IncomingMessage, res: ServerResponse) {
           "UPLOAD_SESSION",
           "Une session existe déjà. Retirez les pièces jointes avant de recommencer.",
         );
-      const tickets = [];
+      const tickets: { id: string; url: string }[] = [];
       for (const f of v.files) {
         const id = randomUUID(),
           path = `quarantine/${v.idempotencyKey}/${id}`;

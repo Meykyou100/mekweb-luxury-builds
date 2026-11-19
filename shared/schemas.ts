@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { parsePhoneNumberFromString } from "libphonenumber-js/max";
-import { projectTypes, relevantFeatures, requestStatuses } from "./catalog";
+import { projectTypes, relevantFeatures, requestStatuses } from "./catalog.js";
 const cleanText = (s: string) =>
   [...s].every((c) => {
     const n = c.charCodeAt(0);

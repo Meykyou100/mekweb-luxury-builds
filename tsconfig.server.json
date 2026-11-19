@@ -1,15 +1,20 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2023", "DOM"],
-    "module": "ESNext",
-    "moduleResolution": "bundler",
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "jsx": "react-jsx",
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "types": ["node"]
+    "types": [
+      "node"
+    ]
   },
   "include": [
     "server/**/*.ts",
@@ -17,5 +22,7 @@
     "api/**/*.ts",
     "shared/**/*.ts"
   ],
-  "exclude": ["**/*.test.ts"]
+  "exclude": [
+    "**/*.test.ts"
+  ]
 }

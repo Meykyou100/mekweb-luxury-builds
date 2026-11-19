@@ -1102,6 +1102,12 @@ type Line = {
 type SettingsData = ReturnType<typeof agencySchema.parse> & { id: string };
 const centsInput = (c: number) =>
   `${Math.floor(c / 100)}.${String(c % 100).padStart(2, "0")}`;
+const quoteFieldId = (label: string) =>
+  `quote-${label
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")}`;
 export function QuoteEditor() {
   const { id } = useParams(),
     [params] = useSearchParams(),
@@ -1295,22 +1301,31 @@ export function QuoteEditor() {
     value: string,
     set: (s: string) => void,
     type = "text",
+    placeholder = "",
+    hint = "",
   ) => (
     <div>
-      <label className="field-label" htmlFor={`quote-${label}`}>
+      <label className="field-label" htmlFor={quoteFieldId(label)}>
         {label}
       </label>
       <input
-        id={`quote-${label}`}
+        id={quoteFieldId(label)}
         className="studio-input"
         value={value}
         onChange={(e) => change(set, e.target.value)}
         type={type}
+        placeholder={placeholder}
+        aria-describedby={hint ? `${quoteFieldId(label)}-hint` : undefined}
       />
+      {hint && (
+        <span className="field-hint" id={`${quoteFieldId(label)}-hint`}>
+          {hint}
+        </span>
+      )}
     </div>
   );
   return (
-    <>
+    <div className="quote-editor">
       <Link className="text-link" to="/admin/devis">
         <ArrowLeft size={14} />
         Tous les devis
@@ -1331,57 +1346,93 @@ export function QuoteEditor() {
           {draft ? (
             <>
               <section className="studio-panel">
+                <div className="studio-section-heading">
+                  <h2>Informations du projet</h2>
+                  <p>
+                    Choisissez le destinataire et posez le cadre de votre
+                    proposition.
+                  </p>
+                </div>
                 <div className="form-fields">
                   <div>
                     <label className="field-label" htmlFor="quote-client">
                       Client
                     </label>
-                    {!id && !request.data && (
-                      <input
+                    <div className="studio-client-picker">
+                      {!id && !request.data && (
+                        <div className="studio-search-field">
+                          <Search size={17} aria-hidden="true" />
+                          <input
+                            type="search"
+                            className="studio-input"
+                            aria-label="Rechercher un client pour le devis"
+                            placeholder="Rechercher par nom…"
+                            value={clientSearch}
+                            onChange={(e) => {
+                              setClientSearch(e.target.value);
+                              setClient("");
+                            }}
+                          />
+                        </div>
+                      )}
+                      <select
+                        id="quote-client"
                         className="studio-input"
-                        aria-label="Rechercher un client pour le devis"
-                        placeholder="Rechercher par nom…"
-                        value={clientSearch}
-                        onChange={(e) => {
-                          setClientSearch(e.target.value);
-                          setClient("");
-                        }}
-                      />
-                    )}
-                    <select
-                      id="quote-client"
-                      className="studio-input"
-                      value={client}
-                      disabled={Boolean(id || request.data)}
-                      onChange={(e) => change(setClient, e.target.value)}
-                    >
-                      <option value="">Choisir un client</option>
-                      {q.data?.client &&
-                        !clients.data?.items.some(
-                          (c) => c.id === q.data.client_id,
-                        ) && (
-                          <option value={q.data.client_id}>
-                            {q.data.client.full_name}
+                        value={client}
+                        disabled={Boolean(id || request.data)}
+                        onChange={(e) => change(setClient, e.target.value)}
+                      >
+                        <option value="">Choisir un client</option>
+                        {q.data?.client &&
+                          !clients.data?.items.some(
+                            (c) => c.id === q.data.client_id,
+                          ) && (
+                            <option value={q.data.client_id}>
+                              {q.data.client.full_name}
+                            </option>
+                          )}
+                        {request.data?.client &&
+                          !clients.data?.items.some(
+                            (c) => c.id === request.data.client_id,
+                          ) && (
+                            <option value={request.data.client_id}>
+                              {request.data.client.full_name}
+                            </option>
+                          )}
+                        {clients.data?.items.map((c) => (
+                          <option key={c.id} value={c.id}>
+                            {c.full_name} · {c.company_name}
                           </option>
-                        )}
-                      {request.data?.client &&
-                        !clients.data?.items.some(
-                          (c) => c.id === request.data.client_id,
-                        ) && (
-                          <option value={request.data.client_id}>
-                            {request.data.client.full_name}
-                          </option>
-                        )}
-                      {clients.data?.items.map((c) => (
-                        <option key={c.id} value={c.id}>
-                          {c.full_name} · {c.company_name}
-                        </option>
-                      ))}
-                    </select>
+                        ))}
+                      </select>
+                    </div>
+                    <span className="field-hint">
+                      Le client sélectionné figurera sur le PDF.
+                    </span>
                   </div>
-                  {field("Date de validité", expiry, setExpiry, "date")}
-                  {field("Intitulé du projet", title, setTitle)}
-                  {field("Délai estimé", timeline, setTimeline)}
+                  {field(
+                    "Date de validité",
+                    expiry,
+                    setExpiry,
+                    "date",
+                    "",
+                    "Dernier jour de validité de cette proposition.",
+                  )}
+                  {field(
+                    "Intitulé du projet",
+                    title,
+                    setTitle,
+                    "text",
+                    "Nom du projet ou de la mission",
+                  )}
+                  {field(
+                    "Délai estimé",
+                    timeline,
+                    setTimeline,
+                    "text",
+                    "Durée ou étapes prévues",
+                    "Facultatif · précisez le calendrier convenu.",
+                  )}
                   <div className="field-full">
                     <label className="field-label" htmlFor="quote-description">
                       Description du projet
@@ -1391,6 +1442,7 @@ export function QuoteEditor() {
                       className="studio-input"
                       value={description}
                       rows={3}
+                      placeholder="Présentez les objectifs du projet et le périmètre de votre intervention…"
                       onChange={(e) => change(setDescription, e.target.value)}
                     />
                   </div>
@@ -1402,6 +1454,7 @@ export function QuoteEditor() {
                   <select
                     className="studio-input catalogue-select"
                     aria-label="Ajouter depuis le catalogue"
+                    disabled={!catalog.data?.items.some((item) => item.active)}
                     value=""
                     onChange={(e) => {
                       const item = catalog.data?.items.find(
@@ -1424,7 +1477,13 @@ export function QuoteEditor() {
                       }
                     }}
                   >
-                    <option value="">Ajouter depuis le catalogue</option>
+                    <option value="">
+                      {catalog.isPending
+                        ? "Chargement du catalogue…"
+                        : catalog.data?.items.some((item) => item.active)
+                          ? "Ajouter depuis le catalogue"
+                          : "Catalogue vide"}
+                    </option>
                     {catalog.data?.items
                       .filter((i) => i.active)
                       .map((i) => (
@@ -1453,6 +1512,7 @@ export function QuoteEditor() {
                             lineChange(index, "description", e.target.value)
                           }
                           rows={2}
+                          placeholder="Décrivez la prestation, les livrables et ce qui est inclus…"
                         />
                       </div>
                       <div className="line-numbers">
@@ -1474,6 +1534,7 @@ export function QuoteEditor() {
                               id={`line-${index}-${key}`}
                               className="studio-input"
                               inputMode="decimal"
+                              placeholder={key === "price" ? "0,00" : undefined}
                               value={line[key]}
                               onChange={(e) =>
                                 lineChange(index, key, e.target.value)
@@ -1564,6 +1625,7 @@ export function QuoteEditor() {
                       className="studio-input"
                       rows={4}
                       value={terms}
+                      placeholder="Précisez les échéances, les modalités et les conditions convenues…"
                       onChange={(e) => change(setTerms, e.target.value)}
                     />
                   </div>
@@ -1576,18 +1638,31 @@ export function QuoteEditor() {
                       className="studio-input"
                       rows={3}
                       value={notes}
+                      placeholder="Ajoutez les précisions utiles au client. Ce texte apparaîtra sur le devis."
                       onChange={(e) => change(setNotes, e.target.value)}
                     />
                   </div>
                 </div>
+              </section>
+              <div className="quote-savebar">
+                <p role="status">
+                  {!id || dirty
+                    ? "Brouillon à enregistrer"
+                    : "Modifications enregistrées"}
+                  <small>
+                    L’enregistrement ne finalise pas le devis et n’envoie aucun
+                    email.
+                  </small>
+                </p>
                 <button
                   className="platform-button"
                   onClick={save}
                   disabled={busy}
                 >
-                  Enregistrer le brouillon <Check size={15} />
+                  {busy ? "Enregistrement…" : "Enregistrer le brouillon"}{" "}
+                  <Check size={15} />
                 </button>
-              </section>
+              </div>
             </>
           ) : issued ? (
             <section className="studio-panel">
@@ -1887,7 +1962,7 @@ export function QuoteEditor() {
           {notice}
         </p>
       )}
-    </>
+    </div>
   );
 }
 export function SettingsPage() {
