@@ -15,7 +15,7 @@ export const LaunchCTA = () => (
             votre activité.<span>Younes Mekki — Fondateur de MekWeb</span>
           </p>
           <a
-            href="#contact"
+            href="/devis"
             className="launch-circle"
             aria-label="Demander un devis pour votre site web"
           >

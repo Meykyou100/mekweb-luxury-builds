@@ -92,8 +92,8 @@ export const Pricing = () => (
               size="lg"
               className="w-full"
             >
-              <a href="#contact">
-                Demander ce pack <ArrowUpRight size={16} />
+              <a href={`/devis?pack=${["essential", "business", "ecommerce"][index]}`}>
+                Configurer mon projet <ArrowUpRight size={16} />
               </a>
             </Button>
           </article>

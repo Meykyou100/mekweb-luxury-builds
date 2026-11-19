@@ -44,3 +44,9 @@ The contact form prepares a WhatsApp message after validation. It does not send 
 `vercel.json` specifies Vite, `npm run build`, `dist`, and the SPA fallback documented by Vercel. Existing static files take precedence. This supports the React Router catch-all; unknown paths show the French 404 screen. A deployed SPA fallback normally responds with HTTP 200, so strict HTTP 404 status handling would require a different hosting approach.
 
 The public preferred hostname is `www.mekwebagency.com`, matching the observed live redirect. No dashboard settings or production environment variables are changed by local development. Use public client credentials only for any `VITE_` variables.
+
+## Quotation platform and CRM
+
+The `feature/quotation-crm` branch adds `/devis`, `/confidentialite`, and the authenticated `/admin` studio. It preserves the existing public website and package inclusions. Read [the platform operations guide](docs/PLATFORM-OPERATIONS.md) before configuring or releasing the backend. There are no production demo records or simulated success responses. Collection stays closed until Supabase, challenge verification and an approved privacy notice are configured.
+
+For local development, run `npm run dev:api` and `npm run dev` in separate terminals with a correctly configured ignored `.env.local`. `npm test` includes client behavior, real embedded PostgreSQL policy/transaction tests, HTTP boundary checks, financial calculations and actual PDF generation. Cloud services require separate connected staging verification.

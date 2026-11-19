@@ -1,0 +1,8 @@
+# Local secrets and test state must never be uploaded
+.env
+.env.*
+!.env.example
+.local/
+node_modules/
+dist/
+.git/
