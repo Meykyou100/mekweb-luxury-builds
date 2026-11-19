@@ -99,7 +99,7 @@ export const Navbar = () => {
             </a>
           ))}
         </div>
-        <a className="nav-cta" href="#contact">
+        <a className="nav-cta" href="/devis">
           Parlons de votre projet <ArrowUpRight size={16} />
         </a>
         <button

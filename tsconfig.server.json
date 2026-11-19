@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "types": ["node"]
+  },
+  "include": [
+    "server/**/*.ts",
+    "server/**/*.tsx",
+    "api/**/*.ts",
+    "shared/**/*.ts"
+  ],
+  "exclude": ["**/*.test.ts"]
+}

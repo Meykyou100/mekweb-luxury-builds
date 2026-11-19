@@ -50,7 +50,7 @@ export const Hero = () => (
           </p>
           <div className="hero-actions hero-enter">
             <Button asChild variant="hero" size="lg">
-              <a href="#contact">
+              <a href="/devis">
                 Demander un devis <ArrowUpRight />
               </a>
             </Button>

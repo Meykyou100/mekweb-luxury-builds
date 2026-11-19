@@ -27,3 +27,9 @@ vite-dev.err
 *.njsproj
 *.sln
 *.sw?
+
+# Local-only service state and QA documents
+.local/
+
+# Supabase CLI local metadata
+supabase/.temp/

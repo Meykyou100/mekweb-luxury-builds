@@ -1,0 +1,98 @@
+export type Client = {
+  id: string;
+  full_name: string;
+  company_name: string;
+  email: string;
+  phone: string;
+  city: string;
+  internal_notes: string;
+  created_at: string;
+};
+export type RequestRow = {
+  id: string;
+  reference: string;
+  client_id: string;
+  project_type: string;
+  business_name: string;
+  status: string;
+  priority: string;
+  created_at: string;
+  internal_notes: string;
+  [key: string]: unknown;
+};
+export type QuoteRow = {
+  id: string;
+  client_id: string;
+  request_id: string | null;
+  reference: string | null;
+  revision: number;
+  current_version_id: string | null;
+  status: string;
+  title: string;
+  description: string;
+  expires_on: string;
+  delivery_estimate: string;
+  payment_terms: string;
+  notes: string;
+  tax_mode: "unconfigured" | "standard" | "exempt" | "not_applicable";
+  tax_bps: number;
+  tax_note: string;
+  created_at: string;
+};
+export type Snapshot = {
+  reference: string;
+  version: number;
+  issued_at: string;
+  expires_on: string;
+  title: string;
+  description: string;
+  delivery_estimate: string;
+  payment_terms: string;
+  notes: string;
+  tax_mode: string;
+  tax_note: string;
+  tax_bps: number;
+  subtotal_cents: number;
+  tax_cents: number;
+  total_cents: number;
+  currency: string;
+  client: Omit<Client, "id" | "internal_notes" | "created_at">;
+  agency: {
+    name: string;
+    email: string;
+    phone: string;
+    city: string;
+    address: string;
+    ice: string;
+    tax_id: string;
+    rc: string;
+    cnss: string;
+    acceptance_instructions: string;
+  };
+  items: {
+    description: string;
+    quantity: string;
+    unit_price_cents: number;
+    discount_bps: number;
+    net_cents: number;
+    gross_cents: number;
+    discount_cents: number;
+  }[];
+};
+export type Version = {
+  id: string;
+  quote_id: string;
+  version: number;
+  snapshot: Snapshot;
+  created_at: string;
+};
+export type Job = {
+  id: string;
+  kind: string;
+  entity_id: string;
+  dedupe_key: string;
+  status: string;
+  attempts: number;
+  created_at: string;
+  provider_id: string | null;
+};
